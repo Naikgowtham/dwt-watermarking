@@ -1,0 +1,111 @@
+/* General layout */
+.App {
+  text-align: center;
+  padding: 30px 20px;
+  background: linear-gradient(to right, #e0eafc, #cfdef3);
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Header */
+.App h1 {
+  margin-bottom: 40px;
+  font-size: 2.2rem;
+  color: #333;
+}
+
+/* Two-panel container */
+.panel-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Individual panels */
+.panel {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 25px 20px;
+  width: 100%;
+  max-width: 500px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.panel:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.panel h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* File input */
+.panel input[type="file"] {
+  margin: 10px 0 15px;
+  padding: 5px;
+}
+
+/* Textarea */
+.panel textarea {
+  width: 100%;
+  padding: 10px;
+  resize: vertical;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+/* Button */
+.panel button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.panel button:hover {
+  background-color: #357ac8;
+}
+
+.panel button:disabled {
+  background-color: #a0c3ec;
+  cursor: not-allowed;
+}
+
+/* Image previews */
+.preview,
+.panel img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 15px;
+  border: 1px solid #ccc;
+}
+
+/* Extracted message display */
+.panel h4 {
+  margin-top: 20px;
+  font-weight: 500;
+  color: #444;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .panel-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .panel {
+    max-width: 90%;
+  }
+}
