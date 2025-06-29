@@ -2,107 +2,67 @@ import numpy as np
 import pywt
 import cv2
 from utils.logger import setup_logger
-from utils.bit_utils import bits_to_int, extract_header
 
 logger = setup_logger(__name__)
 
-def embed_bits_in_dwt(image_array: np.ndarray, bitstream: list, band='LH') -> np.ndarray:
-    logger.info("Starting DWT watermark embedding")
+# -----------------------------------
+# 🔧 Parity-Based Embedding in Y
+# -----------------------------------
+def embed_bits_into_y_parity(Y_channel: np.ndarray, bitstream: list[int]) -> np.ndarray:
+    flat = Y_channel.flatten()
+    if len(bitstream) > len(flat):
+        raise ValueError("Bitstream too long for Y channel")
 
-    try:
-        if image_array is None:
-            logger.error("Input image array is None.")
-            raise ValueError("Image input is missing.")
-
-        if len(image_array.shape) != 3 or image_array.shape[2] != 3:
-            logger.warning("Image is not a 3-channel (color) image. Converting to grayscale.")
-            image_array = cv2.cvtColor(image_array, cv2.COLOR_BGR2GRAY)
+    for i, bit in enumerate(bitstream):
+        val = flat[i]
+        if bit == 0:
+            flat[i] = val - (val % 2)  # force even
         else:
-            image_array = cv2.cvtColor(image_array, cv2.COLOR_BGR2GRAY)
+            flat[i] = val - (val % 2) + 1  # force odd
 
-        logger.debug(f"Image shape for DWT: {image_array.shape}")
-        coeffs2 = pywt.dwt2(image_array, 'haar')
-        LL, (LH, HL, HH) = coeffs2
+    # ✅ Parity verification
+    recovered = [int(val % 2) for val in flat[:len(bitstream)]]
+    mismatches = sum(a != b for a, b in zip(recovered, bitstream))
+    logger.debug(f"Y-parity embed check: {len(bitstream)} bits embedded, {mismatches} mismatches")
 
-        band_map = {'LH': LH, 'HL': HL}
-        if band not in band_map:
-            logger.error(f"Invalid band selected: '{band}'. Use 'LH' or 'HL'.")
-            raise ValueError("Band must be 'LH' or 'HL'")
+    return flat.reshape(Y_channel.shape)
 
-        target_band = band_map[band]
-        flat_band = target_band.flatten()
-        logger.debug(f"Embedding into band: {band}, shape = {target_band.shape}, coefficients = {flat_band.size}")
+# -----------------------------------
+# 🔧 Parity-Based Extraction from Y
+# -----------------------------------
+def extract_bits_from_y_parity(Y_channel: np.ndarray, bit_count: int) -> list[int]:
+    flat = Y_channel.flatten()
+    return [int(val % 2) for val in flat[:bit_count]]
 
-        if len(bitstream) > flat_band.size:
-            logger.error("Bitstream too large to embed in selected band.")
-            raise ValueError("Not enough coefficients to embed all bits.")
+# -----------------------------------
+# 📥 Embed bits in Y after DWT-IDWT
+# -----------------------------------
+def embed_bits_in_dwt(image_rgb: np.ndarray, bitstream: list[int]) -> np.ndarray:
+    ycrcb = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2YCrCb)
+    Y, Cr, Cb = cv2.split(ycrcb)
 
-        # Embed each bit into the LSB of the coefficient (rounded to int)
-        for i, bit in enumerate(bitstream):
-            coeff = flat_band[i]
-            int_coeff = int(coeff)
-            flat_band[i] = (int_coeff & ~1) | bit  # set LSB to bit
+    # DWT-IDWT simulation (to simulate compression effects if needed later)
+    LL, (LH, HL, HH) = pywt.dwt2(Y, 'haar')
+    coeffs = (LL, (LH, HL, HH))
+    recovered_Y = pywt.idwt2(coeffs, 'haar')
+    recovered_Y = np.clip(np.round(recovered_Y), 0, 255).astype(np.uint8)
 
-        # Rebuild modified band
-        modified_band = flat_band.reshape(target_band.shape)
+    logger.debug(f"Embedding {len(bitstream)} bits in Y channel parity")
+    modified_Y = embed_bits_into_y_parity(recovered_Y, bitstream)
 
-        # Update coefficients
-        if band == 'LH':
-            new_coeffs = (LL, (modified_band, HL, HH))
-        else:
-            new_coeffs = (LL, (LH, modified_band, HH))
+    merged = cv2.merge([modified_Y, Cr, Cb])
+    return cv2.cvtColor(merged, cv2.COLOR_YCrCb2RGB)
 
-        watermarked_image = pywt.idwt2(new_coeffs, 'haar')
-        watermarked_image = np.clip(watermarked_image, 0, 255).astype(np.uint8)
-        logger.info("Watermark embedding complete.")
+# -----------------------------------
+# 📤 Extract bits from Y channel parity
+# -----------------------------------
+def extract_bits_from_dwt(image_rgb: np.ndarray) -> list[int]:
+    ycrcb = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2YCrCb)
+    Y, _, _ = cv2.split(ycrcb)
 
-        return watermarked_image
+    flat = Y.flatten()
+    bits = [int(val % 2) for val in flat]
 
-    except Exception as e:
-        logger.exception("Exception occurred during watermark embedding.")
-        raise
-
-def extract_bits_from_dwt(image_array: np.ndarray, band='LH') -> list:
-    logger.info("Starting DWT watermark extraction")
-
-    try:
-        if image_array is None:
-            logger.error("Input image array is None.")
-            raise ValueError("Image input is missing.")
-
-        if len(image_array.shape) != 3 or image_array.shape[2] != 3:
-            logger.debug("Image is grayscale or single-channel. Proceeding as-is.")
-            image_array = cv2.cvtColor(image_array, cv2.COLOR_BGR2GRAY)
-        else:
-            image_array = cv2.cvtColor(image_array, cv2.COLOR_BGR2GRAY)
-
-        coeffs2 = pywt.dwt2(image_array, 'haar')
-        LL, (LH, HL, HH) = coeffs2
-
-        band_map = {'LH': LH, 'HL': HL}
-        if band not in band_map:
-            logger.error(f"Invalid band selected: '{band}'. Use 'LH' or 'HL'.")
-            raise ValueError("Band must be 'LH' or 'HL'")
-
-        target_band = band_map[band]
-        flat_band = target_band.flatten()
-        logger.debug(f"Extracting from band: {band}, shape = {target_band.shape}, total coefficients = {flat_band.size}")
-
-        # Extract header (first 16 bits)
-        header_bits = [(int(val) & 1) for val in flat_band[:16]]
-        message_length = bits_to_int(header_bits)
-        logger.debug(f"Extracted message length from header: {message_length}")
-
-        total_bits_needed = 16 + message_length
-        if total_bits_needed > len(flat_band):
-            logger.error("Not enough DWT coefficients to extract full message.")
-            raise ValueError("Insufficient data in DWT band.")
-
-        message_bits = [(int(val) & 1) for val in flat_band[16:16 + message_length]]
-        logger.info("Watermark extraction complete.")
-
-        return message_bits
-
-    except Exception as e:
-        logger.exception("Exception occurred during watermark extraction.")
-        raise
+    logger.debug(f"Extracted first 32 bits: {bits[:32]}")
+    logger.debug(f"Total bits extracted: {len(bits)}")
+    return bits
