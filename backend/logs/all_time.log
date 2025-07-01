@@ -2049,3 +2049,816 @@ TypeError: extract_bits_from_dwt() got an unexpected keyword argument 'band'
 [2025-06-29 19:57:59,137] [DEBUG] [utils.bit_utils] Bits successfully converted to string: 'sfffggaeEFEAS11233'
 [2025-06-29 19:57:59,137] [INFO] [routes.watermark_routes] POST /extract completed successfully.
 [2025-06-29 19:57:59,139] [INFO] [__main__] App context teardown complete.
+
+
+========== New Session: 2025-07-01 14:47:40 ==========
+
+
+========== New Session: 2025-07-01 14:47:40 ==========
+
+
+========== New Session: 2025-07-01 14:47:40 ==========
+
+
+========== New Session: 2025-07-01 14:47:40 ==========
+
+
+========== New Session: 2025-07-01 14:47:40 ==========
+[2025-07-01 14:47:40,860] [INFO] [__main__] Launching Flask server...
+[2025-07-01 14:47:40,860] [INFO] [__main__] Creating Flask app...
+[2025-07-01 14:47:40,861] [INFO] [__main__] Registering watermark blueprint...
+
+
+========== New Session: 2025-07-01 14:47:41 ==========
+
+
+========== New Session: 2025-07-01 14:47:41 ==========
+
+
+========== New Session: 2025-07-01 14:47:41 ==========
+
+
+========== New Session: 2025-07-01 14:47:41 ==========
+
+
+========== New Session: 2025-07-01 14:47:41 ==========
+[2025-07-01 14:47:41,065] [INFO] [__main__] Launching Flask server...
+[2025-07-01 14:47:41,065] [INFO] [__main__] Creating Flask app...
+[2025-07-01 14:47:41,066] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-01 14:47:44,901] [DEBUG] [__main__] Received a new request.
+[2025-07-01 14:47:44,902] [INFO] [routes.watermark_routes] POST /extract called
+[2025-07-01 14:47:44,906] [DEBUG] [routes.watermark_routes] Loading watermarked image for extraction...
+[2025-07-01 14:47:44,906] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-01 14:47:44,919] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (840, 700, 3)
+[2025-07-01 14:47:44,919] [DEBUG] [routes.watermark_routes] Extracting full bitstream from Y-channel parity...
+[2025-07-01 14:47:44,990] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1]
+[2025-07-01 14:47:44,990] [DEBUG] [core.dwt_engine] Total bits extracted: 588000
+[2025-07-01 14:47:44,991] [DEBUG] [routes.watermark_routes] First 32 bits extracted: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1]
+[2025-07-01 14:47:44,991] [DEBUG] [routes.watermark_routes] Total bits extracted: 588000
+[2025-07-01 14:47:44,991] [DEBUG] [routes.watermark_routes] Parsing header and message bits...
+[2025-07-01 14:47:44,991] [DEBUG] [utils.bit_utils] Extracted header bits: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
+[2025-07-01 14:47:44,991] [DEBUG] [utils.bit_utils] Converted bits to integer: 48
+[2025-07-01 14:47:44,991] [DEBUG] [utils.bit_utils] Message length from header: 48
+[2025-07-01 14:47:44,991] [DEBUG] [utils.bit_utils] Extracted header: message_length = 48 bits
+[2025-07-01 14:47:44,991] [DEBUG] [routes.watermark_routes] Message length from header: 48 bits
+[2025-07-01 14:47:44,991] [DEBUG] [routes.watermark_routes] Converting message bits to string...
+[2025-07-01 14:47:44,991] [DEBUG] [utils.bit_utils] Reconstructing string from bits. Bit length = 48
+[2025-07-01 14:47:44,991] [DEBUG] [utils.bit_utils] Bits successfully converted to string: 'ssdddd'
+[2025-07-01 14:47:44,991] [INFO] [routes.watermark_routes] POST /extract completed successfully.
+[2025-07-01 14:47:44,993] [INFO] [__main__] App context teardown complete.
+[2025-07-01 14:55:22,247] [DEBUG] [__main__] Received a new request.
+[2025-07-01 14:55:22,249] [INFO] [__main__] App context teardown complete.
+[2025-07-01 14:55:22,288] [DEBUG] [__main__] Received a new request.
+[2025-07-01 14:55:22,288] [INFO] [__main__] App context teardown complete.
+
+
+========== New Session: 2025-07-01 15:01:33 ==========
+
+
+========== New Session: 2025-07-01 15:01:33 ==========
+
+
+========== New Session: 2025-07-01 15:01:33 ==========
+
+
+========== New Session: 2025-07-01 15:01:33 ==========
+
+
+========== New Session: 2025-07-01 15:01:33 ==========
+[2025-07-01 15:01:33,022] [INFO] [__main__] Launching Flask server...
+[2025-07-01 15:01:33,022] [INFO] [__main__] Creating Flask app...
+[2025-07-01 15:01:33,023] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-01 15:02:01,713] [DEBUG] [__main__] Received a new request.
+[2025-07-01 15:02:01,713] [INFO] [routes.watermark_routes] POST /watermark called
+[2025-07-01 15:02:01,718] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-01 15:02:01,735] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (840, 700, 3)
+[2025-07-01 15:02:01,803] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+[2025-07-01 15:02:01,803] [DEBUG] [core.dwt_engine] Total bits extracted: 588000
+[2025-07-01 15:02:01,804] [DEBUG] [utils.bit_utils] Converted bits to integer: 65535
+[2025-07-01 15:02:01,804] [DEBUG] [utils.bit_utils] Converted bits to integer: 23433
+[2025-07-01 15:02:01,804] [DEBUG] [utils.bit_utils] Converted bits to integer: 41472
+[2025-07-01 15:02:01,804] [DEBUG] [utils.bit_utils] Converted bits to integer: 24050
+[2025-07-01 15:02:01,805] [DEBUG] [utils.bit_utils] Converted bits to integer: 20312
+[2025-07-01 15:02:01,805] [DEBUG] [utils.bit_utils] Converted bits to integer: 2592
+[2025-07-01 15:02:01,805] [DEBUG] [utils.bit_utils] Converted bits to integer: 51652
+[2025-07-01 15:02:01,805] [DEBUG] [utils.bit_utils] Converted bits to integer: 35400
+[2025-07-01 15:02:01,805] [DEBUG] [utils.bit_utils] Converted bits to integer: 5790
+[2025-07-01 15:02:01,805] [DEBUG] [utils.bit_utils] Converted bits to integer: 5279
+[2025-07-01 15:02:01,805] [DEBUG] [utils.bit_utils] Converted bits to integer: 6241
+[2025-07-01 15:02:01,805] [DEBUG] [utils.bit_utils] Converted bits to integer: 62081
+[2025-07-01 15:02:01,806] [DEBUG] [utils.bit_utils] Converted bits to integer: 24699
+[2025-07-01 15:02:01,806] [DEBUG] [utils.bit_utils] Converted bits to integer: 39056
+[2025-07-01 15:02:01,806] [DEBUG] [utils.bit_utils] Converted bits to integer: 24907
+[2025-07-01 15:02:01,806] [DEBUG] [utils.bit_utils] Converted bits to integer: 1383
+[2025-07-01 15:02:01,806] [DEBUG] [utils.bit_utils] Converted bits to integer: 28562
+[2025-07-01 15:02:01,806] [DEBUG] [utils.bit_utils] Converted bits to integer: 26864
+[2025-07-01 15:02:01,806] [DEBUG] [utils.bit_utils] Converted bits to integer: 6011
+[2025-07-01 15:02:01,807] [DEBUG] [utils.bit_utils] Converted bits to integer: 7211
+[2025-07-01 15:02:01,807] [DEBUG] [utils.bit_utils] Converted bits to integer: 14233
+[2025-07-01 15:02:01,807] [DEBUG] [utils.bit_utils] Converted bits to integer: 38505
+[2025-07-01 15:02:01,807] [DEBUG] [utils.bit_utils] Converted bits to integer: 48378
+[2025-07-01 15:02:01,807] [DEBUG] [utils.bit_utils] Converting string to bits: 'gaae'
+[2025-07-01 15:02:01,807] [DEBUG] [utils.bit_utils] String converted to 32 bits.
+[2025-07-01 15:02:01,807] [DEBUG] [utils.bit_utils] Preparing header for message length: 32 bits
+[2025-07-01 15:02:01,807] [DEBUG] [utils.bit_utils] Converted integer 32 to 16-bit header: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+[2025-07-01 15:02:01,807] [DEBUG] [utils.bit_utils] Total bitstream length after header = 48 bits
+[2025-07-01 15:02:01,807] [DEBUG] [utils.bit_utils] Preparing header for message length: 65535 bits
+[2025-07-01 15:02:01,807] [DEBUG] [utils.bit_utils] Converted integer 65535 to 16-bit header: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+[2025-07-01 15:02:01,807] [DEBUG] [utils.bit_utils] Total bitstream length after header = 65551 bits
+[2025-07-01 15:02:01,808] [DEBUG] [utils.bit_utils] Preparing header for message length: 23433 bits
+[2025-07-01 15:02:01,808] [DEBUG] [utils.bit_utils] Converted integer 23433 to 16-bit header: [0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1]
+[2025-07-01 15:02:01,808] [DEBUG] [utils.bit_utils] Total bitstream length after header = 23449 bits
+[2025-07-01 15:02:01,808] [DEBUG] [utils.bit_utils] Preparing header for message length: 41472 bits
+[2025-07-01 15:02:01,808] [DEBUG] [utils.bit_utils] Converted integer 41472 to 16-bit header: [1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2025-07-01 15:02:01,808] [DEBUG] [utils.bit_utils] Total bitstream length after header = 41488 bits
+[2025-07-01 15:02:01,808] [DEBUG] [utils.bit_utils] Preparing header for message length: 24050 bits
+[2025-07-01 15:02:01,808] [DEBUG] [utils.bit_utils] Converted integer 24050 to 16-bit header: [0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0]
+[2025-07-01 15:02:01,808] [DEBUG] [utils.bit_utils] Total bitstream length after header = 24066 bits
+[2025-07-01 15:02:01,809] [DEBUG] [utils.bit_utils] Preparing header for message length: 20312 bits
+[2025-07-01 15:02:01,809] [DEBUG] [utils.bit_utils] Converted integer 20312 to 16-bit header: [0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0]
+[2025-07-01 15:02:01,809] [DEBUG] [utils.bit_utils] Total bitstream length after header = 20328 bits
+[2025-07-01 15:02:01,809] [DEBUG] [utils.bit_utils] Preparing header for message length: 2592 bits
+[2025-07-01 15:02:01,809] [DEBUG] [utils.bit_utils] Converted integer 2592 to 16-bit header: [0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+[2025-07-01 15:02:01,809] [DEBUG] [utils.bit_utils] Total bitstream length after header = 2608 bits
+[2025-07-01 15:02:01,809] [DEBUG] [utils.bit_utils] Preparing header for message length: 51652 bits
+[2025-07-01 15:02:01,809] [DEBUG] [utils.bit_utils] Converted integer 51652 to 16-bit header: [1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0]
+[2025-07-01 15:02:01,809] [DEBUG] [utils.bit_utils] Total bitstream length after header = 51668 bits
+[2025-07-01 15:02:01,809] [DEBUG] [utils.bit_utils] Preparing header for message length: 35400 bits
+[2025-07-01 15:02:01,809] [DEBUG] [utils.bit_utils] Converted integer 35400 to 16-bit header: [1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0]
+[2025-07-01 15:02:01,809] [DEBUG] [utils.bit_utils] Total bitstream length after header = 35416 bits
+[2025-07-01 15:02:01,810] [DEBUG] [utils.bit_utils] Preparing header for message length: 5790 bits
+[2025-07-01 15:02:01,810] [DEBUG] [utils.bit_utils] Converted integer 5790 to 16-bit header: [0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0]
+[2025-07-01 15:02:01,810] [DEBUG] [utils.bit_utils] Total bitstream length after header = 5806 bits
+[2025-07-01 15:02:01,810] [DEBUG] [utils.bit_utils] Preparing header for message length: 5279 bits
+[2025-07-01 15:02:01,810] [DEBUG] [utils.bit_utils] Converted integer 5279 to 16-bit header: [0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1]
+[2025-07-01 15:02:01,810] [DEBUG] [utils.bit_utils] Total bitstream length after header = 5295 bits
+[2025-07-01 15:02:01,810] [DEBUG] [utils.bit_utils] Preparing header for message length: 6241 bits
+[2025-07-01 15:02:01,810] [DEBUG] [utils.bit_utils] Converted integer 6241 to 16-bit header: [0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1]
+[2025-07-01 15:02:01,810] [DEBUG] [utils.bit_utils] Total bitstream length after header = 6257 bits
+[2025-07-01 15:02:01,810] [DEBUG] [utils.bit_utils] Preparing header for message length: 62081 bits
+[2025-07-01 15:02:01,810] [DEBUG] [utils.bit_utils] Converted integer 62081 to 16-bit header: [1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1]
+[2025-07-01 15:02:01,810] [DEBUG] [utils.bit_utils] Total bitstream length after header = 62097 bits
+[2025-07-01 15:02:01,810] [DEBUG] [utils.bit_utils] Preparing header for message length: 24699 bits
+[2025-07-01 15:02:01,810] [DEBUG] [utils.bit_utils] Converted integer 24699 to 16-bit header: [0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1]
+[2025-07-01 15:02:01,810] [DEBUG] [utils.bit_utils] Total bitstream length after header = 24715 bits
+[2025-07-01 15:02:01,812] [DEBUG] [utils.bit_utils] Preparing header for message length: 39056 bits
+[2025-07-01 15:02:01,812] [DEBUG] [utils.bit_utils] Converted integer 39056 to 16-bit header: [1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0]
+[2025-07-01 15:02:01,812] [DEBUG] [utils.bit_utils] Total bitstream length after header = 39072 bits
+[2025-07-01 15:02:01,812] [DEBUG] [utils.bit_utils] Preparing header for message length: 24907 bits
+[2025-07-01 15:02:01,812] [DEBUG] [utils.bit_utils] Converted integer 24907 to 16-bit header: [0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1]
+[2025-07-01 15:02:01,813] [DEBUG] [utils.bit_utils] Total bitstream length after header = 24923 bits
+[2025-07-01 15:02:01,813] [DEBUG] [utils.bit_utils] Preparing header for message length: 1383 bits
+[2025-07-01 15:02:01,813] [DEBUG] [utils.bit_utils] Converted integer 1383 to 16-bit header: [0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1]
+[2025-07-01 15:02:01,813] [DEBUG] [utils.bit_utils] Total bitstream length after header = 1399 bits
+[2025-07-01 15:02:01,813] [DEBUG] [utils.bit_utils] Preparing header for message length: 28562 bits
+[2025-07-01 15:02:01,813] [DEBUG] [utils.bit_utils] Converted integer 28562 to 16-bit header: [0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0]
+[2025-07-01 15:02:01,813] [DEBUG] [utils.bit_utils] Total bitstream length after header = 28578 bits
+[2025-07-01 15:02:01,813] [DEBUG] [utils.bit_utils] Preparing header for message length: 26864 bits
+[2025-07-01 15:02:01,813] [DEBUG] [utils.bit_utils] Converted integer 26864 to 16-bit header: [0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0]
+[2025-07-01 15:02:01,813] [DEBUG] [utils.bit_utils] Total bitstream length after header = 26880 bits
+[2025-07-01 15:02:01,813] [DEBUG] [utils.bit_utils] Preparing header for message length: 6011 bits
+[2025-07-01 15:02:01,813] [DEBUG] [utils.bit_utils] Converted integer 6011 to 16-bit header: [0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1]
+[2025-07-01 15:02:01,813] [DEBUG] [utils.bit_utils] Total bitstream length after header = 6027 bits
+[2025-07-01 15:02:01,813] [DEBUG] [utils.bit_utils] Preparing header for message length: 7211 bits
+[2025-07-01 15:02:01,813] [DEBUG] [utils.bit_utils] Converted integer 7211 to 16-bit header: [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1]
+[2025-07-01 15:02:01,814] [DEBUG] [utils.bit_utils] Total bitstream length after header = 7227 bits
+[2025-07-01 15:02:01,814] [DEBUG] [utils.bit_utils] Preparing header for message length: 14233 bits
+[2025-07-01 15:02:01,814] [DEBUG] [utils.bit_utils] Converted integer 14233 to 16-bit header: [0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1]
+[2025-07-01 15:02:01,814] [DEBUG] [utils.bit_utils] Total bitstream length after header = 14249 bits
+[2025-07-01 15:02:01,814] [DEBUG] [utils.bit_utils] Preparing header for message length: 38505 bits
+[2025-07-01 15:02:01,814] [DEBUG] [utils.bit_utils] Converted integer 38505 to 16-bit header: [1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1]
+[2025-07-01 15:02:01,814] [DEBUG] [utils.bit_utils] Total bitstream length after header = 38521 bits
+[2025-07-01 15:02:01,814] [DEBUG] [routes.watermark_routes] Embedding total 555668 bits (old + new)
+[2025-07-01 15:02:01,832] [DEBUG] [core.dwt_engine] Embedding 555668 bits in Y channel parity
+[2025-07-01 15:02:02,026] [DEBUG] [core.dwt_engine] Y-parity embed check: 555668 bits embedded, 0 mismatches
+[2025-07-01 15:02:02,027] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/original/84bfc3113c3a4c858bd99e8c4f4105ba_orig.png
+[2025-07-01 15:02:02,046] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-01 15:02:02,046] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/84bfc3113c3a4c858bd99e8c4f4105ba_wm.png
+[2025-07-01 15:02:02,064] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-01 15:02:02,064] [DEBUG] [utils.image_utils] Attempting to convert image to base64 from path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/84bfc3113c3a4c858bd99e8c4f4105ba_wm.png
+[2025-07-01 15:02:02,065] [DEBUG] [utils.image_utils] Image successfully encoded to base64.
+[2025-07-01 15:02:02,065] [INFO] [routes.watermark_routes] POST /watermark completed successfully.
+[2025-07-01 15:02:02,071] [INFO] [__main__] App context teardown complete.
+[2025-07-01 15:02:10,255] [DEBUG] [__main__] Received a new request.
+[2025-07-01 15:02:10,255] [INFO] [routes.watermark_routes] POST /extract called
+[2025-07-01 15:02:10,260] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-01 15:02:10,271] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (840, 700, 3)
+[2025-07-01 15:02:10,332] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+[2025-07-01 15:02:10,332] [DEBUG] [core.dwt_engine] Total bits extracted: 588000
+[2025-07-01 15:02:10,332] [DEBUG] [utils.bit_utils] Converted bits to integer: 65535
+[2025-07-01 15:02:10,332] [ERROR] [utils.bit_utils] Bit length is not a multiple of 8.
+[2025-07-01 15:02:10,332] [INFO] [routes.watermark_routes] POST /extract completed successfully.
+[2025-07-01 15:02:10,333] [INFO] [__main__] App context teardown complete.
+
+
+========== New Session: 2025-07-01 15:05:09 ==========
+
+
+========== New Session: 2025-07-01 15:05:09 ==========
+
+
+========== New Session: 2025-07-01 15:05:09 ==========
+
+
+========== New Session: 2025-07-01 15:05:09 ==========
+[2025-07-01 15:05:09,131] [INFO] [__main__] Launching Flask server...
+[2025-07-01 15:05:09,131] [INFO] [__main__] Creating Flask app...
+[2025-07-01 15:05:09,132] [INFO] [__main__] Registering watermark blueprint...
+
+
+========== New Session: 2025-07-01 15:05:19 ==========
+
+
+========== New Session: 2025-07-01 15:05:19 ==========
+
+
+========== New Session: 2025-07-01 15:05:19 ==========
+
+
+========== New Session: 2025-07-01 15:05:19 ==========
+[2025-07-01 15:05:19,396] [INFO] [__main__] Launching Flask server...
+[2025-07-01 15:05:19,396] [INFO] [__main__] Creating Flask app...
+[2025-07-01 15:05:19,397] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-01 15:05:35,349] [DEBUG] [__main__] Received a new request.
+[2025-07-01 15:05:35,349] [INFO] [routes.watermark_routes] POST /watermark called
+[2025-07-01 15:05:35,354] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-01 15:05:35,371] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (840, 700, 3)
+[2025-07-01 15:05:35,438] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+[2025-07-01 15:05:35,438] [DEBUG] [core.dwt_engine] Total bits extracted: 588000
+[2025-07-01 15:05:35,439] [DEBUG] [routes.watermark_routes] Embedding 80 bits (sig + 0 old + 1 new)
+[2025-07-01 15:05:35,459] [DEBUG] [core.dwt_engine] Embedding 80 bits in Y channel parity
+[2025-07-01 15:05:35,460] [DEBUG] [core.dwt_engine] Y-parity embed check: 80 bits embedded, 0 mismatches
+[2025-07-01 15:05:35,461] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/original/d7e15b40017a45a5a472069ae2446c80_orig.png
+[2025-07-01 15:05:35,480] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-01 15:05:35,480] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/d7e15b40017a45a5a472069ae2446c80_wm.png
+[2025-07-01 15:05:35,498] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-01 15:05:35,498] [DEBUG] [utils.image_utils] Attempting to convert image to base64 from path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/d7e15b40017a45a5a472069ae2446c80_wm.png
+[2025-07-01 15:05:35,499] [DEBUG] [utils.image_utils] Image successfully encoded to base64.
+[2025-07-01 15:05:35,503] [INFO] [__main__] App context teardown complete.
+[2025-07-01 15:05:43,796] [DEBUG] [__main__] Received a new request.
+[2025-07-01 15:05:43,796] [INFO] [routes.watermark_routes] POST /extract called
+[2025-07-01 15:05:43,800] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-01 15:05:43,812] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (840, 700, 3)
+[2025-07-01 15:05:43,873] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
+[2025-07-01 15:05:43,873] [DEBUG] [core.dwt_engine] Total bits extracted: 588000
+[2025-07-01 15:05:43,873] [ERROR] [routes.watermark_routes] Extraction failed.
+Traceback (most recent call last):
+  File "/home/gowtham/dwt-watermarking/backend/routes/watermark_routes.py", line 129, in extract_watermark
+    messages.append(bits_to_string(segment))
+  File "/home/gowtham/dwt-watermarking/backend/utils/bit_utils.py", line 20, in bits_to_string
+    raise ValueError("Bit length must be a multiple of 8 to convert to string.")
+ValueError: Bit length must be a multiple of 8 to convert to string.
+[2025-07-01 15:05:43,875] [INFO] [__main__] App context teardown complete.
+
+
+========== New Session: 2025-07-01 15:07:09 ==========
+
+
+========== New Session: 2025-07-01 15:07:09 ==========
+
+
+========== New Session: 2025-07-01 15:07:09 ==========
+
+
+========== New Session: 2025-07-01 15:07:09 ==========
+[2025-07-01 15:07:09,072] [INFO] [__main__] Launching Flask server...
+[2025-07-01 15:07:09,072] [INFO] [__main__] Creating Flask app...
+[2025-07-01 15:07:09,073] [INFO] [__main__] Registering watermark blueprint...
+
+
+========== New Session: 2025-07-01 15:07:26 ==========
+
+
+========== New Session: 2025-07-01 15:07:26 ==========
+
+
+========== New Session: 2025-07-01 15:07:26 ==========
+
+
+========== New Session: 2025-07-01 15:07:26 ==========
+[2025-07-01 15:07:26,363] [INFO] [__main__] Launching Flask server...
+[2025-07-01 15:07:26,363] [INFO] [__main__] Creating Flask app...
+[2025-07-01 15:07:26,364] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-01 15:07:39,217] [DEBUG] [__main__] Received a new request.
+[2025-07-01 15:07:39,221] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-01 15:07:39,238] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (840, 700, 3)
+[2025-07-01 15:07:39,303] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+[2025-07-01 15:07:39,303] [DEBUG] [core.dwt_engine] Total bits extracted: 588000
+[2025-07-01 15:07:39,304] [DEBUG] [routes.watermark_routes] Embedding 80 bits (sig + 0 old + 1 new)
+[2025-07-01 15:07:39,321] [DEBUG] [core.dwt_engine] Embedding 80 bits in Y channel parity
+[2025-07-01 15:07:39,322] [DEBUG] [core.dwt_engine] Y-parity embed check: 80 bits embedded, 0 mismatches
+[2025-07-01 15:07:39,323] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/routes/../uploads/original/57e5e31099ee4104b5ac437632a7b558_orig.png
+[2025-07-01 15:07:39,345] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-01 15:07:39,345] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/routes/../uploads/watermarked/57e5e31099ee4104b5ac437632a7b558_wm.png
+[2025-07-01 15:07:39,364] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-01 15:07:39,364] [DEBUG] [utils.image_utils] Attempting to convert image to base64 from path: /home/gowtham/dwt-watermarking/backend/routes/../uploads/watermarked/57e5e31099ee4104b5ac437632a7b558_wm.png
+[2025-07-01 15:07:39,365] [DEBUG] [utils.image_utils] Image successfully encoded to base64.
+[2025-07-01 15:07:39,369] [INFO] [__main__] App context teardown complete.
+[2025-07-01 15:07:45,085] [DEBUG] [__main__] Received a new request.
+[2025-07-01 15:07:45,089] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-01 15:07:45,101] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (840, 700, 3)
+[2025-07-01 15:07:45,165] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
+[2025-07-01 15:07:45,165] [DEBUG] [core.dwt_engine] Total bits extracted: 588000
+[2025-07-01 15:07:45,166] [INFO] [__main__] App context teardown complete.
+
+
+========== New Session: 2025-07-01 15:09:07 ==========
+
+
+========== New Session: 2025-07-01 15:09:07 ==========
+
+
+========== New Session: 2025-07-01 15:09:07 ==========
+
+
+========== New Session: 2025-07-01 15:09:07 ==========
+[2025-07-01 15:09:07,282] [INFO] [__main__] Launching Flask server...
+[2025-07-01 15:09:07,282] [INFO] [__main__] Creating Flask app...
+[2025-07-01 15:09:07,283] [INFO] [__main__] Registering watermark blueprint...
+
+
+========== New Session: 2025-07-01 15:09:07 ==========
+
+
+========== New Session: 2025-07-01 15:09:07 ==========
+
+
+========== New Session: 2025-07-01 15:09:07 ==========
+
+
+========== New Session: 2025-07-01 15:09:07 ==========
+[2025-07-01 15:09:07,464] [INFO] [__main__] Launching Flask server...
+[2025-07-01 15:09:07,465] [INFO] [__main__] Creating Flask app...
+[2025-07-01 15:09:07,466] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-01 15:09:23,377] [DEBUG] [__main__] Received a new request.
+[2025-07-01 15:09:23,382] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-01 15:09:23,399] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (840, 700, 3)
+[2025-07-01 15:09:23,466] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+[2025-07-01 15:09:23,466] [DEBUG] [core.dwt_engine] Total bits extracted: 588000
+[2025-07-01 15:09:23,466] [DEBUG] [routes.watermark_routes] Embedding 72 bits (sig + 0 old + 1 new)
+[2025-07-01 15:09:23,489] [DEBUG] [core.dwt_engine] Embedding 72 bits in Y channel parity
+[2025-07-01 15:09:23,489] [DEBUG] [core.dwt_engine] Y-parity embed check: 72 bits embedded, 0 mismatches
+[2025-07-01 15:09:23,490] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/routes/../uploads/original/24a16375327145189339138aab29f8cb_orig.png
+[2025-07-01 15:09:23,510] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-01 15:09:23,510] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/routes/../uploads/watermarked/24a16375327145189339138aab29f8cb_wm.png
+[2025-07-01 15:09:23,528] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-01 15:09:23,528] [DEBUG] [utils.image_utils] Attempting to convert image to base64 from path: /home/gowtham/dwt-watermarking/backend/routes/../uploads/watermarked/24a16375327145189339138aab29f8cb_wm.png
+[2025-07-01 15:09:23,529] [DEBUG] [utils.image_utils] Image successfully encoded to base64.
+[2025-07-01 15:09:23,533] [INFO] [__main__] App context teardown complete.
+[2025-07-01 15:09:55,000] [DEBUG] [__main__] Received a new request.
+[2025-07-01 15:09:55,006] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-01 15:09:55,017] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (840, 700, 3)
+[2025-07-01 15:09:55,079] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0]
+[2025-07-01 15:09:55,079] [DEBUG] [core.dwt_engine] Total bits extracted: 588000
+[2025-07-01 15:09:55,080] [INFO] [__main__] App context teardown complete.
+
+
+========== New Session: 2025-07-01 15:11:06 ==========
+
+
+========== New Session: 2025-07-01 15:11:06 ==========
+
+
+========== New Session: 2025-07-01 15:11:06 ==========
+
+
+========== New Session: 2025-07-01 15:11:06 ==========
+[2025-07-01 15:11:06,206] [INFO] [__main__] Launching Flask server...
+[2025-07-01 15:11:06,206] [INFO] [__main__] Creating Flask app...
+[2025-07-01 15:11:06,207] [INFO] [__main__] Registering watermark blueprint...
+
+
+========== New Session: 2025-07-01 15:13:13 ==========
+
+
+========== New Session: 2025-07-01 15:13:20 ==========
+
+
+========== New Session: 2025-07-01 15:15:43 ==========
+
+
+========== New Session: 2025-07-01 15:15:43 ==========
+
+
+========== New Session: 2025-07-01 15:15:43 ==========
+[2025-07-01 15:15:43,025] [INFO] [__main__] Launching Flask server...
+[2025-07-01 15:15:43,025] [INFO] [__main__] Creating Flask app...
+[2025-07-01 15:15:43,026] [INFO] [__main__] Registering watermark blueprint...
+
+
+========== New Session: 2025-07-01 15:15:43 ==========
+
+
+========== New Session: 2025-07-01 15:15:43 ==========
+
+
+========== New Session: 2025-07-01 15:15:43 ==========
+[2025-07-01 15:15:43,202] [INFO] [__main__] Launching Flask server...
+[2025-07-01 15:15:43,202] [INFO] [__main__] Creating Flask app...
+[2025-07-01 15:15:43,203] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-01 15:16:53,699] [DEBUG] [__main__] Received a new request.
+[2025-07-01 15:16:53,704] [INFO] [__main__] App context teardown complete.
+
+
+========== New Session: 2025-07-01 15:19:31 ==========
+
+
+========== New Session: 2025-07-01 15:19:31 ==========
+
+
+========== New Session: 2025-07-01 15:19:31 ==========
+[2025-07-01 15:19:31,375] [INFO] [__main__] Launching Flask server...
+[2025-07-01 15:19:31,375] [INFO] [__main__] Creating Flask app...
+[2025-07-01 15:19:31,376] [INFO] [__main__] Registering watermark blueprint...
+
+
+========== New Session: 2025-07-01 15:19:33 ==========
+
+
+========== New Session: 2025-07-01 15:19:33 ==========
+
+
+========== New Session: 2025-07-01 15:19:33 ==========
+[2025-07-01 15:19:33,600] [INFO] [__main__] Launching Flask server...
+[2025-07-01 15:19:33,600] [INFO] [__main__] Creating Flask app...
+[2025-07-01 15:19:33,601] [INFO] [__main__] Registering watermark blueprint...
+
+
+========== New Session: 2025-07-01 15:19:57 ==========
+
+
+========== New Session: 2025-07-01 15:19:57 ==========
+
+
+========== New Session: 2025-07-01 15:19:57 ==========
+[2025-07-01 15:19:57,939] [INFO] [__main__] Launching Flask server...
+[2025-07-01 15:19:57,940] [INFO] [__main__] Creating Flask app...
+[2025-07-01 15:19:57,941] [INFO] [__main__] Registering watermark blueprint...
+
+
+========== New Session: 2025-07-01 15:19:58 ==========
+
+
+========== New Session: 2025-07-01 15:19:58 ==========
+
+
+========== New Session: 2025-07-01 15:19:58 ==========
+[2025-07-01 15:19:58,120] [INFO] [__main__] Launching Flask server...
+[2025-07-01 15:19:58,120] [INFO] [__main__] Creating Flask app...
+[2025-07-01 15:19:58,121] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-01 15:20:13,686] [DEBUG] [__main__] Received a new request.
+[2025-07-01 15:20:13,690] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-01 15:20:13,707] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (840, 700, 3)
+[2025-07-01 15:20:13,771] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+[2025-07-01 15:20:13,771] [DEBUG] [core.dwt_engine] Total bits extracted: 588000
+[2025-07-01 15:20:13,790] [DEBUG] [core.dwt_engine] Embedding 88 bits in Y channel parity
+[2025-07-01 15:20:13,790] [DEBUG] [core.dwt_engine] Y-parity embed check: 88 bits embedded, 0 mismatches
+[2025-07-01 15:20:13,794] [INFO] [__main__] App context teardown complete.
+
+
+========== New Session: 2025-07-01 15:24:31 ==========
+
+
+========== New Session: 2025-07-01 15:24:31 ==========
+
+
+========== New Session: 2025-07-01 15:24:31 ==========
+[2025-07-01 15:24:31,467] [INFO] [__main__] Launching Flask server...
+[2025-07-01 15:24:31,467] [INFO] [__main__] Creating Flask app...
+[2025-07-01 15:24:31,468] [INFO] [__main__] Registering watermark blueprint...
+
+
+========== New Session: 2025-07-01 15:24:38 ==========
+
+
+========== New Session: 2025-07-01 15:24:38 ==========
+
+
+========== New Session: 2025-07-01 15:24:38 ==========
+[2025-07-01 15:24:38,432] [INFO] [__main__] Launching Flask server...
+[2025-07-01 15:24:38,432] [INFO] [__main__] Creating Flask app...
+[2025-07-01 15:24:38,433] [INFO] [__main__] Registering watermark blueprint...
+
+
+========== New Session: 2025-07-01 15:24:38 ==========
+
+
+========== New Session: 2025-07-01 15:24:38 ==========
+
+
+========== New Session: 2025-07-01 15:24:38 ==========
+[2025-07-01 15:24:38,628] [INFO] [__main__] Launching Flask server...
+[2025-07-01 15:24:38,628] [INFO] [__main__] Creating Flask app...
+[2025-07-01 15:24:38,629] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-01 15:24:59,978] [DEBUG] [__main__] Received a new request.
+[2025-07-01 15:24:59,982] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-01 15:24:59,999] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (840, 700, 3)
+[2025-07-01 15:25:00,064] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+[2025-07-01 15:25:00,065] [DEBUG] [core.dwt_engine] Total bits extracted: 588000
+[2025-07-01 15:25:00,083] [DEBUG] [core.dwt_engine] Embedding 80 bits in Y channel parity
+[2025-07-01 15:25:00,083] [DEBUG] [core.dwt_engine] Y-parity embed check: 80 bits embedded, 0 mismatches
+[2025-07-01 15:25:00,085] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/original/652255f68f734e0c964dc8e849625c7a_orig.png
+[2025-07-01 15:25:00,104] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-01 15:25:00,105] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/652255f68f734e0c964dc8e849625c7a_wm.png
+[2025-07-01 15:25:00,123] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-01 15:25:00,123] [DEBUG] [utils.image_utils] Attempting to convert image to base64 from path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/652255f68f734e0c964dc8e849625c7a_wm.png
+[2025-07-01 15:25:00,124] [DEBUG] [utils.image_utils] Image successfully encoded to base64.
+[2025-07-01 15:25:00,128] [INFO] [__main__] App context teardown complete.
+[2025-07-01 15:25:10,673] [DEBUG] [__main__] Received a new request.
+[2025-07-01 15:25:10,677] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-01 15:25:10,689] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (840, 700, 3)
+[2025-07-01 15:25:10,748] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
+[2025-07-01 15:25:10,748] [DEBUG] [core.dwt_engine] Total bits extracted: 588000
+[2025-07-01 15:25:10,749] [INFO] [__main__] App context teardown complete.
+
+
+========== New Session: 2025-07-01 15:26:37 ==========
+
+
+========== New Session: 2025-07-01 15:26:37 ==========
+
+
+========== New Session: 2025-07-01 15:26:37 ==========
+[2025-07-01 15:26:37,342] [INFO] [__main__] Launching Flask server...
+[2025-07-01 15:26:37,343] [INFO] [__main__] Creating Flask app...
+[2025-07-01 15:26:37,343] [INFO] [__main__] Registering watermark blueprint...
+
+
+========== New Session: 2025-07-01 15:26:58 ==========
+
+
+========== New Session: 2025-07-01 15:26:58 ==========
+
+
+========== New Session: 2025-07-01 15:26:58 ==========
+
+
+========== New Session: 2025-07-01 15:26:58 ==========
+[2025-07-01 15:26:58,655] [INFO] [__main__] Launching Flask server...
+[2025-07-01 15:26:58,655] [INFO] [__main__] Creating Flask app...
+[2025-07-01 15:26:58,656] [INFO] [__main__] Registering watermark blueprint...
+
+
+========== New Session: 2025-07-01 15:27:03 ==========
+
+
+========== New Session: 2025-07-01 15:27:03 ==========
+
+
+========== New Session: 2025-07-01 15:27:03 ==========
+
+
+========== New Session: 2025-07-01 15:27:03 ==========
+[2025-07-01 15:27:03,054] [INFO] [__main__] Launching Flask server...
+[2025-07-01 15:27:03,054] [INFO] [__main__] Creating Flask app...
+[2025-07-01 15:27:03,055] [INFO] [__main__] Registering watermark blueprint...
+
+
+========== New Session: 2025-07-01 15:27:03 ==========
+
+
+========== New Session: 2025-07-01 15:27:03 ==========
+
+
+========== New Session: 2025-07-01 15:27:03 ==========
+
+
+========== New Session: 2025-07-01 15:27:03 ==========
+[2025-07-01 15:27:03,233] [INFO] [__main__] Launching Flask server...
+[2025-07-01 15:27:03,233] [INFO] [__main__] Creating Flask app...
+[2025-07-01 15:27:03,234] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-01 15:27:18,821] [DEBUG] [__main__] Received a new request.
+[2025-07-01 15:27:18,821] [INFO] [routes.watermark_routes] POST /watermark called
+[2025-07-01 15:27:18,825] [DEBUG] [routes.watermark_routes] Received file: filename=Screenshot from 2025-05-24 15-26-09.png, content_type=image/png
+[2025-07-01 15:27:18,825] [DEBUG] [routes.watermark_routes] Received message of length 6 characters
+[2025-07-01 15:27:18,825] [DEBUG] [routes.watermark_routes] Loading original image from uploaded file
+[2025-07-01 15:27:18,825] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-01 15:27:18,843] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (840, 700, 3)
+[2025-07-01 15:27:18,843] [INFO] [routes.watermark_routes] Original image loaded: shape=(840, 700, 3), dtype=uint8
+[2025-07-01 15:27:18,843] [DEBUG] [routes.watermark_routes] Extracting existing parity bitstream via DWT engine
+[2025-07-01 15:27:18,908] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+[2025-07-01 15:27:18,908] [DEBUG] [core.dwt_engine] Total bits extracted: 588000
+[2025-07-01 15:27:18,908] [INFO] [routes.watermark_routes] Extracted total bitstream length: 588000 bits
+[2025-07-01 15:27:18,908] [DEBUG] [routes.watermark_routes] First 32 bits of extracted stream: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+[2025-07-01 15:27:18,909] [DEBUG] [routes.watermark_routes] Expected signature bits: [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1]
+[2025-07-01 15:27:18,909] [INFO] [routes.watermark_routes] Signature not found in existing bitstream
+[2025-07-01 15:27:18,909] [DEBUG] [routes.watermark_routes] No existing watermark messages to parse
+[2025-07-01 15:27:18,909] [INFO] [routes.watermark_routes] Appending new message. Total messages to embed: 1
+[2025-07-01 15:27:18,909] [DEBUG] [routes.watermark_routes] Preparing combined bitstream with headers and signature
+[2025-07-01 15:27:18,909] [INFO] [routes.watermark_routes] Combined bitstream length: 80 bits
+[2025-07-01 15:27:18,909] [DEBUG] [routes.watermark_routes] Embedding combined bitstream into image via DWT parity
+[2025-07-01 15:27:18,932] [DEBUG] [core.dwt_engine] Embedding 80 bits in Y channel parity
+[2025-07-01 15:27:18,933] [DEBUG] [core.dwt_engine] Y-parity embed check: 80 bits embedded, 0 mismatches
+[2025-07-01 15:27:18,934] [INFO] [routes.watermark_routes] Embedding complete without mismatches
+[2025-07-01 15:27:18,934] [DEBUG] [routes.watermark_routes] Saving original image to /home/gowtham/dwt-watermarking/backend/uploads/original/aecc5849c401492ba98fde4d693fc40e_orig.png
+[2025-07-01 15:27:18,934] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/original/aecc5849c401492ba98fde4d693fc40e_orig.png
+[2025-07-01 15:27:18,953] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-01 15:27:18,954] [INFO] [routes.watermark_routes] Original image saved successfully
+[2025-07-01 15:27:18,954] [DEBUG] [routes.watermark_routes] Saving watermarked image to /home/gowtham/dwt-watermarking/backend/uploads/watermarked/aecc5849c401492ba98fde4d693fc40e_wm.png
+[2025-07-01 15:27:18,954] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/aecc5849c401492ba98fde4d693fc40e_wm.png
+[2025-07-01 15:27:18,973] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-01 15:27:18,973] [INFO] [routes.watermark_routes] Watermarked image saved successfully
+[2025-07-01 15:27:18,973] [DEBUG] [routes.watermark_routes] Encoding watermarked image at /home/gowtham/dwt-watermarking/backend/uploads/watermarked/aecc5849c401492ba98fde4d693fc40e_wm.png to base64
+[2025-07-01 15:27:18,973] [DEBUG] [utils.image_utils] Attempting to convert image to base64 from path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/aecc5849c401492ba98fde4d693fc40e_wm.png
+[2025-07-01 15:27:18,974] [DEBUG] [utils.image_utils] Image successfully encoded to base64.
+[2025-07-01 15:27:18,974] [INFO] [routes.watermark_routes] Base64 encoding complete
+[2025-07-01 15:27:18,974] [INFO] [routes.watermark_routes] POST /watermark completed successfully
+[2025-07-01 15:27:18,978] [INFO] [__main__] App context teardown complete.
+[2025-07-01 15:27:31,546] [DEBUG] [__main__] Received a new request.
+[2025-07-01 15:27:31,546] [INFO] [routes.watermark_routes] POST /extract called
+[2025-07-01 15:27:31,551] [DEBUG] [routes.watermark_routes] Loading watermarked image: filename=aecc5849c401492ba98fde4d693fc40e_wm.png
+[2025-07-01 15:27:31,551] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-01 15:27:31,562] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (840, 700, 3)
+[2025-07-01 15:27:31,562] [INFO] [routes.watermark_routes] Watermarked image loaded: shape=(840, 700, 3), dtype=uint8
+[2025-07-01 15:27:31,562] [DEBUG] [routes.watermark_routes] Extracting full parity bitstream via DWT engine
+[2025-07-01 15:27:31,626] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
+[2025-07-01 15:27:31,626] [DEBUG] [core.dwt_engine] Total bits extracted: 588000
+[2025-07-01 15:27:31,626] [INFO] [routes.watermark_routes] Extracted total bitstream length: 588000 bits
+[2025-07-01 15:27:31,626] [DEBUG] [routes.watermark_routes] First 32 bits of bitstream: [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
+[2025-07-01 15:27:31,626] [DEBUG] [routes.watermark_routes] Expected signature bits: [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1]
+[2025-07-01 15:27:31,626] [INFO] [routes.watermark_routes] Valid signature detected; proceeding to parse messages
+[2025-07-01 15:27:31,626] [DEBUG] [routes.watermark_routes] Header at cursor 16: length=48 bits
+[2025-07-01 15:27:31,626] [INFO] [routes.watermark_routes] Extracted message: 'wefawe'
+[2025-07-01 15:27:31,626] [DEBUG] [routes.watermark_routes] Header at cursor 80: length=65535 bits
+[2025-07-01 15:27:31,626] [WARNING] [routes.watermark_routes] Invalid or out-of-bounds header at cursor 80: length=65535. Stopping parse.
+[2025-07-01 15:27:31,626] [INFO] [routes.watermark_routes] Extraction complete: 1 messages found
+[2025-07-01 15:27:31,628] [INFO] [__main__] App context teardown complete.
+
+
+========== New Session: 2025-07-01 15:30:00 ==========
+
+
+========== New Session: 2025-07-01 15:30:00 ==========
+
+
+========== New Session: 2025-07-01 15:30:00 ==========
+
+
+========== New Session: 2025-07-01 15:30:00 ==========
+[2025-07-01 15:30:00,962] [INFO] [__main__] Launching Flask server...
+[2025-07-01 15:30:00,962] [INFO] [__main__] Creating Flask app...
+[2025-07-01 15:30:00,963] [INFO] [__main__] Registering watermark blueprint...
+
+
+========== New Session: 2025-07-01 15:30:01 ==========
+
+
+========== New Session: 2025-07-01 15:30:01 ==========
+
+
+========== New Session: 2025-07-01 15:30:01 ==========
+
+
+========== New Session: 2025-07-01 15:30:01 ==========
+[2025-07-01 15:30:01,172] [INFO] [__main__] Launching Flask server...
+[2025-07-01 15:30:01,172] [INFO] [__main__] Creating Flask app...
+[2025-07-01 15:30:01,173] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-01 15:31:45,851] [DEBUG] [__main__] Received a new request.
+[2025-07-01 15:31:45,852] [INFO] [routes.watermark_routes] POST /extract called
+[2025-07-01 15:31:45,856] [DEBUG] [routes.watermark_routes] Loading watermarked image: filename=aecc5849c401492ba98fde4d693fc40e_wm.png
+[2025-07-01 15:31:45,856] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-01 15:31:45,868] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (840, 700, 3)
+[2025-07-01 15:31:45,868] [INFO] [routes.watermark_routes] Watermarked image loaded: shape=(840, 700, 3), dtype=uint8
+[2025-07-01 15:31:45,868] [DEBUG] [routes.watermark_routes] Extracting full parity bitstream via DWT engine
+[2025-07-01 15:31:45,934] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
+[2025-07-01 15:31:45,934] [DEBUG] [core.dwt_engine] Total bits extracted: 588000
+[2025-07-01 15:31:45,934] [INFO] [routes.watermark_routes] Extracted total bitstream length: 588000 bits
+[2025-07-01 15:31:45,934] [DEBUG] [routes.watermark_routes] First 32 bits of bitstream: [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
+[2025-07-01 15:31:45,935] [DEBUG] [routes.watermark_routes] Expected signature bits: [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1]
+[2025-07-01 15:31:45,935] [INFO] [routes.watermark_routes] Valid signature detected; proceeding to parse messages
+[2025-07-01 15:31:45,935] [DEBUG] [routes.watermark_routes] Header at cursor 16: length=48 bits
+[2025-07-01 15:31:45,935] [INFO] [routes.watermark_routes] Extracted message: 'wefawe'
+[2025-07-01 15:31:45,935] [DEBUG] [routes.watermark_routes] Header at cursor 80: length=65535 bits
+[2025-07-01 15:31:45,935] [WARNING] [routes.watermark_routes] Invalid or out-of-bounds header at cursor 80: length=65535. Stopping parse.
+[2025-07-01 15:31:45,935] [INFO] [routes.watermark_routes] Extraction complete: 1 messages found
+[2025-07-01 15:31:45,937] [INFO] [__main__] App context teardown complete.
+[2025-07-01 15:31:58,009] [DEBUG] [__main__] Received a new request.
+[2025-07-01 15:31:58,009] [INFO] [routes.watermark_routes] POST /watermark called
+[2025-07-01 15:31:58,013] [DEBUG] [routes.watermark_routes] Received file: filename=aecc5849c401492ba98fde4d693fc40e_wm.png, content_type=image/png
+[2025-07-01 15:31:58,013] [DEBUG] [routes.watermark_routes] Received message of length 6 characters
+[2025-07-01 15:31:58,013] [DEBUG] [routes.watermark_routes] Loading original image from uploaded file
+[2025-07-01 15:31:58,013] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-01 15:31:58,024] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (840, 700, 3)
+[2025-07-01 15:31:58,025] [INFO] [routes.watermark_routes] Original image loaded: shape=(840, 700, 3), dtype=uint8
+[2025-07-01 15:31:58,025] [DEBUG] [routes.watermark_routes] Extracting existing parity bitstream via DWT engine
+[2025-07-01 15:31:58,088] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
+[2025-07-01 15:31:58,088] [DEBUG] [core.dwt_engine] Total bits extracted: 588000
+[2025-07-01 15:31:58,088] [INFO] [routes.watermark_routes] Extracted total bitstream length: 588000 bits
+[2025-07-01 15:31:58,088] [DEBUG] [routes.watermark_routes] First 32 bits of extracted stream: [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
+[2025-07-01 15:31:58,088] [DEBUG] [routes.watermark_routes] Expected signature bits: [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1]
+[2025-07-01 15:31:58,088] [INFO] [routes.watermark_routes] Signature found in existing bitstream
+[2025-07-01 15:31:58,088] [DEBUG] [routes.watermark_routes] Parsing existing messages from extracted bitstream
+[2025-07-01 15:31:58,088] [DEBUG] [routes.watermark_routes] Header at cursor 16: length=48 bits
+[2025-07-01 15:31:58,088] [INFO] [routes.watermark_routes] Parsed existing message: 'wefawe' (length=48 bits)
+[2025-07-01 15:31:58,088] [DEBUG] [routes.watermark_routes] Header at cursor 80: length=65535 bits
+[2025-07-01 15:31:58,088] [WARNING] [routes.watermark_routes] Invalid or out-of-bounds header at cursor 80: length=65535. Stopping parse.
+[2025-07-01 15:31:58,088] [INFO] [routes.watermark_routes] Total existing messages parsed: 1
+[2025-07-01 15:31:58,088] [INFO] [routes.watermark_routes] Appending new message. Total messages to embed: 2
+[2025-07-01 15:31:58,088] [DEBUG] [routes.watermark_routes] Preparing combined bitstream with headers and signature
+[2025-07-01 15:31:58,088] [INFO] [routes.watermark_routes] Combined bitstream length: 144 bits
+[2025-07-01 15:31:58,088] [DEBUG] [routes.watermark_routes] Embedding combined bitstream into image via DWT parity
+[2025-07-01 15:31:58,107] [DEBUG] [core.dwt_engine] Embedding 144 bits in Y channel parity
+[2025-07-01 15:31:58,108] [DEBUG] [core.dwt_engine] Y-parity embed check: 144 bits embedded, 0 mismatches
+[2025-07-01 15:31:58,109] [INFO] [routes.watermark_routes] Embedding complete without mismatches
+[2025-07-01 15:31:58,109] [DEBUG] [routes.watermark_routes] Saving original image to /home/gowtham/dwt-watermarking/backend/uploads/original/726fcd3be4f24f978799faf9d0918b85_orig.png
+[2025-07-01 15:31:58,109] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/original/726fcd3be4f24f978799faf9d0918b85_orig.png
+[2025-07-01 15:31:58,128] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-01 15:31:58,128] [INFO] [routes.watermark_routes] Original image saved successfully
+[2025-07-01 15:31:58,128] [DEBUG] [routes.watermark_routes] Saving watermarked image to /home/gowtham/dwt-watermarking/backend/uploads/watermarked/726fcd3be4f24f978799faf9d0918b85_wm.png
+[2025-07-01 15:31:58,128] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/726fcd3be4f24f978799faf9d0918b85_wm.png
+[2025-07-01 15:31:58,147] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-01 15:31:58,147] [INFO] [routes.watermark_routes] Watermarked image saved successfully
+[2025-07-01 15:31:58,147] [DEBUG] [routes.watermark_routes] Encoding watermarked image at /home/gowtham/dwt-watermarking/backend/uploads/watermarked/726fcd3be4f24f978799faf9d0918b85_wm.png to base64
+[2025-07-01 15:31:58,147] [DEBUG] [utils.image_utils] Attempting to convert image to base64 from path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/726fcd3be4f24f978799faf9d0918b85_wm.png
+[2025-07-01 15:31:58,148] [DEBUG] [utils.image_utils] Image successfully encoded to base64.
+[2025-07-01 15:31:58,148] [INFO] [routes.watermark_routes] Base64 encoding complete
+[2025-07-01 15:31:58,148] [INFO] [routes.watermark_routes] POST /watermark completed successfully
+[2025-07-01 15:31:58,153] [INFO] [__main__] App context teardown complete.
+[2025-07-01 15:32:07,086] [DEBUG] [__main__] Received a new request.
+[2025-07-01 15:32:07,086] [INFO] [routes.watermark_routes] POST /extract called
+[2025-07-01 15:32:07,090] [DEBUG] [routes.watermark_routes] Loading watermarked image: filename=726fcd3be4f24f978799faf9d0918b85_wm.png
+[2025-07-01 15:32:07,090] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-01 15:32:07,102] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (840, 700, 3)
+[2025-07-01 15:32:07,102] [INFO] [routes.watermark_routes] Watermarked image loaded: shape=(840, 700, 3), dtype=uint8
+[2025-07-01 15:32:07,102] [DEBUG] [routes.watermark_routes] Extracting full parity bitstream via DWT engine
+[2025-07-01 15:32:07,164] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
+[2025-07-01 15:32:07,164] [DEBUG] [core.dwt_engine] Total bits extracted: 588000
+[2025-07-01 15:32:07,164] [INFO] [routes.watermark_routes] Extracted total bitstream length: 588000 bits
+[2025-07-01 15:32:07,164] [DEBUG] [routes.watermark_routes] First 32 bits of bitstream: [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
+[2025-07-01 15:32:07,164] [DEBUG] [routes.watermark_routes] Expected signature bits: [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1]
+[2025-07-01 15:32:07,164] [INFO] [routes.watermark_routes] Valid signature detected; proceeding to parse messages
+[2025-07-01 15:32:07,165] [DEBUG] [routes.watermark_routes] Header at cursor 16: length=48 bits
+[2025-07-01 15:32:07,165] [INFO] [routes.watermark_routes] Extracted message: 'wefawe'
+[2025-07-01 15:32:07,165] [DEBUG] [routes.watermark_routes] Header at cursor 80: length=48 bits
+[2025-07-01 15:32:07,165] [INFO] [routes.watermark_routes] Extracted message: 'rfgwer'
+[2025-07-01 15:32:07,165] [DEBUG] [routes.watermark_routes] Header at cursor 144: length=65535 bits
+[2025-07-01 15:32:07,165] [WARNING] [routes.watermark_routes] Invalid or out-of-bounds header at cursor 144: length=65535. Stopping parse.
+[2025-07-01 15:32:07,165] [INFO] [routes.watermark_routes] Extraction complete: 2 messages found
+[2025-07-01 15:32:07,166] [INFO] [__main__] App context teardown complete.
+[2025-07-01 18:22:50,180] [DEBUG] [__main__] Received a new request.
+[2025-07-01 18:22:50,180] [INFO] [routes.watermark_routes] POST /watermark called
+[2025-07-01 18:22:50,183] [DEBUG] [routes.watermark_routes] Received file: filename=726fcd3be4f24f978799faf9d0918b85_wm.png, content_type=image/png
+[2025-07-01 18:22:50,183] [DEBUG] [routes.watermark_routes] Received message of length 7 characters
+[2025-07-01 18:22:50,183] [DEBUG] [routes.watermark_routes] Loading original image from uploaded file
+[2025-07-01 18:22:50,183] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-01 18:22:50,194] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (840, 700, 3)
+[2025-07-01 18:22:50,194] [INFO] [routes.watermark_routes] Original image loaded: shape=(840, 700, 3), dtype=uint8
+[2025-07-01 18:22:50,194] [DEBUG] [routes.watermark_routes] Extracting existing parity bitstream via DWT engine
+[2025-07-01 18:22:50,253] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
+[2025-07-01 18:22:50,253] [DEBUG] [core.dwt_engine] Total bits extracted: 588000
+[2025-07-01 18:22:50,253] [INFO] [routes.watermark_routes] Extracted total bitstream length: 588000 bits
+[2025-07-01 18:22:50,253] [DEBUG] [routes.watermark_routes] First 32 bits of extracted stream: [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
+[2025-07-01 18:22:50,253] [DEBUG] [routes.watermark_routes] Expected signature bits: [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1]
+[2025-07-01 18:22:50,253] [INFO] [routes.watermark_routes] Signature found in existing bitstream
+[2025-07-01 18:22:50,253] [DEBUG] [routes.watermark_routes] Parsing existing messages from extracted bitstream
+[2025-07-01 18:22:50,253] [DEBUG] [routes.watermark_routes] Header at cursor 16: length=48 bits
+[2025-07-01 18:22:50,253] [INFO] [routes.watermark_routes] Parsed existing message: 'wefawe' (length=48 bits)
+[2025-07-01 18:22:50,253] [DEBUG] [routes.watermark_routes] Header at cursor 80: length=48 bits
+[2025-07-01 18:22:50,253] [INFO] [routes.watermark_routes] Parsed existing message: 'rfgwer' (length=48 bits)
+[2025-07-01 18:22:50,253] [DEBUG] [routes.watermark_routes] Header at cursor 144: length=65535 bits
+[2025-07-01 18:22:50,253] [WARNING] [routes.watermark_routes] Invalid or out-of-bounds header at cursor 144: length=65535. Stopping parse.
+[2025-07-01 18:22:50,253] [INFO] [routes.watermark_routes] Total existing messages parsed: 2
+[2025-07-01 18:22:50,253] [INFO] [routes.watermark_routes] Appending new message. Total messages to embed: 3
+[2025-07-01 18:22:50,253] [DEBUG] [routes.watermark_routes] Preparing combined bitstream with headers and signature
+[2025-07-01 18:22:50,253] [INFO] [routes.watermark_routes] Combined bitstream length: 216 bits
+[2025-07-01 18:22:50,253] [DEBUG] [routes.watermark_routes] Embedding combined bitstream into image via DWT parity
+[2025-07-01 18:22:50,272] [DEBUG] [core.dwt_engine] Embedding 216 bits in Y channel parity
+[2025-07-01 18:22:50,272] [DEBUG] [core.dwt_engine] Y-parity embed check: 216 bits embedded, 0 mismatches
+[2025-07-01 18:22:50,272] [INFO] [routes.watermark_routes] Embedding complete without mismatches
+[2025-07-01 18:22:50,272] [DEBUG] [routes.watermark_routes] Saving original image to /home/gowtham/dwt-watermarking/backend/uploads/original/f2491ad91d4143c795d7d5d9df0745d8_orig.png
+[2025-07-01 18:22:50,272] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/original/f2491ad91d4143c795d7d5d9df0745d8_orig.png
+[2025-07-01 18:22:50,291] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-01 18:22:50,291] [INFO] [routes.watermark_routes] Original image saved successfully
+[2025-07-01 18:22:50,291] [DEBUG] [routes.watermark_routes] Saving watermarked image to /home/gowtham/dwt-watermarking/backend/uploads/watermarked/f2491ad91d4143c795d7d5d9df0745d8_wm.png
+[2025-07-01 18:22:50,292] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/f2491ad91d4143c795d7d5d9df0745d8_wm.png
+[2025-07-01 18:22:50,310] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-01 18:22:50,310] [INFO] [routes.watermark_routes] Watermarked image saved successfully
+[2025-07-01 18:22:50,310] [DEBUG] [routes.watermark_routes] Encoding watermarked image at /home/gowtham/dwt-watermarking/backend/uploads/watermarked/f2491ad91d4143c795d7d5d9df0745d8_wm.png to base64
+[2025-07-01 18:22:50,310] [DEBUG] [utils.image_utils] Attempting to convert image to base64 from path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/f2491ad91d4143c795d7d5d9df0745d8_wm.png
+[2025-07-01 18:22:50,311] [DEBUG] [utils.image_utils] Image successfully encoded to base64.
+[2025-07-01 18:22:50,311] [INFO] [routes.watermark_routes] Base64 encoding complete
+[2025-07-01 18:22:50,311] [INFO] [routes.watermark_routes] POST /watermark completed successfully
+[2025-07-01 18:22:50,316] [INFO] [__main__] App context teardown complete.
+[2025-07-01 18:22:56,930] [DEBUG] [__main__] Received a new request.
+[2025-07-01 18:22:56,930] [INFO] [routes.watermark_routes] POST /extract called
+[2025-07-01 18:22:56,934] [DEBUG] [routes.watermark_routes] Loading watermarked image: filename=f2491ad91d4143c795d7d5d9df0745d8_wm.png
+[2025-07-01 18:22:56,934] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-01 18:22:56,945] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (840, 700, 3)
+[2025-07-01 18:22:56,945] [INFO] [routes.watermark_routes] Watermarked image loaded: shape=(840, 700, 3), dtype=uint8
+[2025-07-01 18:22:56,945] [DEBUG] [routes.watermark_routes] Extracting full parity bitstream via DWT engine
+[2025-07-01 18:22:57,008] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
+[2025-07-01 18:22:57,009] [DEBUG] [core.dwt_engine] Total bits extracted: 588000
+[2025-07-01 18:22:57,009] [INFO] [routes.watermark_routes] Extracted total bitstream length: 588000 bits
+[2025-07-01 18:22:57,009] [DEBUG] [routes.watermark_routes] First 32 bits of bitstream: [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
+[2025-07-01 18:22:57,009] [DEBUG] [routes.watermark_routes] Expected signature bits: [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1]
+[2025-07-01 18:22:57,009] [INFO] [routes.watermark_routes] Valid signature detected; proceeding to parse messages
+[2025-07-01 18:22:57,009] [DEBUG] [routes.watermark_routes] Header at cursor 16: length=48 bits
+[2025-07-01 18:22:57,009] [INFO] [routes.watermark_routes] Extracted message: 'wefawe'
+[2025-07-01 18:22:57,009] [DEBUG] [routes.watermark_routes] Header at cursor 80: length=48 bits
+[2025-07-01 18:22:57,009] [INFO] [routes.watermark_routes] Extracted message: 'rfgwer'
+[2025-07-01 18:22:57,009] [DEBUG] [routes.watermark_routes] Header at cursor 144: length=56 bits
+[2025-07-01 18:22:57,009] [INFO] [routes.watermark_routes] Extracted message: 'zdFCFCs'
+[2025-07-01 18:22:57,009] [DEBUG] [routes.watermark_routes] Header at cursor 216: length=65535 bits
+[2025-07-01 18:22:57,009] [WARNING] [routes.watermark_routes] Invalid or out-of-bounds header at cursor 216: length=65535. Stopping parse.
+[2025-07-01 18:22:57,009] [INFO] [routes.watermark_routes] Extraction complete: 3 messages found
+[2025-07-01 18:22:57,010] [INFO] [__main__] App context teardown complete.

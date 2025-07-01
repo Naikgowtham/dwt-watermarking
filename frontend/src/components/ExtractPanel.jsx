@@ -23,7 +23,7 @@ function ExtractPanel() {
     setLoading(true);
     try {
       const res = await axios.post('http://localhost:5000/extract', formData);
-      setMessage(res.data.message);
+      setMessage((res.data.messages || []).join('\n'));  // join all messages (if any)
     } catch (err) {
       alert("Error: " + err.message);
     } finally {

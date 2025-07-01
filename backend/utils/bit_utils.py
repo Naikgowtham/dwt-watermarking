@@ -1,7 +1,8 @@
 import logging
-from utils.logger import setup_logger
 
-logger = setup_logger(__name__)
+logger = logging.getLogger(__name__)
+
+SIGNATURE = 0xABCD  # Magic number to identify valid watermarked stream
 
 def string_to_bits(s: str) -> list[int]:
     if not isinstance(s, str):
@@ -18,8 +19,10 @@ def bits_to_string(bits: list[int]) -> str:
         logger.error("Bit length is not a multiple of 8.")
         raise ValueError("Bit length must be a multiple of 8 to convert to string.")
     logger.debug(f"Reconstructing string from bits. Bit length = {len(bits)}")
-    bytes_list = [int("".join(str(bit) for bit in bits[i:i+8]), 2)
-                  for i in range(0, len(bits), 8)]
+    bytes_list = [
+        int("".join(str(bit) for bit in bits[i:i+8]), 2)
+        for i in range(0, len(bits), 8)
+    ]
     try:
         result = bytes(bytes_list).decode('utf-8')
     except UnicodeDecodeError as e:
@@ -58,7 +61,7 @@ def add_header(message_bits: list[int]) -> list[int]:
 
 def extract_header(full_bitstream: list[int]) -> tuple[int, list[int]]:
     """
-    Reads the first 16 bits as the header to get message_length,
+    Extracts the first 16-bit header to get the message length,
     then returns (message_length, message_bits).
     """
     if len(full_bitstream) < 16:
@@ -72,5 +75,58 @@ def extract_header(full_bitstream: list[int]) -> tuple[int, list[int]]:
         raise ValueError("Bitstream shorter than header-specified message length.")
     message_bits = full_bitstream[16:16 + message_length]
     logger.debug(f"Message length from header: {message_length}")
-    logger.debug(f"Extracted header: message_length = {message_length} bits")
     return message_length, message_bits
+
+def get_signature_bits() -> list[int]:
+    return int_to_bits(SIGNATURE, length=16)
+
+def prepare_bitstream_with_headers(messages: list[str]) -> list[int]:
+    """
+    Prepends a 16-bit magic signature and headers for each message.
+    Format: [SIGNATURE][HDR1][MSG1]...[HDRn][MSGn]
+    """
+    logger.debug("Preparing bitstream for multiple messages...")
+    full_bitstream = get_signature_bits()
+    for msg in messages:
+        msg_bits = string_to_bits(msg)
+        full_bitstream += add_header(msg_bits)
+    logger.debug(f"Total bitstream prepared: {len(full_bitstream)} bits")
+    return full_bitstream
+
+def parse_bitstream_with_headers(bitstream: list[int]) -> list[str]:
+    """
+    Parses a bitstream beginning with a signature, followed by multiple [HDR][MSG] blocks.
+    Returns list of extracted messages.
+    """
+    logger.debug("Parsing extracted bitstream...")
+    if len(bitstream) < 16:
+        logger.error("Bitstream too short to contain signature.")
+        raise ValueError("Bitstream too short to contain signature.")
+    
+    sig_bits = bitstream[:16]
+    extracted_sig = bits_to_int(sig_bits)
+    if extracted_sig != SIGNATURE:
+        logger.error(f"Invalid signature: {extracted_sig}. Expected: {SIGNATURE}")
+        raise ValueError("Invalid or missing signature in bitstream.")
+    logger.debug("Signature validated successfully.")
+
+    messages = []
+    cursor = 16  # skip signature
+    while cursor + 16 <= len(bitstream):
+        length_bits = bitstream[cursor:cursor + 16]
+        msg_len = bits_to_int(length_bits)
+        cursor += 16
+        if cursor + msg_len > len(bitstream):
+            logger.warning("Incomplete message at end of bitstream. Ignoring.")
+            break
+        message_bits = bitstream[cursor:cursor + msg_len]
+        cursor += msg_len
+        try:
+            msg = bits_to_string(message_bits)
+            messages.append(msg)
+        except ValueError as e:
+            logger.warning(f"Failed to decode one message block: {e}")
+            continue
+
+    logger.debug(f"Total messages extracted: {len(messages)}")
+    return messages
