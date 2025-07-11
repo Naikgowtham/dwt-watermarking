@@ -7314,3 +7314,72 @@ ModuleNotFoundError: No module named 'backend'
 [2025-07-11 22:19:06,681] [INFO] [__main__] Registering watermark blueprint...
 [2025-07-11 22:19:06,689] [ERROR] [__main__]  * Debugger is active!
 [2025-07-11 22:19:06,689] [ERROR] [__main__]  * Debugger PIN: 575-763-446
+[2025-07-11 22:29:34,039] [INFO] [__main__] Launching Flask server...
+[2025-07-11 22:29:34,039] [INFO] [__main__] Creating Flask app...
+[2025-07-11 22:29:34,040] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-11 22:29:34,041] [INFO] [__main__] b" * Serving Flask app 'app'"
+[2025-07-11 22:29:34,041] [INFO] [__main__] b' * Debug mode: on'
+[2025-07-11 22:29:34,047] [ERROR] [__main__] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-07-11 22:29:34,047] [ERROR] [__main__] [33mPress CTRL+C to quit[0m
+[2025-07-11 22:29:34,047] [ERROR] [__main__]  * Restarting with stat
+[2025-07-11 22:29:34,576] [INFO] [__main__] Launching Flask server...
+[2025-07-11 22:29:34,576] [INFO] [__main__] Creating Flask app...
+[2025-07-11 22:29:34,577] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-11 22:29:34,584] [ERROR] [__main__]  * Debugger is active!
+[2025-07-11 22:29:34,584] [ERROR] [__main__]  * Debugger PIN: 575-763-446
+[2025-07-11 22:29:36,987] [DEBUG] [__main__] Received a new request.
+[2025-07-11 22:29:36,987] [INFO] [routes.watermark_routes] POST /extract called
+[2025-07-11 22:29:36,988] [DEBUG] [routes.watermark_routes] Loading watermarked image: filename=6fd72ff8d8c8468d859517fa6f8123ba_wm.png
+[2025-07-11 22:29:36,988] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-11 22:29:36,989] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (106, 462, 3)
+[2025-07-11 22:29:36,989] [INFO] [routes.watermark_routes] Watermarked image loaded: shape=(106, 462, 3), dtype=uint8
+[2025-07-11 22:29:36,989] [DEBUG] [routes.watermark_routes] Extracting full parity bitstream via DWT engine
+[2025-07-11 22:29:36,995] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0]
+[2025-07-11 22:29:36,995] [DEBUG] [core.dwt_engine] Total bits extracted: 48972
+[2025-07-11 22:29:36,995] [INFO] [routes.watermark_routes] Extracted total bitstream length: 48972 bits
+[2025-07-11 22:29:36,995] [DEBUG] [routes.watermark_routes] First 32 bits of bitstream: [1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0]
+[2025-07-11 22:29:36,996] [ERROR] [__main__] Invalid or out-of-bounds message length at cursor 304: 36864. Stopping parse.
+[2025-07-11 22:29:36,996] [INFO] [routes.watermark_routes] Extracted SHA256 hash: 894d8a6092ba240583c788e6544f74d8834989536c510a3dfdd3b8b41adb7650
+[2025-07-11 22:29:36,996] [WARNING] [routes.watermark_routes] Blockchain query failed: name 'contract' is not defined
+[2025-07-11 22:29:36,996] [INFO] [routes.watermark_routes] Extraction complete: 1 messages found
+[2025-07-11 22:29:36,997] [INFO] [__main__] App context teardown complete.
+[2025-07-11 22:29:36,997] [ERROR] [__main__] 127.0.0.1 - - [11/Jul/2025 22:29:36] "POST /extract HTTP/1.1" 200 -
+[2025-07-11 22:31:30,632] [ERROR] [__main__]  * Detected change in '/home/gowtham/dwt-watermarking/backend/routes/watermark_routes.py', reloading
+[2025-07-11 22:31:30,743] [ERROR] [__main__]  * Restarting with stat
+[2025-07-11 22:31:31,277] [INFO] [__main__] Launching Flask server...
+[2025-07-11 22:31:31,277] [INFO] [__main__] Creating Flask app...
+[2025-07-11 22:31:31,278] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-11 22:31:31,285] [ERROR] [__main__]  * Debugger is active!
+[2025-07-11 22:31:31,285] [ERROR] [__main__]  * Debugger PIN: 575-763-446
+[2025-07-11 22:31:50,645] [INFO] [__main__] Launching Flask server...
+[2025-07-11 22:31:50,645] [INFO] [__main__] Creating Flask app...
+[2025-07-11 22:31:50,645] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-11 22:31:50,647] [INFO] [__main__] b" * Serving Flask app 'app'"
+[2025-07-11 22:31:50,647] [INFO] [__main__] b' * Debug mode: on'
+[2025-07-11 22:31:50,652] [ERROR] [__main__] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-07-11 22:31:50,653] [ERROR] [__main__] [33mPress CTRL+C to quit[0m
+[2025-07-11 22:31:50,653] [ERROR] [__main__]  * Restarting with stat
+[2025-07-11 22:31:51,209] [INFO] [__main__] Launching Flask server...
+[2025-07-11 22:31:51,209] [INFO] [__main__] Creating Flask app...
+[2025-07-11 22:31:51,210] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-11 22:31:51,219] [ERROR] [__main__]  * Debugger is active!
+[2025-07-11 22:31:51,220] [ERROR] [__main__]  * Debugger PIN: 575-763-446
+[2025-07-11 22:31:57,125] [DEBUG] [__main__] Received a new request.
+[2025-07-11 22:31:57,125] [INFO] [routes.watermark_routes] POST /extract called
+[2025-07-11 22:31:57,127] [DEBUG] [routes.watermark_routes] Loading watermarked image: filename=6fd72ff8d8c8468d859517fa6f8123ba_wm.png
+[2025-07-11 22:31:57,127] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-11 22:31:57,128] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (106, 462, 3)
+[2025-07-11 22:31:57,128] [INFO] [routes.watermark_routes] Watermarked image loaded: shape=(106, 462, 3), dtype=uint8
+[2025-07-11 22:31:57,128] [DEBUG] [routes.watermark_routes] Extracting full parity bitstream via DWT engine
+[2025-07-11 22:31:57,136] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0]
+[2025-07-11 22:31:57,136] [DEBUG] [core.dwt_engine] Total bits extracted: 48972
+[2025-07-11 22:31:57,136] [INFO] [routes.watermark_routes] Extracted total bitstream length: 48972 bits
+[2025-07-11 22:31:57,136] [DEBUG] [routes.watermark_routes] First 32 bits of bitstream: [1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0]
+[2025-07-11 22:31:57,136] [ERROR] [routes.watermark_routes] Invalid or out-of-bounds message length at cursor 304: 36864. Stopping parse.
+[2025-07-11 22:31:57,137] [INFO] [routes.watermark_routes] Extracted SHA256 hash: 894d8a6092ba240583c788e6544f74d8834989536c510a3dfdd3b8b41adb7650
+[2025-07-11 22:31:58,251] [INFO] [routes.watermark_routes] Blockchain metadata found for hash 894d8a6092ba240583c788e6544f74d8834989536c510a3dfdd3b8b41adb7650. CRC match: True
+[2025-07-11 22:31:58,251] [INFO] [routes.watermark_routes] Extraction complete: 1 messages found
+[2025-07-11 22:31:58,251] [INFO] [__main__] App context teardown complete.
+[2025-07-11 22:31:58,252] [ERROR] [__main__] 127.0.0.1 - - [11/Jul/2025 22:31:58] "POST /extract HTTP/1.1" 200 -

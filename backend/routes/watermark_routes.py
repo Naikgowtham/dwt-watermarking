@@ -187,9 +187,39 @@ def extract_watermark():
         logger.info(f"Extracted total bitstream length: {total_bits} bits")
         logger.debug(f"First 32 bits of bitstream: {raw_bits[:32]}")
 
-        # Parse hash and messages
+        # Parse hash and messages with robust bounds checking
+        hash_bits = None
+        messages = []
+        hash_hex = None
         try:
-            hash_bits, messages = parse_bitstream_with_hash_and_messages(raw_bits)
+            if len(raw_bits) < 256:
+                logger.warning("Bitstream too short to contain SHA256 hash.")
+                raise ValueError("Bitstream too short to contain SHA256 hash.")
+            hash_bits = raw_bits[:256]
+            messages = []
+            cursor = 256
+            MAX_MESSAGE_BITS = 1024 * 8  # 8KB per message
+            while True:
+                if cursor + 16 > len(raw_bits):
+                    logger.warning(f"Not enough bits for message length header at cursor {cursor}. Breaking.")
+                    break
+                length_bits = raw_bits[cursor:cursor+16]
+                msg_len = bits_to_int(length_bits)
+                cursor += 16
+                if msg_len <= 0 or msg_len > MAX_MESSAGE_BITS:
+                    logger.error(f"Invalid or out-of-bounds message length at cursor {cursor-16}: {msg_len}. Stopping parse.")
+                    break
+                if cursor + msg_len > len(raw_bits):
+                    logger.error(f"Message length {msg_len} at cursor {cursor-16} exceeds remaining bits. Stopping parse.")
+                    break
+                msg_bits = raw_bits[cursor:cursor+msg_len]
+                cursor += msg_len
+                try:
+                    msg = bits_to_string(msg_bits)
+                    messages.append(msg)
+                except ValueError as e:
+                    logger.warning(f"Failed to decode message at cursor {cursor-msg_len}: {e}. Skipping this message and continuing.")
+                    continue
             # Convert hash bits to hex string for return
             hash_bytes = bytearray()
             for i in range(0, 256, 8):
@@ -206,35 +236,22 @@ def extract_watermark():
         # Query blockchain using extracted hash
         on_chain = None
         crc_match = False
-        try:
-            entry = contract.functions.getWatermark(Web3.to_bytes(hexstr=hash_hex)).call()
-            if entry and entry[0] != b'\x00' * 32:
-                original_hash_hex     = entry[0].hex()
-                watermarked_hash_hex  = entry[1].hex()
-                watermark_data        = entry[2]
-                original_cid          = entry[3]
-                watermarked_cid       = entry[4]
-                crc_on_chain          = entry[5]
-                parent_hash_hex       = entry[6].hex()
-                # Compute CRC from extracted messages
-                full_message = ''.join(messages)
-                crc_actual = zlib.crc32(full_message.encode()) & 0xFFFF
-                crc_match = crc_actual == crc_on_chain
-                on_chain = {
-                    "originalHash": original_hash_hex,
-                    "watermarkedHash": watermarked_hash_hex,
-                    "watermarkData": watermark_data,
-                    "originalCID": original_cid,
-                    "watermarkedCID": watermarked_cid,
-                    "crc": crc_on_chain,
-                    "parentHash": parent_hash_hex
-                }
-            else:
+        if hash_hex:
+            try:
+                entry = get_watermark_from_chain(bytes.fromhex(hash_hex))
+                if entry and entry["original_hash"] != "0"*64:
+                    # Compute CRC from extracted messages
+                    full_message = ''.join(messages)
+                    crc_actual = zlib.crc32(full_message.encode()) & 0xFFFF
+                    crc_on_chain = entry["crc"]
+                    crc_match = crc_actual == crc_on_chain
+                    on_chain = entry
+                    logger.info(f"Blockchain metadata found for hash {hash_hex}. CRC match: {crc_match}")
+                else:
+                    logger.info(f"No blockchain entry found for hash {hash_hex}.")
+            except Exception as e:
+                logger.warning(f"Blockchain query failed: {e}")
                 on_chain = None
-        except Exception as e:
-            logger.warning(f"Blockchain query failed: {e}")
-            on_chain = None
-
         logger.info(f"Extraction complete: {len(messages)} messages found")
         return jsonify({
             "messages": messages,
@@ -242,7 +259,6 @@ def extract_watermark():
             "crc_match": crc_match,
             "on_chain": on_chain
         }), 200
-
     except Exception as e:
         logger.exception("Extraction failed due to unexpected error")
         return jsonify({"error": "Failed to extract watermark."}), 500
