@@ -2,16 +2,29 @@ import React from 'react';
 import './App.css';
 import EmbedPanel from './components/EmbedPanel';
 import ExtractPanel from './components/ExtractPanel';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import BlockchainLogs from './components/BlockchainLogs';
 
 function App() {
   return (
-    <div className="App">
-      <h1>DWT Watermarking Tool</h1>
-      <div className="panel-container">
-        <EmbedPanel />
-        <ExtractPanel />
+    <Router>
+      <div className="App">
+        <h1>DWT Watermarking Tool</h1>
+        <nav style={{ marginBottom: '20px' }}>
+          <Link to="/" style={{ marginRight: '10px' }}>Home</Link>
+          <Link to="/blockchain-logs">Blockchain Logs</Link>
+        </nav>
+        <Routes>
+          <Route path="/" element={
+            <div className="panel-container">
+              <EmbedPanel />
+              <ExtractPanel />
+            </div>
+          } />
+          <Route path="/blockchain-logs" element={<BlockchainLogs />} />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
 

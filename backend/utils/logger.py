@@ -1,52 +1,67 @@
 import logging
+import sys
 import os
 from datetime import datetime
 
-def setup_logger(name: str) -> logging.Logger:
-    # Ensure logs directory exists
-    log_dir = os.path.join(os.path.dirname(__file__), '..', 'logs')
-    os.makedirs(log_dir, exist_ok=True)
+def setup_logger(name, log_file=None, level=logging.DEBUG):
+    if log_file is None:
+        # Default log file path
+        log_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'logs')
+        os.makedirs(log_dir, exist_ok=True)
+        log_file = os.path.join(log_dir, 'all_time.log')
+        current_log = os.path.join(log_dir, 'current_session.log')
+        # Clear current session log at startup
+        with open(current_log, 'w') as f:
+            f.write("")
+    else:
+        current_log = None
 
-    # Log file paths
-    all_time_log = os.path.join(log_dir, 'all_time.log')
-    current_log = os.path.join(log_dir, 'current_session.log')
-
-    # Reset current session log
-    with open(current_log, 'w') as f:
-        f.write("")  # Clear contents
-
-    # Append session header to all_time.log
-    with open(all_time_log, 'a') as f:
-        f.write(f"\n\n========== New Session: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ==========\n")
-
-    # Define log format
     formatter = logging.Formatter('[%(asctime)s] [%(levelname)s] [%(name)s] %(message)s')
 
-    # Get logger instance
-    logger = logging.getLogger(name)
-    logger.setLevel(logging.DEBUG)  # Capture all levels
+    # File handler for all_time.log
+    file_handler = logging.FileHandler(log_file)
+    file_handler.setFormatter(formatter)
 
-    # Prevent duplicate handlers on multiple imports
-    if not logger.handlers:
-
-        # Handler for current session
+    # File handler for current_session.log
+    handlers = [file_handler]
+    if current_log:
         file_handler_current = logging.FileHandler(current_log)
-        file_handler_current.setLevel(logging.DEBUG)
         file_handler_current.setFormatter(formatter)
+        handlers.append(file_handler_current)
 
-        # Handler for all-time log
-        file_handler_all = logging.FileHandler(all_time_log)
-        file_handler_all.setLevel(logging.DEBUG)
-        file_handler_all.setFormatter(formatter)
+    # Console handler
+    console_handler = logging.StreamHandler(sys.__stdout__)
+    console_handler.setFormatter(formatter)
+    handlers.append(console_handler)
 
-        # Console (optional)
-        console_handler = logging.StreamHandler()
-        console_handler.setLevel(logging.INFO)
-        console_handler.setFormatter(formatter)
+    logger = logging.getLogger(name)
+    logger.setLevel(level)
+    logger.handlers = []  # Remove any existing handlers
+    for h in handlers:
+        logger.addHandler(h)
+    logger.propagate = False
 
-        # Attach handlers
-        logger.addHandler(file_handler_current)
-        logger.addHandler(file_handler_all)
-        logger.addHandler(console_handler)
+    # Redirect print and uncaught exceptions to logger
+    class StreamToLogger:
+        def __init__(self, logger, level):
+            self.logger = logger
+            self.level = level
+        def write(self, message):
+            message = message.rstrip()
+            if message:
+                self.logger.log(self.level, message)
+        def flush(self):
+            pass
+
+    sys.stdout = StreamToLogger(logger, logging.INFO)
+    sys.stderr = StreamToLogger(logger, logging.ERROR)
+
+    # Redirect uncaught exceptions to logger
+    def handle_exception(exc_type, exc_value, exc_traceback):
+        if issubclass(exc_type, KeyboardInterrupt):
+            sys.__excepthook__(exc_type, exc_value, exc_traceback)
+            return
+        logger.error("Uncaught exception", exc_info=(exc_type, exc_value, exc_traceback))
+    sys.excepthook = handle_exception
 
     return logger

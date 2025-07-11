@@ -1,4 +1,6 @@
 import logging
+import hashlib
+import numpy as np
 
 logger = logging.getLogger(__name__)
 
@@ -130,3 +132,59 @@ def parse_bitstream_with_headers(bitstream: list[int]) -> list[str]:
 
     logger.debug(f"Total messages extracted: {len(messages)}")
     return messages
+
+# New: Convert image (numpy array) to SHA256 hash bits (256 bits)
+def image_to_sha256_bits(image: np.ndarray) -> list[int]:
+    if not isinstance(image, np.ndarray):
+        logger.error("Input to image_to_sha256_bits is not a numpy array.")
+        raise TypeError("Expected numpy.ndarray input")
+    # Convert image to bytes
+    image_bytes = image.tobytes()
+    sha256_hash = hashlib.sha256(image_bytes).digest()  # 32 bytes
+    bits = [int(bit) for byte in sha256_hash for bit in format(byte, '08b')]
+    if len(bits) != 256:
+        logger.error(f"SHA256 hash did not produce 256 bits, got {len(bits)} bits.")
+        raise ValueError("SHA256 hash must be 256 bits.")
+    logger.debug(f"SHA256 hash bits: {bits[:32]} ... (total 256 bits)")
+    return bits
+
+# New: Prepare bitstream with hash and multi-message framing
+def prepare_bitstream_with_hash_and_messages(image: np.ndarray, messages: list[str]) -> list[int]:
+    logger.debug("Preparing bitstream with SHA256 hash and multi-message framing...")
+    hash_bits = image_to_sha256_bits(image)
+    bitstream = hash_bits
+    for msg in messages:
+        msg_bits = string_to_bits(msg)
+        length_bits = int_to_bits(len(msg_bits), length=16)
+        bitstream += length_bits + msg_bits
+    logger.debug(f"Total bitstream prepared: {len(bitstream)} bits")
+    return bitstream
+
+# New: Parse bitstream with hash and multi-message framing
+def parse_bitstream_with_hash_and_messages(bitstream: list[int]) -> tuple[list[int], list[str]]:
+    logger.debug("Parsing bitstream for SHA256 hash and multi-message framing...")
+    if len(bitstream) < 256:
+        logger.error("Bitstream too short to contain SHA256 hash.")
+        raise ValueError("Bitstream too short to contain SHA256 hash.")
+    hash_bits = bitstream[:256]
+    messages = []
+    cursor = 256
+    MAX_MESSAGE_BITS = 1024 * 8  # 1024 bytes (8kb) per message, adjust as needed
+    while cursor + 16 <= len(bitstream):
+        length_bits = bitstream[cursor:cursor+16]
+        msg_len = bits_to_int(length_bits)
+        cursor += 16
+        # Validate message length
+        if msg_len <= 0 or msg_len > MAX_MESSAGE_BITS or cursor + msg_len > len(bitstream):
+            logger.warning(f"Invalid or out-of-bounds message length at cursor {cursor-16}: {msg_len}. Stopping parse.")
+            break
+        msg_bits = bitstream[cursor:cursor+msg_len]
+        cursor += msg_len
+        try:
+            msg = bits_to_string(msg_bits)
+            messages.append(msg)
+        except ValueError as e:
+            logger.warning(f"Failed to decode message at cursor {cursor-msg_len}: {e}. Skipping this message and continuing.")
+            continue
+    logger.debug(f"Extracted hash bits and {len(messages)} messages.")
+    return hash_bits, messages

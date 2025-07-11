@@ -50,6 +50,22 @@ def embed_bits_in_dwt(image_rgb: np.ndarray, bitstream: list[int]) -> np.ndarray
     logger.debug(f"Embedding {len(bitstream)} bits in Y channel parity")
     modified_Y = embed_bits_into_y_parity(recovered_Y, bitstream)
 
+    # --- PATCH: Ensure all channels have the same shape and dtype ---
+    if modified_Y.shape != Cr.shape:
+        logger.warning(f"Resizing Cr from {Cr.shape} to {modified_Y.shape}")
+        Cr = cv2.resize(Cr, (modified_Y.shape[1], modified_Y.shape[0]), interpolation=cv2.INTER_NEAREST)
+    if modified_Y.shape != Cb.shape:
+        logger.warning(f"Resizing Cb from {Cb.shape} to {modified_Y.shape}")
+        Cb = cv2.resize(Cb, (modified_Y.shape[1], modified_Y.shape[0]), interpolation=cv2.INTER_NEAREST)
+    # Ensure dtype matches
+    if Cr.dtype != modified_Y.dtype:
+        logger.warning(f"Casting Cr from {Cr.dtype} to {modified_Y.dtype}")
+        Cr = Cr.astype(modified_Y.dtype)
+    if Cb.dtype != modified_Y.dtype:
+        logger.warning(f"Casting Cb from {Cb.dtype} to {modified_Y.dtype}")
+        Cb = Cb.astype(modified_Y.dtype)
+    # --- END PATCH ---
+
     merged = cv2.merge([modified_Y, Cr, Cb])
     return cv2.cvtColor(merged, cv2.COLOR_YCrCb2RGB)
 

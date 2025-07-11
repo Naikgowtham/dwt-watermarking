@@ -1,0 +1,199 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "originalHash",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "watermarkedHash",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "string",
+				"name": "watermarkData",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "originalCID",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "watermarkedCID",
+				"type": "string"
+			},
+			{
+				"internalType": "uint16",
+				"name": "crc",
+				"type": "uint16"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "parentHash",
+				"type": "bytes32"
+			}
+		],
+		"name": "storeWatermark",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "originalHash",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "watermarkedHash",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "watermarkData",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "originalCID",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "watermarkedCID",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint16",
+				"name": "crc",
+				"type": "uint16"
+			},
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "parentHash",
+				"type": "bytes32"
+			}
+		],
+		"name": "WatermarkStored",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"name": "entries",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "originalHash",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "watermarkedHash",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "string",
+				"name": "watermarkData",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "originalCID",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "watermarkedCID",
+				"type": "string"
+			},
+			{
+				"internalType": "uint16",
+				"name": "crc",
+				"type": "uint16"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "parentHash",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "originalHash",
+				"type": "bytes32"
+			}
+		],
+		"name": "getWatermark",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "bytes32",
+						"name": "originalHash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "watermarkedHash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "string",
+						"name": "watermarkData",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "originalCID",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "watermarkedCID",
+						"type": "string"
+					},
+					{
+						"internalType": "uint16",
+						"name": "crc",
+						"type": "uint16"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "parentHash",
+						"type": "bytes32"
+					}
+				],
+				"internalType": "struct WatermarkStorage.Watermark",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
