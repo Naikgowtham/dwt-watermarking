@@ -13,7 +13,6 @@ function App() {
         <h1>DWT Watermarking Tool</h1>
         <nav style={{ marginBottom: '20px' }}>
           <Link to="/" style={{ marginRight: '10px' }}>Home</Link>
-          <Link to="/blockchain-logs" style={{ marginRight: '10px' }}>Blockchain Logs</Link>
           <Link to="/watermark-chain">Watermark Chain</Link>
         </nav>
         <Routes>
@@ -23,7 +22,6 @@ function App() {
               <ExtractPanel />
             </div>
           } />
-          <Route path="/blockchain-logs" element={<BlockchainLogs />} />
           <Route path="/watermark-chain" element={<WatermarkChain />} />
         </Routes>
       </div>
