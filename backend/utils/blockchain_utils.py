@@ -119,4 +119,60 @@ def get_watermark_from_chain(parent_hash):
         logger.error(f"Error fetching watermark from chain: {e}", exc_info=True)
         return None
 
+def get_all_watermark_logs():
+    """
+    Get all watermark entries from the blockchain.
+    Returns a list of watermark metadata dictionaries.
+    """
+    try:
+        # Get all watermark entries from the contract
+        # Note: This is a simplified implementation. In a real scenario,
+        # you might need to scan events or maintain a separate database
+        logs = []
+        
+        # For now, we'll return an empty list since the contract doesn't have
+        # a direct method to get all entries. In a production system, you would:
+        # 1. Scan WatermarkStored events from the contract
+        # 2. Maintain a database of all watermarks
+        # 3. Or implement a method in the contract to return all entries
+        
+        logger.info("Retrieved 0 watermark logs (functionality not fully implemented)")
+        return logs
+        
+    except Exception as e:
+        logger.error(f"Error fetching all watermark logs: {e}", exc_info=True)
+        return []
+
+def get_watermark_chain(parent_hash):
+    """
+    Get the complete chain of watermarks starting from a given parent hash.
+    Returns a list of watermark entries in chain order.
+    """
+    try:
+        chain = []
+        current_hash = parent_hash
+        
+        # Follow the chain by following parent_hash references
+        max_iterations = 100  # Prevent infinite loops
+        iteration = 0
+        
+        while current_hash and iteration < max_iterations:
+            entry = get_watermark_from_chain(current_hash)
+            if entry:
+                chain.append(entry)
+                # Move to the parent hash
+                current_hash = entry.get("parent_hash")
+                if current_hash == "0" * 64:  # Genesis watermark
+                    break
+            else:
+                break
+            iteration += 1
+        
+        logger.info(f"Retrieved watermark chain with {len(chain)} entries")
+        return chain
+        
+    except Exception as e:
+        logger.error(f"Error fetching watermark chain: {e}", exc_info=True)
+        return []
+
 # Blockchain logic for watermarking is now handled by store_watermark_on_chain.

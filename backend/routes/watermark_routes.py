@@ -20,7 +20,7 @@ import zlib
 from core.dwt_engine import embed_bits_in_dwt, extract_bits_from_dwt
 from utils.logger import setup_logger
 import time
-from utils.blockchain_utils import store_watermark_on_chain, get_watermark_from_chain
+from utils.blockchain_utils import store_watermark_on_chain, get_watermark_from_chain, get_all_watermark_logs, get_watermark_chain
 from web3 import Web3
 logger = setup_logger(__name__)
 watermark_bp = Blueprint("watermark", __name__)
@@ -291,6 +291,14 @@ def blockchain_logs():
     try:
         logs = get_all_watermark_logs()
         return jsonify(logs), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@watermark_bp.route("/blockchain/chain/<hash>", methods=["GET"])
+def get_watermark_chain_endpoint(hash):
+    try:
+        chain = get_watermark_chain(hash)
+        return jsonify(chain), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
