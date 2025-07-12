@@ -13,6 +13,7 @@ from utils.bit_utils import (
     image_to_sha256_bits,
     prepare_bitstream_with_hash_and_messages,
     parse_bitstream_with_hash_and_messages,
+    detect_and_parse_bitstream,
 )
 from utils.ipfs_utils import upload_to_pinata
 import zlib
@@ -54,15 +55,54 @@ def watermark_image():
         image = load_image(image_file)
         logger.info(f"Original image loaded: shape={image.shape}, dtype={image.dtype}")
 
-        # Try to extract existing hash and messages
+        # Try to extract existing hash and messages for chaining
         logger.debug("Attempting to extract existing hash and messages for appending support")
+        parent_hash = '00' * 32  # Default to zero hash
+        parent_hash_extracted = False
+        existing_messages = []
         try:
             raw_bits = extract_bits_from_dwt(image)
-            hash_bits, existing_messages = parse_bitstream_with_hash_and_messages(raw_bits)
-            logger.info(f"Found existing watermark with {len(existing_messages)} messages. Appending new message.")
+            logger.debug(f"Extracted {len(raw_bits)} bits from image for parent hash extraction.")
+            hash_bits, existing_messages, format_type = detect_and_parse_bitstream(raw_bits)
+            logger.debug(f"Detected format: {format_type}, found {len(existing_messages)} existing messages.")
+            
+            if format_type == 'hash_based' and len(hash_bits) == 256:
+                # Compute parent hash from extracted hash_bits
+                parent_hash_bytes = bytearray()
+                for i in range(0, 256, 8):
+                    byte = 0
+                    for b in hash_bits[i:i+8]:
+                        byte = (byte << 1) | b
+                    parent_hash_bytes.append(byte)
+                parent_hash = parent_hash_bytes.hex()
+                parent_hash_extracted = True
+                logger.info(f"Extracted parent hash from image: {parent_hash}")
+            else:
+                logger.info(f"Legacy format detected or no hash available. Using zero hash.")
         except Exception as e:
-            logger.info(f"No valid existing watermark found or parse failed: {e}. Starting new watermark.")
-            existing_messages = []
+            logger.warning(f"No valid watermark found in image for chaining. Using zero hash. Details: {e}")
+
+        # File-level validation
+        uploaded_image_hash = image_to_sha256_bits(image)
+        logger.info(f"SHA256 of uploaded image: {uploaded_image_hash}")
+        if parent_hash_extracted:
+            if parent_hash == uploaded_image_hash:
+                logger.info("File-level chain intact: parent hash matches uploaded image hash.")
+            else:
+                logger.warning(f"File-level chain broken: parent hash ({parent_hash}) does not match uploaded image hash ({uploaded_image_hash}).")
+        else:
+            logger.info("No parent hash extracted; treating as genesis watermark.")
+
+        # Blockchain-level validation
+        try:
+            blockchain_metadata = get_watermark_from_chain(parent_hash)
+            if blockchain_metadata:
+                logger.info(f"Blockchain chain intact: found watermark record for parent hash {parent_hash}.")
+            else:
+                logger.warning(f"Blockchain chain broken: no watermark record found for parent hash {parent_hash}.")
+        except Exception as e:
+            logger.error(f"Blockchain validation failed for parent hash {parent_hash}: {e}")
+
         # Append new message
         all_messages = existing_messages + [message]
         logger.info(f"Total messages to embed: {len(all_messages)}")
@@ -127,9 +167,11 @@ def watermark_image():
             logger.info(f"Combined message string: {combined_message_string}")
             logger.info(f"CRC value: {crc_value}")
 
-            # Parent hash (zero hash for now)
-            parent_hash = '00' * 32
-            logger.info(f"Parent hash (hex): {parent_hash}")
+            # Use the extracted parent hash if available, otherwise use zero hash
+            if parent_hash_extracted:
+                logger.info(f"Using extracted parent hash: {parent_hash}")
+            else:
+                logger.info(f"No parent hash extracted, using zero hash: {parent_hash}")
 
             # Convert hex hashes to bytes32
             original_hash_bytes = bytes.fromhex(original_hash)
@@ -187,51 +229,30 @@ def extract_watermark():
         logger.info(f"Extracted total bitstream length: {total_bits} bits")
         logger.debug(f"First 32 bits of bitstream: {raw_bits[:32]}")
 
-        # Parse hash and messages with robust bounds checking
+        # Parse hash and messages with format detection
         hash_bits = None
         messages = []
         hash_hex = None
+        format_type = None
         try:
-            if len(raw_bits) < 256:
-                logger.warning("Bitstream too short to contain SHA256 hash.")
-                raise ValueError("Bitstream too short to contain SHA256 hash.")
-            hash_bits = raw_bits[:256]
-            messages = []
-            cursor = 256
-            MAX_MESSAGE_BITS = 1024 * 8  # 8KB per message
-            while True:
-                if cursor + 16 > len(raw_bits):
-                    logger.warning(f"Not enough bits for message length header at cursor {cursor}. Breaking.")
-                    break
-                length_bits = raw_bits[cursor:cursor+16]
-                msg_len = bits_to_int(length_bits)
-                cursor += 16
-                if msg_len <= 0 or msg_len > MAX_MESSAGE_BITS:
-                    logger.error(f"Invalid or out-of-bounds message length at cursor {cursor-16}: {msg_len}. Stopping parse.")
-                    break
-                if cursor + msg_len > len(raw_bits):
-                    logger.error(f"Message length {msg_len} at cursor {cursor-16} exceeds remaining bits. Stopping parse.")
-                    break
-                msg_bits = raw_bits[cursor:cursor+msg_len]
-                cursor += msg_len
-                try:
-                    msg = bits_to_string(msg_bits)
-                    messages.append(msg)
-                except ValueError as e:
-                    logger.warning(f"Failed to decode message at cursor {cursor-msg_len}: {e}. Skipping this message and continuing.")
-                    continue
-            # Convert hash bits to hex string for return
-            hash_bytes = bytearray()
-            for i in range(0, 256, 8):
-                byte = 0
-                for b in raw_bits[i:i+8]:
-                    byte = (byte << 1) | b
-                hash_bytes.append(byte)
-            hash_hex = hash_bytes.hex()
-            logger.info(f"Extracted SHA256 hash: {hash_hex}")
+            hash_bits, messages, format_type = detect_and_parse_bitstream(raw_bits)
+            logger.info(f"Detected format: {format_type}, extracted {len(messages)} messages")
+            
+            # Convert hash bits to hex string for return (if available)
+            if format_type == 'hash_based' and len(hash_bits) == 256:
+                hash_bytes = bytearray()
+                for i in range(0, 256, 8):
+                    byte = 0
+                    for b in hash_bits[i:i+8]:
+                        byte = (byte << 1) | b
+                    hash_bytes.append(byte)
+                hash_hex = hash_bytes.hex()
+                logger.info(f"Extracted SHA256 hash: {hash_hex}")
+            else:
+                logger.info("No hash available (legacy format)")
         except Exception as e:
             logger.warning(f"Failed to parse bitstream: {e}")
-            return jsonify({"messages": [], "hash": None, "crc_match": False, "on_chain": None}), 200
+            return jsonify({"messages": [], "hash": None, "crc_match": False, "on_chain": None, "format": None}), 200
 
         # Query blockchain using extracted hash
         on_chain = None
@@ -257,7 +278,8 @@ def extract_watermark():
             "messages": messages,
             "hash": hash_hex,
             "crc_match": crc_match,
-            "on_chain": on_chain
+            "on_chain": on_chain,
+            "format": format_type
         }), 200
     except Exception as e:
         logger.exception("Extraction failed due to unexpected error")

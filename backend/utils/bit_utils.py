@@ -188,3 +188,35 @@ def parse_bitstream_with_hash_and_messages(bitstream: list[int]) -> tuple[list[i
             continue
     logger.debug(f"Extracted hash bits and {len(messages)} messages.")
     return hash_bits, messages
+
+# New: Detect watermark format and parse accordingly
+def detect_and_parse_bitstream(bitstream: list[int]) -> tuple[list[int], list[str], str]:
+    """
+    Detects the watermark format and parses accordingly.
+    Returns (hash_bits, messages, format_type).
+    format_type can be 'legacy' (with signature) or 'hash_based' (with SHA256 hash).
+    """
+    logger.debug("Detecting watermark format...")
+    
+    if len(bitstream) < 16:
+        logger.error("Bitstream too short to detect format.")
+        raise ValueError("Bitstream too short to detect format.")
+    
+    # Check if it's legacy format (starts with signature)
+    sig_bits = bitstream[:16]
+    extracted_sig = bits_to_int(sig_bits)
+    if extracted_sig == SIGNATURE:
+        logger.debug("Detected legacy format (with signature)")
+        messages = parse_bitstream_with_headers(bitstream)
+        # For legacy format, we don't have a hash, so return empty hash bits
+        return [], messages, 'legacy'
+    
+    # Check if it's hash-based format (starts with 256-bit hash)
+    elif len(bitstream) >= 256:
+        logger.debug("Detected hash-based format (with SHA256 hash)")
+        hash_bits, messages = parse_bitstream_with_hash_and_messages(bitstream)
+        return hash_bits, messages, 'hash_based'
+    
+    else:
+        logger.error("Unknown watermark format")
+        raise ValueError("Unknown watermark format")

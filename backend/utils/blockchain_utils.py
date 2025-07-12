@@ -88,13 +88,18 @@ def store_watermark_on_chain(
         print(f"Error in store_watermark_on_chain: {e}")
         return None
 
-def get_watermark_from_chain(original_hash: bytes):
+def get_watermark_from_chain(parent_hash):
     """
     Fetch watermark metadata from the blockchain contract using getWatermark.
     Returns a dict with all fields, or None on failure.
     """
     try:
-        entry = contract.functions.getWatermark(original_hash).call()
+        # Convert hex string to bytes32
+        if isinstance(parent_hash, str):
+            parent_hash_bytes = bytes.fromhex(parent_hash)
+        else:
+            parent_hash_bytes = parent_hash
+        entry = contract.functions.getWatermark(parent_hash_bytes).call()
         # Check if entry is empty (all bytes32 fields are zero)
         if not entry or (hasattr(entry[0], 'hex') and entry[0] == b'\x00' * 32):
             logger.warning("No watermark entry found for given hash.")

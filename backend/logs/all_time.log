@@ -7383,3 +7383,1339 @@ ModuleNotFoundError: No module named 'backend'
 [2025-07-11 22:31:58,251] [INFO] [routes.watermark_routes] Extraction complete: 1 messages found
 [2025-07-11 22:31:58,251] [INFO] [__main__] App context teardown complete.
 [2025-07-11 22:31:58,252] [ERROR] [__main__] 127.0.0.1 - - [11/Jul/2025 22:31:58] "POST /extract HTTP/1.1" 200 -
+[2025-07-11 22:52:18,957] [INFO] [__main__] Launching Flask server...
+[2025-07-11 22:52:18,957] [INFO] [__main__] Creating Flask app...
+[2025-07-11 22:52:18,958] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-11 22:52:18,959] [INFO] [__main__] b" * Serving Flask app 'app'"
+[2025-07-11 22:52:18,959] [INFO] [__main__] b' * Debug mode: on'
+[2025-07-11 22:52:18,965] [ERROR] [__main__] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-07-11 22:52:18,965] [ERROR] [__main__] [33mPress CTRL+C to quit[0m
+[2025-07-11 22:52:18,965] [ERROR] [__main__]  * Restarting with stat
+[2025-07-11 22:52:19,530] [INFO] [__main__] Launching Flask server...
+[2025-07-11 22:52:19,531] [INFO] [__main__] Creating Flask app...
+[2025-07-11 22:52:19,531] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-11 22:52:19,538] [ERROR] [__main__]  * Debugger is active!
+[2025-07-11 22:52:19,538] [ERROR] [__main__]  * Debugger PIN: 575-763-446
+[2025-07-11 22:53:04,941] [DEBUG] [__main__] Received a new request.
+[2025-07-11 22:53:04,941] [INFO] [routes.watermark_routes] POST /watermark called
+[2025-07-11 22:53:04,943] [DEBUG] [routes.watermark_routes] Received file: filename=Screenshot from 2025-07-08 13-03-38.png, content_type=image/png
+[2025-07-11 22:53:04,943] [DEBUG] [routes.watermark_routes] Received message of length 2 characters
+[2025-07-11 22:53:04,943] [DEBUG] [routes.watermark_routes] Loading original image from uploaded file
+[2025-07-11 22:53:04,943] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-11 22:53:04,946] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (603, 402, 3)
+[2025-07-11 22:53:04,946] [INFO] [routes.watermark_routes] Original image loaded: shape=(603, 402, 3), dtype=uint8
+[2025-07-11 22:53:04,946] [DEBUG] [routes.watermark_routes] Attempting to extract existing hash and messages for appending support
+[2025-07-11 22:53:04,978] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+[2025-07-11 22:53:04,978] [DEBUG] [core.dwt_engine] Total bits extracted: 242406
+[2025-07-11 22:53:04,979] [ERROR] [__main__] Invalid or out-of-bounds message length at cursor 256: 65535. Stopping parse.
+[2025-07-11 22:53:04,979] [INFO] [routes.watermark_routes] Found existing watermark with 0 messages. Appending new message.
+[2025-07-11 22:53:04,979] [INFO] [routes.watermark_routes] Total messages to embed: 1
+[2025-07-11 22:53:04,979] [DEBUG] [routes.watermark_routes] Preparing bitstream with SHA256 hash and multi-message framing
+[2025-07-11 22:53:04,979] [INFO] [routes.watermark_routes] Combined bitstream length: 288 bits
+[2025-07-11 22:53:04,980] [DEBUG] [routes.watermark_routes] Embedding combined bitstream into image via DWT parity
+[2025-07-11 22:53:04,989] [DEBUG] [core.dwt_engine] Embedding 288 bits in Y channel parity
+[2025-07-11 22:53:04,989] [DEBUG] [core.dwt_engine] Y-parity embed check: 288 bits embedded, 0 mismatches
+[2025-07-11 22:53:04,989] [WARNING] [core.dwt_engine] Resizing Cr from (603, 402) to (604, 402)
+[2025-07-11 22:53:04,990] [WARNING] [core.dwt_engine] Resizing Cb from (603, 402) to (604, 402)
+[2025-07-11 22:53:04,990] [INFO] [routes.watermark_routes] Embedding complete without mismatches
+[2025-07-11 22:53:04,990] [DEBUG] [routes.watermark_routes] Saving original image to /home/gowtham/dwt-watermarking/backend/uploads/original/1f05412f5ae94fe8a07af475d9f0865d_orig.png
+[2025-07-11 22:53:04,990] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/original/1f05412f5ae94fe8a07af475d9f0865d_orig.png
+[2025-07-11 22:53:04,993] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-11 22:53:04,993] [INFO] [routes.watermark_routes] Original image saved successfully
+[2025-07-11 22:53:04,993] [DEBUG] [routes.watermark_routes] Saving watermarked image to /home/gowtham/dwt-watermarking/backend/uploads/watermarked/1f05412f5ae94fe8a07af475d9f0865d_wm.png
+[2025-07-11 22:53:04,993] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/1f05412f5ae94fe8a07af475d9f0865d_wm.png
+[2025-07-11 22:53:04,996] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-11 22:53:04,996] [INFO] [routes.watermark_routes] Watermarked image saved successfully
+[2025-07-11 22:53:04,996] [INFO] [routes.watermark_routes] Starting upload of original and watermarked images to Pinata Cloud (IPFS)...
+[2025-07-11 22:53:04,996] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/original/1f05412f5ae94fe8a07af475d9f0865d_orig.png to Pinata Cloud...
+[2025-07-11 22:53:06,803] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: QmUuNrUMuizcWyXQAq53bbnNswnZUYypBzEAv7CCKKDb4D
+[2025-07-11 22:53:06,803] [INFO] [routes.watermark_routes] Original image uploaded to Pinata. CID: QmUuNrUMuizcWyXQAq53bbnNswnZUYypBzEAv7CCKKDb4D
+[2025-07-11 22:53:06,804] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/watermarked/1f05412f5ae94fe8a07af475d9f0865d_wm.png to Pinata Cloud...
+[2025-07-11 22:53:08,141] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: QmeoNTGsy7S17nTJZw2nEeYaVf1CNF8P8LUfqyJL3coAJV
+[2025-07-11 22:53:08,141] [INFO] [routes.watermark_routes] Watermarked image uploaded to Pinata. CID: QmeoNTGsy7S17nTJZw2nEeYaVf1CNF8P8LUfqyJL3coAJV
+[2025-07-11 22:53:08,141] [INFO] [routes.watermark_routes] IPFS upload step completed in 3.15 seconds.
+[2025-07-11 22:53:08,143] [INFO] [routes.watermark_routes] Original image SHA256 hash: a0ca329f4b06209e88cb7504a8dc210d6fac9b2f44b8cdec2fdd010317364b66
+[2025-07-11 22:53:08,143] [INFO] [routes.watermark_routes] Watermarked image SHA256 hash: 34a4677c94a87707e31aa3a80025b736c0c7ee659cfe8fc48d81939d26c703ae
+[2025-07-11 22:53:08,143] [INFO] [routes.watermark_routes] Combined message string: ee
+[2025-07-11 22:53:08,143] [INFO] [routes.watermark_routes] CRC value: 6346
+[2025-07-11 22:53:08,143] [INFO] [routes.watermark_routes] Parent hash (hex): 0000000000000000000000000000000000000000000000000000000000000000
+[2025-07-11 22:53:10,695] [INFO] [__main__] Transaction sent. Hash: 0x5849639e054529faf8ee1d6e32c8460f368cc95e849a6e45bbfa0491f0b8b8f0
+[2025-07-11 22:53:11,567] [INFO] [__main__] Transaction mined in block 23788666 with status 1
+[2025-07-11 22:53:11,567] [INFO] [routes.watermark_routes] Logged watermark to blockchain. Tx hash: 0x5849639e054529faf8ee1d6e32c8460f368cc95e849a6e45bbfa0491f0b8b8f0
+[2025-07-11 22:53:11,567] [DEBUG] [routes.watermark_routes] Encoding watermarked image at /home/gowtham/dwt-watermarking/backend/uploads/watermarked/1f05412f5ae94fe8a07af475d9f0865d_wm.png to base64
+[2025-07-11 22:53:11,567] [DEBUG] [utils.image_utils] Attempting to convert image to base64 from path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/1f05412f5ae94fe8a07af475d9f0865d_wm.png
+[2025-07-11 22:53:11,567] [DEBUG] [utils.image_utils] Image successfully encoded to base64.
+[2025-07-11 22:53:11,567] [INFO] [routes.watermark_routes] Base64 encoding complete
+[2025-07-11 22:53:11,567] [INFO] [routes.watermark_routes] POST /watermark completed successfully
+[2025-07-11 22:53:11,570] [INFO] [__main__] App context teardown complete.
+[2025-07-11 22:53:11,570] [ERROR] [__main__] 127.0.0.1 - - [11/Jul/2025 22:53:11] "POST /watermark HTTP/1.1" 200 -
+[2025-07-11 22:53:51,508] [DEBUG] [__main__] Received a new request.
+[2025-07-11 22:53:51,508] [INFO] [routes.watermark_routes] POST /extract called
+[2025-07-11 22:53:51,509] [DEBUG] [routes.watermark_routes] Loading watermarked image: filename=1f05412f5ae94fe8a07af475d9f0865d_wm.png
+[2025-07-11 22:53:51,509] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-11 22:53:51,513] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (604, 402, 3)
+[2025-07-11 22:53:51,513] [INFO] [routes.watermark_routes] Watermarked image loaded: shape=(604, 402, 3), dtype=uint8
+[2025-07-11 22:53:51,513] [DEBUG] [routes.watermark_routes] Extracting full parity bitstream via DWT engine
+[2025-07-11 22:53:51,552] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1]
+[2025-07-11 22:53:51,552] [DEBUG] [core.dwt_engine] Total bits extracted: 242808
+[2025-07-11 22:53:51,553] [INFO] [routes.watermark_routes] Extracted total bitstream length: 242808 bits
+[2025-07-11 22:53:51,553] [DEBUG] [routes.watermark_routes] First 32 bits of bitstream: [1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1]
+[2025-07-11 22:53:51,553] [ERROR] [routes.watermark_routes] Invalid or out-of-bounds message length at cursor 288: 65447. Stopping parse.
+[2025-07-11 22:53:51,553] [INFO] [routes.watermark_routes] Extracted SHA256 hash: a0ca329f4b06209e88cb7504a8dc210d6fac9b2f44b8cdec2fdd010317364b66
+[2025-07-11 22:53:52,563] [INFO] [routes.watermark_routes] Blockchain metadata found for hash a0ca329f4b06209e88cb7504a8dc210d6fac9b2f44b8cdec2fdd010317364b66. CRC match: True
+[2025-07-11 22:53:52,563] [INFO] [routes.watermark_routes] Extraction complete: 1 messages found
+[2025-07-11 22:53:52,564] [INFO] [__main__] App context teardown complete.
+[2025-07-11 22:53:52,564] [ERROR] [__main__] 127.0.0.1 - - [11/Jul/2025 22:53:52] "POST /extract HTTP/1.1" 200 -
+[2025-07-11 22:54:06,699] [DEBUG] [__main__] Received a new request.
+[2025-07-11 22:54:06,700] [INFO] [routes.watermark_routes] POST /watermark called
+[2025-07-11 22:54:06,701] [DEBUG] [routes.watermark_routes] Received file: filename=1f05412f5ae94fe8a07af475d9f0865d_wm.png, content_type=image/png
+[2025-07-11 22:54:06,701] [DEBUG] [routes.watermark_routes] Received message of length 3 characters
+[2025-07-11 22:54:06,701] [DEBUG] [routes.watermark_routes] Loading original image from uploaded file
+[2025-07-11 22:54:06,701] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-11 22:54:06,704] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (604, 402, 3)
+[2025-07-11 22:54:06,704] [INFO] [routes.watermark_routes] Original image loaded: shape=(604, 402, 3), dtype=uint8
+[2025-07-11 22:54:06,704] [DEBUG] [routes.watermark_routes] Attempting to extract existing hash and messages for appending support
+[2025-07-11 22:54:06,734] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1]
+[2025-07-11 22:54:06,734] [DEBUG] [core.dwt_engine] Total bits extracted: 242808
+[2025-07-11 22:54:06,734] [ERROR] [__main__] Invalid or out-of-bounds message length at cursor 288: 65447. Stopping parse.
+[2025-07-11 22:54:06,734] [INFO] [routes.watermark_routes] Found existing watermark with 1 messages. Appending new message.
+[2025-07-11 22:54:06,734] [INFO] [routes.watermark_routes] Total messages to embed: 2
+[2025-07-11 22:54:06,734] [DEBUG] [routes.watermark_routes] Preparing bitstream with SHA256 hash and multi-message framing
+[2025-07-11 22:54:06,735] [INFO] [routes.watermark_routes] Combined bitstream length: 328 bits
+[2025-07-11 22:54:06,735] [DEBUG] [routes.watermark_routes] Embedding combined bitstream into image via DWT parity
+[2025-07-11 22:54:06,743] [DEBUG] [core.dwt_engine] Embedding 328 bits in Y channel parity
+[2025-07-11 22:54:06,743] [DEBUG] [core.dwt_engine] Y-parity embed check: 328 bits embedded, 0 mismatches
+[2025-07-11 22:54:06,744] [INFO] [routes.watermark_routes] Embedding complete without mismatches
+[2025-07-11 22:54:06,744] [DEBUG] [routes.watermark_routes] Saving original image to /home/gowtham/dwt-watermarking/backend/uploads/original/5a3e9b8f7077473288f2b0c4d37aa270_orig.png
+[2025-07-11 22:54:06,744] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/original/5a3e9b8f7077473288f2b0c4d37aa270_orig.png
+[2025-07-11 22:54:06,748] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-11 22:54:06,748] [INFO] [routes.watermark_routes] Original image saved successfully
+[2025-07-11 22:54:06,748] [DEBUG] [routes.watermark_routes] Saving watermarked image to /home/gowtham/dwt-watermarking/backend/uploads/watermarked/5a3e9b8f7077473288f2b0c4d37aa270_wm.png
+[2025-07-11 22:54:06,748] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/5a3e9b8f7077473288f2b0c4d37aa270_wm.png
+[2025-07-11 22:54:06,752] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-11 22:54:06,752] [INFO] [routes.watermark_routes] Watermarked image saved successfully
+[2025-07-11 22:54:06,752] [INFO] [routes.watermark_routes] Starting upload of original and watermarked images to Pinata Cloud (IPFS)...
+[2025-07-11 22:54:06,752] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/original/5a3e9b8f7077473288f2b0c4d37aa270_orig.png to Pinata Cloud...
+[2025-07-11 22:54:08,337] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: QmeoNTGsy7S17nTJZw2nEeYaVf1CNF8P8LUfqyJL3coAJV
+[2025-07-11 22:54:08,338] [INFO] [routes.watermark_routes] Original image uploaded to Pinata. CID: QmeoNTGsy7S17nTJZw2nEeYaVf1CNF8P8LUfqyJL3coAJV
+[2025-07-11 22:54:08,338] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/watermarked/5a3e9b8f7077473288f2b0c4d37aa270_wm.png to Pinata Cloud...
+[2025-07-11 22:54:09,780] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: Qmf7Qfc44H2UtpFGw6Lmo8Jg7zUuwph5jpDAFuT57zY5cy
+[2025-07-11 22:54:09,781] [INFO] [routes.watermark_routes] Watermarked image uploaded to Pinata. CID: Qmf7Qfc44H2UtpFGw6Lmo8Jg7zUuwph5jpDAFuT57zY5cy
+[2025-07-11 22:54:09,781] [INFO] [routes.watermark_routes] IPFS upload step completed in 3.03 seconds.
+[2025-07-11 22:54:09,783] [INFO] [routes.watermark_routes] Original image SHA256 hash: 34a4677c94a87707e31aa3a80025b736c0c7ee659cfe8fc48d81939d26c703ae
+[2025-07-11 22:54:09,783] [INFO] [routes.watermark_routes] Watermarked image SHA256 hash: ddb0dc39c1ab75a650aed809a4a03db817e225992f7e8160d69360a02ff34a66
+[2025-07-11 22:54:09,783] [INFO] [routes.watermark_routes] Combined message string: eegtr
+[2025-07-11 22:54:09,783] [INFO] [routes.watermark_routes] CRC value: 31062
+[2025-07-11 22:54:09,783] [INFO] [routes.watermark_routes] Parent hash (hex): 0000000000000000000000000000000000000000000000000000000000000000
+[2025-07-11 22:54:12,024] [INFO] [__main__] Transaction sent. Hash: 0x7ebb5216afbd920fe35afcc1974a2a40837dc6812e91a73036442fc182390f9d
+[2025-07-11 22:54:13,472] [INFO] [__main__] Transaction mined in block 23788695 with status 1
+[2025-07-11 22:54:13,472] [INFO] [routes.watermark_routes] Logged watermark to blockchain. Tx hash: 0x7ebb5216afbd920fe35afcc1974a2a40837dc6812e91a73036442fc182390f9d
+[2025-07-11 22:54:13,472] [DEBUG] [routes.watermark_routes] Encoding watermarked image at /home/gowtham/dwt-watermarking/backend/uploads/watermarked/5a3e9b8f7077473288f2b0c4d37aa270_wm.png to base64
+[2025-07-11 22:54:13,472] [DEBUG] [utils.image_utils] Attempting to convert image to base64 from path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/5a3e9b8f7077473288f2b0c4d37aa270_wm.png
+[2025-07-11 22:54:13,473] [DEBUG] [utils.image_utils] Image successfully encoded to base64.
+[2025-07-11 22:54:13,473] [INFO] [routes.watermark_routes] Base64 encoding complete
+[2025-07-11 22:54:13,473] [INFO] [routes.watermark_routes] POST /watermark completed successfully
+[2025-07-11 22:54:13,474] [INFO] [__main__] App context teardown complete.
+[2025-07-11 22:54:13,474] [ERROR] [__main__] 127.0.0.1 - - [11/Jul/2025 22:54:13] "POST /watermark HTTP/1.1" 200 -
+[2025-07-11 22:55:06,983] [DEBUG] [__main__] Received a new request.
+[2025-07-11 22:55:06,983] [INFO] [routes.watermark_routes] POST /extract called
+[2025-07-11 22:55:06,984] [DEBUG] [routes.watermark_routes] Loading watermarked image: filename=5a3e9b8f7077473288f2b0c4d37aa270_wm.png
+[2025-07-11 22:55:06,984] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-11 22:55:06,987] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (604, 402, 3)
+[2025-07-11 22:55:06,987] [INFO] [routes.watermark_routes] Watermarked image loaded: shape=(604, 402, 3), dtype=uint8
+[2025-07-11 22:55:06,987] [DEBUG] [routes.watermark_routes] Extracting full parity bitstream via DWT engine
+[2025-07-11 22:55:07,024] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0]
+[2025-07-11 22:55:07,024] [DEBUG] [core.dwt_engine] Total bits extracted: 242808
+[2025-07-11 22:55:07,024] [INFO] [routes.watermark_routes] Extracted total bitstream length: 242808 bits
+[2025-07-11 22:55:07,024] [DEBUG] [routes.watermark_routes] First 32 bits of bitstream: [0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0]
+[2025-07-11 22:55:07,024] [ERROR] [routes.watermark_routes] Invalid or out-of-bounds message length at cursor 328: 65535. Stopping parse.
+[2025-07-11 22:55:07,025] [INFO] [routes.watermark_routes] Extracted SHA256 hash: 34a4677c94a87707e31aa3a80025b736c0c7ee659cfe8fc48d81939d26c703ae
+[2025-07-11 22:55:08,015] [INFO] [routes.watermark_routes] Blockchain metadata found for hash 34a4677c94a87707e31aa3a80025b736c0c7ee659cfe8fc48d81939d26c703ae. CRC match: True
+[2025-07-11 22:55:08,015] [INFO] [routes.watermark_routes] Extraction complete: 2 messages found
+[2025-07-11 22:55:08,015] [INFO] [__main__] App context teardown complete.
+[2025-07-11 22:55:08,015] [ERROR] [__main__] 127.0.0.1 - - [11/Jul/2025 22:55:08] "POST /extract HTTP/1.1" 200 -
+[2025-07-11 23:01:29,123] [INFO] [__main__] Launching Flask server...
+[2025-07-11 23:01:29,124] [INFO] [__main__] Creating Flask app...
+[2025-07-11 23:01:29,124] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-11 23:01:29,126] [INFO] [__main__] b" * Serving Flask app 'app'"
+[2025-07-11 23:01:29,126] [INFO] [__main__] b' * Debug mode: on'
+[2025-07-11 23:01:29,131] [ERROR] [__main__] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-07-11 23:01:29,131] [ERROR] [__main__] [33mPress CTRL+C to quit[0m
+[2025-07-11 23:01:29,132] [ERROR] [__main__]  * Restarting with stat
+[2025-07-11 23:01:29,669] [INFO] [__main__] Launching Flask server...
+[2025-07-11 23:01:29,669] [INFO] [__main__] Creating Flask app...
+[2025-07-11 23:01:29,670] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-11 23:01:29,676] [ERROR] [__main__]  * Debugger is active!
+[2025-07-11 23:01:29,677] [ERROR] [__main__]  * Debugger PIN: 575-763-446
+[2025-07-11 23:02:20,824] [DEBUG] [__main__] Received a new request.
+[2025-07-11 23:02:20,825] [INFO] [routes.watermark_routes] POST /watermark called
+[2025-07-11 23:02:20,826] [DEBUG] [routes.watermark_routes] Received file: filename=Screenshot from 2025-07-03 15-09-32.png, content_type=image/png
+[2025-07-11 23:02:20,826] [DEBUG] [routes.watermark_routes] Received message of length 2 characters
+[2025-07-11 23:02:20,826] [DEBUG] [routes.watermark_routes] Loading original image from uploaded file
+[2025-07-11 23:02:20,826] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-11 23:02:20,829] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (258, 343, 3)
+[2025-07-11 23:02:20,829] [INFO] [routes.watermark_routes] Original image loaded: shape=(258, 343, 3), dtype=uint8
+[2025-07-11 23:02:20,829] [DEBUG] [routes.watermark_routes] Attempting to extract existing hash and messages for appending support
+[2025-07-11 23:02:20,840] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2025-07-11 23:02:20,840] [DEBUG] [core.dwt_engine] Total bits extracted: 88494
+[2025-07-11 23:02:20,840] [ERROR] [__main__] Invalid or out-of-bounds message length at cursor 256: 0. Stopping parse.
+[2025-07-11 23:02:20,840] [INFO] [routes.watermark_routes] Found existing watermark with 0 messages. Appending new message. Parent hash: 0000000000000000000000000000000000000000000000000000000000000000
+[2025-07-11 23:02:20,840] [INFO] [routes.watermark_routes] Total messages to embed: 1
+[2025-07-11 23:02:20,840] [DEBUG] [routes.watermark_routes] Preparing bitstream with SHA256 hash and multi-message framing
+[2025-07-11 23:02:20,841] [INFO] [routes.watermark_routes] Combined bitstream length: 288 bits
+[2025-07-11 23:02:20,841] [DEBUG] [routes.watermark_routes] Embedding combined bitstream into image via DWT parity
+[2025-07-11 23:02:20,845] [DEBUG] [core.dwt_engine] Embedding 288 bits in Y channel parity
+[2025-07-11 23:02:20,845] [DEBUG] [core.dwt_engine] Y-parity embed check: 288 bits embedded, 0 mismatches
+[2025-07-11 23:02:20,845] [WARNING] [core.dwt_engine] Resizing Cr from (258, 343) to (258, 344)
+[2025-07-11 23:02:20,845] [WARNING] [core.dwt_engine] Resizing Cb from (258, 343) to (258, 344)
+[2025-07-11 23:02:20,846] [INFO] [routes.watermark_routes] Embedding complete without mismatches
+[2025-07-11 23:02:20,846] [DEBUG] [routes.watermark_routes] Saving original image to /home/gowtham/dwt-watermarking/backend/uploads/original/7d726594c0944bb1b21591dfca9c63dd_orig.png
+[2025-07-11 23:02:20,846] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/original/7d726594c0944bb1b21591dfca9c63dd_orig.png
+[2025-07-11 23:02:20,847] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-11 23:02:20,847] [INFO] [routes.watermark_routes] Original image saved successfully
+[2025-07-11 23:02:20,847] [DEBUG] [routes.watermark_routes] Saving watermarked image to /home/gowtham/dwt-watermarking/backend/uploads/watermarked/7d726594c0944bb1b21591dfca9c63dd_wm.png
+[2025-07-11 23:02:20,848] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/7d726594c0944bb1b21591dfca9c63dd_wm.png
+[2025-07-11 23:02:20,849] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-11 23:02:20,849] [INFO] [routes.watermark_routes] Watermarked image saved successfully
+[2025-07-11 23:02:20,849] [INFO] [routes.watermark_routes] Starting upload of original and watermarked images to Pinata Cloud (IPFS)...
+[2025-07-11 23:02:20,849] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/original/7d726594c0944bb1b21591dfca9c63dd_orig.png to Pinata Cloud...
+[2025-07-11 23:02:22,299] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: QmbwkdnQTc7sGQG8hgxe2QBoordZtaMaEi9BPDKtjYbfTA
+[2025-07-11 23:02:22,299] [INFO] [routes.watermark_routes] Original image uploaded to Pinata. CID: QmbwkdnQTc7sGQG8hgxe2QBoordZtaMaEi9BPDKtjYbfTA
+[2025-07-11 23:02:22,299] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/watermarked/7d726594c0944bb1b21591dfca9c63dd_wm.png to Pinata Cloud...
+[2025-07-11 23:02:23,585] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: QmWBLYYLAod9BA24yPwP9cX9296ywnxDVEacx8cbutpX6Z
+[2025-07-11 23:02:23,585] [INFO] [routes.watermark_routes] Watermarked image uploaded to Pinata. CID: QmWBLYYLAod9BA24yPwP9cX9296ywnxDVEacx8cbutpX6Z
+[2025-07-11 23:02:23,586] [INFO] [routes.watermark_routes] IPFS upload step completed in 2.74 seconds.
+[2025-07-11 23:02:23,586] [INFO] [routes.watermark_routes] Original image SHA256 hash: a69166c9f6f2bd9983d8483d19273d5c2b89ef9dbaae76ae9be983c2147460e3
+[2025-07-11 23:02:23,586] [INFO] [routes.watermark_routes] Watermarked image SHA256 hash: 67fe12ee39b579f1da0efce0a08278f59d79067676a94bf719c6c887bcaa022e
+[2025-07-11 23:02:23,586] [INFO] [routes.watermark_routes] Combined message string: ss
+[2025-07-11 23:02:23,586] [INFO] [routes.watermark_routes] CRC value: 6220
+[2025-07-11 23:02:23,586] [INFO] [routes.watermark_routes] Parent hash (hex): 0000000000000000000000000000000000000000000000000000000000000000
+[2025-07-11 23:02:25,946] [ERROR] [__main__] Error in store_watermark_on_chain: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds'}
+Traceback (most recent call last):
+  File "/home/gowtham/dwt-watermarking/backend/utils/blockchain_utils.py", line 76, in store_watermark_on_chain
+    tx_hash = w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/eth/eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/_utils/validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds'}
+[2025-07-11 23:02:25,946] [INFO] [__main__] Error in store_watermark_on_chain: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds'}
+[2025-07-11 23:02:25,947] [INFO] [routes.watermark_routes] Logged watermark to blockchain. Tx hash: None
+[2025-07-11 23:02:25,947] [DEBUG] [routes.watermark_routes] Encoding watermarked image at /home/gowtham/dwt-watermarking/backend/uploads/watermarked/7d726594c0944bb1b21591dfca9c63dd_wm.png to base64
+[2025-07-11 23:02:25,947] [DEBUG] [utils.image_utils] Attempting to convert image to base64 from path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/7d726594c0944bb1b21591dfca9c63dd_wm.png
+[2025-07-11 23:02:25,947] [DEBUG] [utils.image_utils] Image successfully encoded to base64.
+[2025-07-11 23:02:25,947] [INFO] [routes.watermark_routes] Base64 encoding complete
+[2025-07-11 23:02:25,947] [INFO] [routes.watermark_routes] POST /watermark completed successfully
+[2025-07-11 23:02:25,948] [INFO] [__main__] App context teardown complete.
+[2025-07-11 23:02:25,948] [ERROR] [__main__] 127.0.0.1 - - [11/Jul/2025 23:02:25] "POST /watermark HTTP/1.1" 200 -
+[2025-07-11 23:11:10,281] [INFO] [__main__] Launching Flask server...
+[2025-07-11 23:11:10,281] [INFO] [__main__] Creating Flask app...
+[2025-07-11 23:11:10,282] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-11 23:11:10,284] [INFO] [__main__] b" * Serving Flask app 'app'"
+[2025-07-11 23:11:10,284] [INFO] [__main__] b' * Debug mode: on'
+[2025-07-11 23:11:10,290] [ERROR] [__main__] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-07-11 23:11:10,290] [ERROR] [__main__] [33mPress CTRL+C to quit[0m
+[2025-07-11 23:11:10,290] [ERROR] [__main__]  * Restarting with stat
+[2025-07-11 23:11:10,814] [INFO] [__main__] Launching Flask server...
+[2025-07-11 23:11:10,814] [INFO] [__main__] Creating Flask app...
+[2025-07-11 23:11:10,815] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-11 23:11:10,822] [ERROR] [__main__]  * Debugger is active!
+[2025-07-11 23:11:10,822] [ERROR] [__main__]  * Debugger PIN: 575-763-446
+[2025-07-11 23:11:40,851] [DEBUG] [__main__] Received a new request.
+[2025-07-11 23:11:40,851] [INFO] [routes.watermark_routes] POST /watermark called
+[2025-07-11 23:11:40,853] [DEBUG] [routes.watermark_routes] Received file: filename=Screenshot from 2025-07-08 13-10-19.png, content_type=image/png
+[2025-07-11 23:11:40,853] [DEBUG] [routes.watermark_routes] Received message of length 3 characters
+[2025-07-11 23:11:40,853] [DEBUG] [routes.watermark_routes] Loading original image from uploaded file
+[2025-07-11 23:11:40,853] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-11 23:11:40,860] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (384, 849, 3)
+[2025-07-11 23:11:40,860] [INFO] [routes.watermark_routes] Original image loaded: shape=(384, 849, 3), dtype=uint8
+[2025-07-11 23:11:40,860] [DEBUG] [routes.watermark_routes] Attempting to extract existing hash and messages for appending support
+[2025-07-11 23:11:40,899] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2025-07-11 23:11:40,899] [DEBUG] [core.dwt_engine] Total bits extracted: 326016
+[2025-07-11 23:11:40,900] [ERROR] [__main__] Invalid or out-of-bounds message length at cursor 256: 0. Stopping parse.
+[2025-07-11 23:11:40,900] [INFO] [routes.watermark_routes] Found existing watermark with 0 messages. Appending new message. Parent hash: 0000000000000000000000000000000000000000000000000000000000000000
+[2025-07-11 23:11:40,900] [INFO] [routes.watermark_routes] Total messages to embed: 1
+[2025-07-11 23:11:40,900] [DEBUG] [routes.watermark_routes] Preparing bitstream with SHA256 hash and multi-message framing
+[2025-07-11 23:11:40,901] [INFO] [routes.watermark_routes] Combined bitstream length: 296 bits
+[2025-07-11 23:11:40,901] [DEBUG] [routes.watermark_routes] Embedding combined bitstream into image via DWT parity
+[2025-07-11 23:11:40,914] [DEBUG] [core.dwt_engine] Embedding 296 bits in Y channel parity
+[2025-07-11 23:11:40,914] [DEBUG] [core.dwt_engine] Y-parity embed check: 296 bits embedded, 0 mismatches
+[2025-07-11 23:11:40,914] [WARNING] [core.dwt_engine] Resizing Cr from (384, 849) to (384, 850)
+[2025-07-11 23:11:40,915] [WARNING] [core.dwt_engine] Resizing Cb from (384, 849) to (384, 850)
+[2025-07-11 23:11:40,915] [INFO] [routes.watermark_routes] Embedding complete without mismatches
+[2025-07-11 23:11:40,915] [DEBUG] [routes.watermark_routes] Saving original image to /home/gowtham/dwt-watermarking/backend/uploads/original/ab5684047a654831bc3972d1aff1241a_orig.png
+[2025-07-11 23:11:40,916] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/original/ab5684047a654831bc3972d1aff1241a_orig.png
+[2025-07-11 23:11:40,919] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-11 23:11:40,919] [INFO] [routes.watermark_routes] Original image saved successfully
+[2025-07-11 23:11:40,919] [DEBUG] [routes.watermark_routes] Saving watermarked image to /home/gowtham/dwt-watermarking/backend/uploads/watermarked/ab5684047a654831bc3972d1aff1241a_wm.png
+[2025-07-11 23:11:40,919] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/ab5684047a654831bc3972d1aff1241a_wm.png
+[2025-07-11 23:11:40,923] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-11 23:11:40,923] [INFO] [routes.watermark_routes] Watermarked image saved successfully
+[2025-07-11 23:11:40,923] [INFO] [routes.watermark_routes] Starting upload of original and watermarked images to Pinata Cloud (IPFS)...
+[2025-07-11 23:11:40,923] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/original/ab5684047a654831bc3972d1aff1241a_orig.png to Pinata Cloud...
+[2025-07-11 23:11:43,900] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: QmNmbRMQRMEbSAHQjtRr4AWNQB8ALe8QyZk9htp3n7zQfn
+[2025-07-11 23:11:43,900] [INFO] [routes.watermark_routes] Original image uploaded to Pinata. CID: QmNmbRMQRMEbSAHQjtRr4AWNQB8ALe8QyZk9htp3n7zQfn
+[2025-07-11 23:11:43,900] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/watermarked/ab5684047a654831bc3972d1aff1241a_wm.png to Pinata Cloud...
+[2025-07-11 23:11:45,294] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: QmXiM12Lw7W4wT3vj3gQaWkfh5e3LYXJfg1f2RX3rjchfm
+[2025-07-11 23:11:45,294] [INFO] [routes.watermark_routes] Watermarked image uploaded to Pinata. CID: QmXiM12Lw7W4wT3vj3gQaWkfh5e3LYXJfg1f2RX3rjchfm
+[2025-07-11 23:11:45,294] [INFO] [routes.watermark_routes] IPFS upload step completed in 4.37 seconds.
+[2025-07-11 23:11:45,296] [INFO] [routes.watermark_routes] Original image SHA256 hash: 880f70eeefffd39cf558fb06e89c6512248a48e742d259ce64e551388f39cfd8
+[2025-07-11 23:11:45,296] [INFO] [routes.watermark_routes] Watermarked image SHA256 hash: 06d42880fa3310df49da09d8f5030d3a45614741ca7bd470403353be4e208754
+[2025-07-11 23:11:45,296] [INFO] [routes.watermark_routes] Combined message string: gdf
+[2025-07-11 23:11:45,297] [INFO] [routes.watermark_routes] CRC value: 28281
+[2025-07-11 23:11:45,297] [INFO] [routes.watermark_routes] Parent hash (hex): 0000000000000000000000000000000000000000000000000000000000000000
+[2025-07-11 23:11:47,550] [INFO] [__main__] Transaction sent. Hash: 0xb74ffe60620a46667bb8d92bb76d41aba47f2a264820767435beac14a54f8e88
+[2025-07-11 23:11:49,380] [INFO] [__main__] Transaction mined in block 23789192 with status 1
+[2025-07-11 23:11:49,380] [INFO] [routes.watermark_routes] Logged watermark to blockchain. Tx hash: 0xb74ffe60620a46667bb8d92bb76d41aba47f2a264820767435beac14a54f8e88
+[2025-07-11 23:11:49,380] [DEBUG] [routes.watermark_routes] Encoding watermarked image at /home/gowtham/dwt-watermarking/backend/uploads/watermarked/ab5684047a654831bc3972d1aff1241a_wm.png to base64
+[2025-07-11 23:11:49,380] [DEBUG] [utils.image_utils] Attempting to convert image to base64 from path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/ab5684047a654831bc3972d1aff1241a_wm.png
+[2025-07-11 23:11:49,380] [DEBUG] [utils.image_utils] Image successfully encoded to base64.
+[2025-07-11 23:11:49,380] [INFO] [routes.watermark_routes] Base64 encoding complete
+[2025-07-11 23:11:49,380] [INFO] [routes.watermark_routes] POST /watermark completed successfully
+[2025-07-11 23:11:49,383] [INFO] [__main__] App context teardown complete.
+[2025-07-11 23:11:49,383] [ERROR] [__main__] 127.0.0.1 - - [11/Jul/2025 23:11:49] "POST /watermark HTTP/1.1" 200 -
+[2025-07-11 23:12:00,098] [DEBUG] [__main__] Received a new request.
+[2025-07-11 23:12:00,098] [INFO] [routes.watermark_routes] POST /extract called
+[2025-07-11 23:12:00,099] [DEBUG] [routes.watermark_routes] Loading watermarked image: filename=ab5684047a654831bc3972d1aff1241a_wm.png
+[2025-07-11 23:12:00,099] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-11 23:12:00,105] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (384, 850, 3)
+[2025-07-11 23:12:00,105] [INFO] [routes.watermark_routes] Watermarked image loaded: shape=(384, 850, 3), dtype=uint8
+[2025-07-11 23:12:00,105] [DEBUG] [routes.watermark_routes] Extracting full parity bitstream via DWT engine
+[2025-07-11 23:12:00,144] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0]
+[2025-07-11 23:12:00,144] [DEBUG] [core.dwt_engine] Total bits extracted: 326400
+[2025-07-11 23:12:00,144] [INFO] [routes.watermark_routes] Extracted total bitstream length: 326400 bits
+[2025-07-11 23:12:00,144] [DEBUG] [routes.watermark_routes] First 32 bits of bitstream: [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0]
+[2025-07-11 23:12:00,144] [ERROR] [routes.watermark_routes] Invalid or out-of-bounds message length at cursor 296: 0. Stopping parse.
+[2025-07-11 23:12:00,144] [INFO] [routes.watermark_routes] Extracted SHA256 hash: 880f70eeefffd39cf558fb06e89c6512248a48e742d259ce64e551388f39cfd8
+[2025-07-11 23:12:01,136] [INFO] [routes.watermark_routes] Blockchain metadata found for hash 880f70eeefffd39cf558fb06e89c6512248a48e742d259ce64e551388f39cfd8. CRC match: True
+[2025-07-11 23:12:01,136] [INFO] [routes.watermark_routes] Extraction complete: 1 messages found
+[2025-07-11 23:12:01,137] [INFO] [__main__] App context teardown complete.
+[2025-07-11 23:12:01,137] [ERROR] [__main__] 127.0.0.1 - - [11/Jul/2025 23:12:01] "POST /extract HTTP/1.1" 200 -
+[2025-07-11 23:12:11,258] [DEBUG] [__main__] Received a new request.
+[2025-07-11 23:12:11,258] [INFO] [routes.watermark_routes] POST /watermark called
+[2025-07-11 23:12:11,259] [DEBUG] [routes.watermark_routes] Received file: filename=ab5684047a654831bc3972d1aff1241a_wm.png, content_type=image/png
+[2025-07-11 23:12:11,260] [DEBUG] [routes.watermark_routes] Received message of length 4 characters
+[2025-07-11 23:12:11,260] [DEBUG] [routes.watermark_routes] Loading original image from uploaded file
+[2025-07-11 23:12:11,260] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-11 23:12:11,264] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (384, 850, 3)
+[2025-07-11 23:12:11,264] [INFO] [routes.watermark_routes] Original image loaded: shape=(384, 850, 3), dtype=uint8
+[2025-07-11 23:12:11,264] [DEBUG] [routes.watermark_routes] Attempting to extract existing hash and messages for appending support
+[2025-07-11 23:12:11,308] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0]
+[2025-07-11 23:12:11,309] [DEBUG] [core.dwt_engine] Total bits extracted: 326400
+[2025-07-11 23:12:11,309] [ERROR] [__main__] Invalid or out-of-bounds message length at cursor 296: 0. Stopping parse.
+[2025-07-11 23:12:11,309] [INFO] [routes.watermark_routes] Found existing watermark with 1 messages. Appending new message. Parent hash: 880f70eeefffd39cf558fb06e89c6512248a48e742d259ce64e551388f39cfd8
+[2025-07-11 23:12:11,309] [INFO] [routes.watermark_routes] Total messages to embed: 2
+[2025-07-11 23:12:11,309] [DEBUG] [routes.watermark_routes] Preparing bitstream with SHA256 hash and multi-message framing
+[2025-07-11 23:12:11,310] [INFO] [routes.watermark_routes] Combined bitstream length: 344 bits
+[2025-07-11 23:12:11,310] [DEBUG] [routes.watermark_routes] Embedding combined bitstream into image via DWT parity
+[2025-07-11 23:12:11,317] [DEBUG] [core.dwt_engine] Embedding 344 bits in Y channel parity
+[2025-07-11 23:12:11,318] [DEBUG] [core.dwt_engine] Y-parity embed check: 344 bits embedded, 0 mismatches
+[2025-07-11 23:12:11,318] [INFO] [routes.watermark_routes] Embedding complete without mismatches
+[2025-07-11 23:12:11,318] [DEBUG] [routes.watermark_routes] Saving original image to /home/gowtham/dwt-watermarking/backend/uploads/original/e133956e318f4f26a8160deaa98897c8_orig.png
+[2025-07-11 23:12:11,318] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/original/e133956e318f4f26a8160deaa98897c8_orig.png
+[2025-07-11 23:12:11,321] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-11 23:12:11,321] [INFO] [routes.watermark_routes] Original image saved successfully
+[2025-07-11 23:12:11,321] [DEBUG] [routes.watermark_routes] Saving watermarked image to /home/gowtham/dwt-watermarking/backend/uploads/watermarked/e133956e318f4f26a8160deaa98897c8_wm.png
+[2025-07-11 23:12:11,321] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/e133956e318f4f26a8160deaa98897c8_wm.png
+[2025-07-11 23:12:11,325] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-11 23:12:11,325] [INFO] [routes.watermark_routes] Watermarked image saved successfully
+[2025-07-11 23:12:11,325] [INFO] [routes.watermark_routes] Starting upload of original and watermarked images to Pinata Cloud (IPFS)...
+[2025-07-11 23:12:11,325] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/original/e133956e318f4f26a8160deaa98897c8_orig.png to Pinata Cloud...
+[2025-07-11 23:12:12,749] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: QmXiM12Lw7W4wT3vj3gQaWkfh5e3LYXJfg1f2RX3rjchfm
+[2025-07-11 23:12:12,750] [INFO] [routes.watermark_routes] Original image uploaded to Pinata. CID: QmXiM12Lw7W4wT3vj3gQaWkfh5e3LYXJfg1f2RX3rjchfm
+[2025-07-11 23:12:12,750] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/watermarked/e133956e318f4f26a8160deaa98897c8_wm.png to Pinata Cloud...
+[2025-07-11 23:12:14,055] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: QmbDhWJHHMswrRxGeensvdMtYninX7uJDoD8TE483H4Cmo
+[2025-07-11 23:12:14,055] [INFO] [routes.watermark_routes] Watermarked image uploaded to Pinata. CID: QmbDhWJHHMswrRxGeensvdMtYninX7uJDoD8TE483H4Cmo
+[2025-07-11 23:12:14,056] [INFO] [routes.watermark_routes] IPFS upload step completed in 2.73 seconds.
+[2025-07-11 23:12:14,058] [INFO] [routes.watermark_routes] Original image SHA256 hash: 06d42880fa3310df49da09d8f5030d3a45614741ca7bd470403353be4e208754
+[2025-07-11 23:12:14,058] [INFO] [routes.watermark_routes] Watermarked image SHA256 hash: e6acb33af62e68cdd14cf1e451fad81e07ca402a0b921f0ddf342a865ef59031
+[2025-07-11 23:12:14,058] [INFO] [routes.watermark_routes] Combined message string: gdfhdfd
+[2025-07-11 23:12:14,058] [INFO] [routes.watermark_routes] CRC value: 47044
+[2025-07-11 23:12:14,058] [INFO] [routes.watermark_routes] Parent hash (hex): 0000000000000000000000000000000000000000000000000000000000000000
+[2025-07-11 23:12:16,229] [INFO] [__main__] Transaction sent. Hash: 0x6b47f6085250b0c90a37384c6e877e63be683d91c2a6226035df894b46b263bc
+[2025-07-11 23:12:17,598] [INFO] [__main__] Transaction mined in block 23789205 with status 1
+[2025-07-11 23:12:17,598] [INFO] [routes.watermark_routes] Logged watermark to blockchain. Tx hash: 0x6b47f6085250b0c90a37384c6e877e63be683d91c2a6226035df894b46b263bc
+[2025-07-11 23:12:17,598] [DEBUG] [routes.watermark_routes] Encoding watermarked image at /home/gowtham/dwt-watermarking/backend/uploads/watermarked/e133956e318f4f26a8160deaa98897c8_wm.png to base64
+[2025-07-11 23:12:17,598] [DEBUG] [utils.image_utils] Attempting to convert image to base64 from path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/e133956e318f4f26a8160deaa98897c8_wm.png
+[2025-07-11 23:12:17,598] [DEBUG] [utils.image_utils] Image successfully encoded to base64.
+[2025-07-11 23:12:17,598] [INFO] [routes.watermark_routes] Base64 encoding complete
+[2025-07-11 23:12:17,598] [INFO] [routes.watermark_routes] POST /watermark completed successfully
+[2025-07-11 23:12:17,599] [INFO] [__main__] App context teardown complete.
+[2025-07-11 23:12:17,600] [ERROR] [__main__] 127.0.0.1 - - [11/Jul/2025 23:12:17] "POST /watermark HTTP/1.1" 200 -
+[2025-07-11 23:51:09,498] [INFO] [__main__] Launching Flask server...
+[2025-07-11 23:51:09,498] [INFO] [__main__] Creating Flask app...
+[2025-07-11 23:51:09,499] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-11 23:51:09,500] [INFO] [__main__] b" * Serving Flask app 'app'"
+[2025-07-11 23:51:09,501] [INFO] [__main__] b' * Debug mode: on'
+[2025-07-11 23:51:09,507] [ERROR] [__main__] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-07-11 23:51:09,507] [ERROR] [__main__] [33mPress CTRL+C to quit[0m
+[2025-07-11 23:51:09,508] [ERROR] [__main__]  * Restarting with stat
+[2025-07-11 23:51:10,054] [INFO] [__main__] Launching Flask server...
+[2025-07-11 23:51:10,054] [INFO] [__main__] Creating Flask app...
+[2025-07-11 23:51:10,055] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-11 23:51:10,061] [ERROR] [__main__]  * Debugger is active!
+[2025-07-11 23:51:10,061] [ERROR] [__main__]  * Debugger PIN: 575-763-446
+[2025-07-11 23:55:38,943] [DEBUG] [__main__] Received a new request.
+[2025-07-11 23:55:38,944] [INFO] [routes.watermark_routes] POST /watermark called
+[2025-07-11 23:55:38,945] [DEBUG] [routes.watermark_routes] Received file: filename=Screenshot from 2025-07-05 16-10-46.png, content_type=image/png
+[2025-07-11 23:55:38,945] [DEBUG] [routes.watermark_routes] Received message of length 3 characters
+[2025-07-11 23:55:38,945] [DEBUG] [routes.watermark_routes] Loading original image from uploaded file
+[2025-07-11 23:55:38,946] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-11 23:55:38,961] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (931, 977, 3)
+[2025-07-11 23:55:38,961] [INFO] [routes.watermark_routes] Original image loaded: shape=(931, 977, 3), dtype=uint8
+[2025-07-11 23:55:38,961] [DEBUG] [routes.watermark_routes] Attempting to extract existing hash and messages for appending support
+[2025-07-11 23:55:39,065] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2025-07-11 23:55:39,065] [DEBUG] [core.dwt_engine] Total bits extracted: 909587
+[2025-07-11 23:55:39,066] [DEBUG] [routes.watermark_routes] Extracted 909587 bits from image for parent hash extraction.
+[2025-07-11 23:55:39,066] [ERROR] [__main__] Invalid or out-of-bounds message length at cursor 256: 0. Stopping parse.
+[2025-07-11 23:55:39,066] [DEBUG] [routes.watermark_routes] Parsed hash bits and found 0 existing messages.
+[2025-07-11 23:55:39,066] [INFO] [routes.watermark_routes] Extracted parent hash from image: 0000000000000000000000000000000000000000000000000000000000000000
+[2025-07-11 23:55:39,069] [INFO] [routes.watermark_routes] SHA256 of uploaded image: [1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0]
+[2025-07-11 23:55:39,069] [WARNING] [routes.watermark_routes] File-level chain broken: parent hash (0000000000000000000000000000000000000000000000000000000000000000) does not match uploaded image hash ([1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0]).
+[2025-07-11 23:55:39,073] [ERROR] [__main__] Error fetching watermark from chain: 
+ABI Not Found!
+Found 1 element(s) named `getWatermark` that accept 1 argument(s).
+The provided arguments are not valid.
+Provided argument types: (str)
+Provided keyword argument types: {}
+
+Tried to find a matching ABI element named `getWatermark`, but encountered the following problems:
+Signature: getWatermark(bytes32), type: function
+Argument 1 value `0000000000000000000000000000000000000000000000000000000000000000` is not compatible with type `bytes32`.
+Traceback (most recent call last):
+  File "/home/gowtham/dwt-watermarking/backend/utils/blockchain_utils.py", line 97, in get_watermark_from_chain
+    entry = contract.functions.getWatermark(original_hash).call()
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/contract/base_contract.py", line 855, in __call__
+    raise MismatchedABI(
+web3.exceptions.MismatchedABI: 
+ABI Not Found!
+Found 1 element(s) named `getWatermark` that accept 1 argument(s).
+The provided arguments are not valid.
+Provided argument types: (str)
+Provided keyword argument types: {}
+
+Tried to find a matching ABI element named `getWatermark`, but encountered the following problems:
+Signature: getWatermark(bytes32), type: function
+Argument 1 value `0000000000000000000000000000000000000000000000000000000000000000` is not compatible with type `bytes32`.
+[2025-07-11 23:55:39,073] [WARNING] [routes.watermark_routes] Blockchain chain broken: no watermark record found for parent hash 0000000000000000000000000000000000000000000000000000000000000000.
+[2025-07-11 23:55:39,073] [INFO] [routes.watermark_routes] Total messages to embed: 1
+[2025-07-11 23:55:39,073] [DEBUG] [routes.watermark_routes] Preparing bitstream with SHA256 hash and multi-message framing
+[2025-07-11 23:55:39,075] [INFO] [routes.watermark_routes] Combined bitstream length: 296 bits
+[2025-07-11 23:55:39,075] [DEBUG] [routes.watermark_routes] Embedding combined bitstream into image via DWT parity
+[2025-07-11 23:55:39,112] [DEBUG] [core.dwt_engine] Embedding 296 bits in Y channel parity
+[2025-07-11 23:55:39,112] [DEBUG] [core.dwt_engine] Y-parity embed check: 296 bits embedded, 0 mismatches
+[2025-07-11 23:55:39,112] [WARNING] [core.dwt_engine] Resizing Cr from (931, 977) to (932, 978)
+[2025-07-11 23:55:39,112] [WARNING] [core.dwt_engine] Resizing Cb from (931, 977) to (932, 978)
+[2025-07-11 23:55:39,114] [INFO] [routes.watermark_routes] Embedding complete without mismatches
+[2025-07-11 23:55:39,114] [DEBUG] [routes.watermark_routes] Saving original image to /home/gowtham/dwt-watermarking/backend/uploads/original/0d1bcca0f3bf42fa9afa7c554c9fc7a9_orig.png
+[2025-07-11 23:55:39,114] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/original/0d1bcca0f3bf42fa9afa7c554c9fc7a9_orig.png
+[2025-07-11 23:55:39,122] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-11 23:55:39,123] [INFO] [routes.watermark_routes] Original image saved successfully
+[2025-07-11 23:55:39,123] [DEBUG] [routes.watermark_routes] Saving watermarked image to /home/gowtham/dwt-watermarking/backend/uploads/watermarked/0d1bcca0f3bf42fa9afa7c554c9fc7a9_wm.png
+[2025-07-11 23:55:39,123] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/0d1bcca0f3bf42fa9afa7c554c9fc7a9_wm.png
+[2025-07-11 23:55:39,132] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-11 23:55:39,132] [INFO] [routes.watermark_routes] Watermarked image saved successfully
+[2025-07-11 23:55:39,132] [INFO] [routes.watermark_routes] Starting upload of original and watermarked images to Pinata Cloud (IPFS)...
+[2025-07-11 23:55:39,132] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/original/0d1bcca0f3bf42fa9afa7c554c9fc7a9_orig.png to Pinata Cloud...
+[2025-07-11 23:55:42,164] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: QmTsWHjhEh793ECnmZs1AdsHSs47xDMBfDnnZA4zf49R2T
+[2025-07-11 23:55:42,164] [INFO] [routes.watermark_routes] Original image uploaded to Pinata. CID: QmTsWHjhEh793ECnmZs1AdsHSs47xDMBfDnnZA4zf49R2T
+[2025-07-11 23:55:42,164] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/watermarked/0d1bcca0f3bf42fa9afa7c554c9fc7a9_wm.png to Pinata Cloud...
+[2025-07-11 23:55:44,135] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: QmU7asxgMQRqopMBwutd5AQc6T39FjTmxiX87x4VfpbhHJ
+[2025-07-11 23:55:44,135] [INFO] [routes.watermark_routes] Watermarked image uploaded to Pinata. CID: QmU7asxgMQRqopMBwutd5AQc6T39FjTmxiX87x4VfpbhHJ
+[2025-07-11 23:55:44,135] [INFO] [routes.watermark_routes] IPFS upload step completed in 5.00 seconds.
+[2025-07-11 23:55:44,139] [INFO] [routes.watermark_routes] Original image SHA256 hash: 8b0588afc788e859365830e77bd63a012de06acce7a455b27a94fb164815dd0c
+[2025-07-11 23:55:44,139] [INFO] [routes.watermark_routes] Watermarked image SHA256 hash: 9cb0b4ff16e696109c5e934e062014df9b40efd19ecc6ab44289fbc174aad427
+[2025-07-11 23:55:44,139] [INFO] [routes.watermark_routes] Combined message string: gff
+[2025-07-11 23:55:44,139] [INFO] [routes.watermark_routes] CRC value: 3323
+[2025-07-11 23:55:44,139] [INFO] [routes.watermark_routes] Parent hash (hex): 0000000000000000000000000000000000000000000000000000000000000000
+[2025-07-11 23:55:46,380] [INFO] [__main__] Transaction sent. Hash: 0x518ecb7762141d92539e1282b94ab40ff4d3b918c5aac4d98e2a48e257285c3f
+[2025-07-11 23:55:47,745] [INFO] [__main__] Transaction mined in block 23790433 with status 1
+[2025-07-11 23:55:47,745] [INFO] [routes.watermark_routes] Logged watermark to blockchain. Tx hash: 0x518ecb7762141d92539e1282b94ab40ff4d3b918c5aac4d98e2a48e257285c3f
+[2025-07-11 23:55:47,745] [DEBUG] [routes.watermark_routes] Encoding watermarked image at /home/gowtham/dwt-watermarking/backend/uploads/watermarked/0d1bcca0f3bf42fa9afa7c554c9fc7a9_wm.png to base64
+[2025-07-11 23:55:47,746] [DEBUG] [utils.image_utils] Attempting to convert image to base64 from path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/0d1bcca0f3bf42fa9afa7c554c9fc7a9_wm.png
+[2025-07-11 23:55:47,746] [DEBUG] [utils.image_utils] Image successfully encoded to base64.
+[2025-07-11 23:55:47,746] [INFO] [routes.watermark_routes] Base64 encoding complete
+[2025-07-11 23:55:47,746] [INFO] [routes.watermark_routes] POST /watermark completed successfully
+[2025-07-11 23:55:47,753] [INFO] [__main__] App context teardown complete.
+[2025-07-11 23:55:47,753] [ERROR] [__main__] 127.0.0.1 - - [11/Jul/2025 23:55:47] "POST /watermark HTTP/1.1" 200 -
+[2025-07-11 23:55:57,200] [INFO] [__main__] Launching Flask server...
+[2025-07-11 23:55:57,200] [INFO] [__main__] Creating Flask app...
+[2025-07-11 23:55:57,201] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-11 23:55:57,202] [INFO] [__main__] b" * Serving Flask app 'app'"
+[2025-07-11 23:55:57,202] [INFO] [__main__] b' * Debug mode: on'
+[2025-07-11 23:55:57,208] [ERROR] [__main__] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-07-11 23:55:57,208] [ERROR] [__main__] [33mPress CTRL+C to quit[0m
+[2025-07-11 23:55:57,209] [ERROR] [__main__]  * Restarting with stat
+[2025-07-11 23:55:57,769] [INFO] [__main__] Launching Flask server...
+[2025-07-11 23:55:57,769] [INFO] [__main__] Creating Flask app...
+[2025-07-11 23:55:57,770] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-11 23:55:57,776] [ERROR] [__main__]  * Debugger is active!
+[2025-07-11 23:55:57,777] [ERROR] [__main__]  * Debugger PIN: 575-763-446
+[2025-07-11 23:56:12,150] [DEBUG] [__main__] Received a new request.
+[2025-07-11 23:56:12,151] [INFO] [routes.watermark_routes] POST /watermark called
+[2025-07-11 23:56:12,152] [DEBUG] [routes.watermark_routes] Received file: filename=Screenshot from 2025-07-08 13-12-19.png, content_type=image/png
+[2025-07-11 23:56:12,152] [DEBUG] [routes.watermark_routes] Received message of length 3 characters
+[2025-07-11 23:56:12,153] [DEBUG] [routes.watermark_routes] Loading original image from uploaded file
+[2025-07-11 23:56:12,153] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-11 23:56:12,159] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (675, 408, 3)
+[2025-07-11 23:56:12,159] [INFO] [routes.watermark_routes] Original image loaded: shape=(675, 408, 3), dtype=uint8
+[2025-07-11 23:56:12,159] [DEBUG] [routes.watermark_routes] Attempting to extract existing hash and messages for appending support
+[2025-07-11 23:56:12,193] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2025-07-11 23:56:12,193] [DEBUG] [core.dwt_engine] Total bits extracted: 275400
+[2025-07-11 23:56:12,193] [DEBUG] [routes.watermark_routes] Extracted 275400 bits from image for parent hash extraction.
+[2025-07-11 23:56:12,193] [ERROR] [__main__] Invalid or out-of-bounds message length at cursor 256: 0. Stopping parse.
+[2025-07-11 23:56:12,193] [DEBUG] [routes.watermark_routes] Parsed hash bits and found 0 existing messages.
+[2025-07-11 23:56:12,194] [INFO] [routes.watermark_routes] Extracted parent hash from image: 0000000000000000000000000000000000000000000000000000000000000000
+[2025-07-11 23:56:12,194] [INFO] [routes.watermark_routes] SHA256 of uploaded image: [0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1]
+[2025-07-11 23:56:12,194] [WARNING] [routes.watermark_routes] File-level chain broken: parent hash (0000000000000000000000000000000000000000000000000000000000000000) does not match uploaded image hash ([0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1]).
+[2025-07-11 23:56:12,196] [ERROR] [__main__] Error fetching watermark from chain: 
+ABI Not Found!
+Found 1 element(s) named `getWatermark` that accept 1 argument(s).
+The provided arguments are not valid.
+Provided argument types: (str)
+Provided keyword argument types: {}
+
+Tried to find a matching ABI element named `getWatermark`, but encountered the following problems:
+Signature: getWatermark(bytes32), type: function
+Argument 1 value `0000000000000000000000000000000000000000000000000000000000000000` is not compatible with type `bytes32`.
+Traceback (most recent call last):
+  File "/home/gowtham/dwt-watermarking/backend/utils/blockchain_utils.py", line 97, in get_watermark_from_chain
+    entry = contract.functions.getWatermark(original_hash).call()
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/contract/base_contract.py", line 855, in __call__
+    raise MismatchedABI(
+web3.exceptions.MismatchedABI: 
+ABI Not Found!
+Found 1 element(s) named `getWatermark` that accept 1 argument(s).
+The provided arguments are not valid.
+Provided argument types: (str)
+Provided keyword argument types: {}
+
+Tried to find a matching ABI element named `getWatermark`, but encountered the following problems:
+Signature: getWatermark(bytes32), type: function
+Argument 1 value `0000000000000000000000000000000000000000000000000000000000000000` is not compatible with type `bytes32`.
+[2025-07-11 23:56:12,196] [WARNING] [routes.watermark_routes] Blockchain chain broken: no watermark record found for parent hash 0000000000000000000000000000000000000000000000000000000000000000.
+[2025-07-11 23:56:12,196] [INFO] [routes.watermark_routes] Total messages to embed: 1
+[2025-07-11 23:56:12,196] [DEBUG] [routes.watermark_routes] Preparing bitstream with SHA256 hash and multi-message framing
+[2025-07-11 23:56:12,197] [INFO] [routes.watermark_routes] Combined bitstream length: 296 bits
+[2025-07-11 23:56:12,197] [DEBUG] [routes.watermark_routes] Embedding combined bitstream into image via DWT parity
+[2025-07-11 23:56:12,208] [DEBUG] [core.dwt_engine] Embedding 296 bits in Y channel parity
+[2025-07-11 23:56:12,208] [DEBUG] [core.dwt_engine] Y-parity embed check: 296 bits embedded, 0 mismatches
+[2025-07-11 23:56:12,208] [WARNING] [core.dwt_engine] Resizing Cr from (675, 408) to (676, 408)
+[2025-07-11 23:56:12,209] [WARNING] [core.dwt_engine] Resizing Cb from (675, 408) to (676, 408)
+[2025-07-11 23:56:12,209] [INFO] [routes.watermark_routes] Embedding complete without mismatches
+[2025-07-11 23:56:12,209] [DEBUG] [routes.watermark_routes] Saving original image to /home/gowtham/dwt-watermarking/backend/uploads/original/59739f2e32444ce19e1c8fdbe0a16e61_orig.png
+[2025-07-11 23:56:12,209] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/original/59739f2e32444ce19e1c8fdbe0a16e61_orig.png
+[2025-07-11 23:56:12,213] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-11 23:56:12,213] [INFO] [routes.watermark_routes] Original image saved successfully
+[2025-07-11 23:56:12,213] [DEBUG] [routes.watermark_routes] Saving watermarked image to /home/gowtham/dwt-watermarking/backend/uploads/watermarked/59739f2e32444ce19e1c8fdbe0a16e61_wm.png
+[2025-07-11 23:56:12,213] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/59739f2e32444ce19e1c8fdbe0a16e61_wm.png
+[2025-07-11 23:56:12,217] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-11 23:56:12,217] [INFO] [routes.watermark_routes] Watermarked image saved successfully
+[2025-07-11 23:56:12,217] [INFO] [routes.watermark_routes] Starting upload of original and watermarked images to Pinata Cloud (IPFS)...
+[2025-07-11 23:56:12,217] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/original/59739f2e32444ce19e1c8fdbe0a16e61_orig.png to Pinata Cloud...
+[2025-07-11 23:56:13,644] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: QmUTp5itjm4yJa3YchQ37qTwbRwb5pJRx56V6LPxSobBBs
+[2025-07-11 23:56:13,645] [INFO] [routes.watermark_routes] Original image uploaded to Pinata. CID: QmUTp5itjm4yJa3YchQ37qTwbRwb5pJRx56V6LPxSobBBs
+[2025-07-11 23:56:13,645] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/watermarked/59739f2e32444ce19e1c8fdbe0a16e61_wm.png to Pinata Cloud...
+[2025-07-11 23:56:15,007] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: QmPLkvM8AzdZGWhbJW2qUnji4P5PznZxCbeNcEZxL82bhJ
+[2025-07-11 23:56:15,008] [INFO] [routes.watermark_routes] Watermarked image uploaded to Pinata. CID: QmPLkvM8AzdZGWhbJW2qUnji4P5PznZxCbeNcEZxL82bhJ
+[2025-07-11 23:56:15,008] [INFO] [routes.watermark_routes] IPFS upload step completed in 2.79 seconds.
+[2025-07-11 23:56:15,010] [INFO] [routes.watermark_routes] Original image SHA256 hash: 58730a98b23b3442d4224d7d7431e0b66555c71d380323e6b464247cc760f42b
+[2025-07-11 23:56:15,010] [INFO] [routes.watermark_routes] Watermarked image SHA256 hash: 14de45415be21c60da3230fdf3d77293a27af0c339996389e0f107bbc6c7cb54
+[2025-07-11 23:56:15,010] [INFO] [routes.watermark_routes] Combined message string: gff
+[2025-07-11 23:56:15,010] [INFO] [routes.watermark_routes] CRC value: 3323
+[2025-07-11 23:56:15,010] [INFO] [routes.watermark_routes] Parent hash (hex): 0000000000000000000000000000000000000000000000000000000000000000
+[2025-07-11 23:56:17,399] [INFO] [__main__] Transaction sent. Hash: 0xe532d87462f98147fd8c3d33019d2d21cf76eccde1e4ba26caddf2b8e0ee3c80
+[2025-07-11 23:56:19,733] [INFO] [__main__] Transaction mined in block 23790448 with status 1
+[2025-07-11 23:56:19,733] [INFO] [routes.watermark_routes] Logged watermark to blockchain. Tx hash: 0xe532d87462f98147fd8c3d33019d2d21cf76eccde1e4ba26caddf2b8e0ee3c80
+[2025-07-11 23:56:19,733] [DEBUG] [routes.watermark_routes] Encoding watermarked image at /home/gowtham/dwt-watermarking/backend/uploads/watermarked/59739f2e32444ce19e1c8fdbe0a16e61_wm.png to base64
+[2025-07-11 23:56:19,734] [DEBUG] [utils.image_utils] Attempting to convert image to base64 from path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/59739f2e32444ce19e1c8fdbe0a16e61_wm.png
+[2025-07-11 23:56:19,734] [DEBUG] [utils.image_utils] Image successfully encoded to base64.
+[2025-07-11 23:56:19,734] [INFO] [routes.watermark_routes] Base64 encoding complete
+[2025-07-11 23:56:19,734] [INFO] [routes.watermark_routes] POST /watermark completed successfully
+[2025-07-11 23:56:19,736] [INFO] [__main__] App context teardown complete.
+[2025-07-11 23:56:19,737] [ERROR] [__main__] 127.0.0.1 - - [11/Jul/2025 23:56:19] "POST /watermark HTTP/1.1" 200 -
+[2025-07-11 23:58:03,938] [INFO] [__main__] Launching Flask server...
+[2025-07-11 23:58:03,938] [INFO] [__main__] Creating Flask app...
+[2025-07-11 23:58:03,939] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-11 23:58:03,940] [INFO] [__main__] b" * Serving Flask app 'app'"
+[2025-07-11 23:58:03,940] [INFO] [__main__] b' * Debug mode: on'
+[2025-07-11 23:58:03,946] [ERROR] [__main__] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-07-11 23:58:03,946] [ERROR] [__main__] [33mPress CTRL+C to quit[0m
+[2025-07-11 23:58:03,946] [ERROR] [__main__]  * Restarting with stat
+[2025-07-11 23:58:04,481] [INFO] [__main__] Launching Flask server...
+[2025-07-11 23:58:04,481] [INFO] [__main__] Creating Flask app...
+[2025-07-11 23:58:04,482] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-11 23:58:04,488] [ERROR] [__main__]  * Debugger is active!
+[2025-07-11 23:58:04,489] [ERROR] [__main__]  * Debugger PIN: 575-763-446
+[2025-07-11 23:58:15,956] [DEBUG] [__main__] Received a new request.
+[2025-07-11 23:58:15,956] [INFO] [routes.watermark_routes] POST /watermark called
+[2025-07-11 23:58:15,960] [DEBUG] [routes.watermark_routes] Received file: filename=Screenshot from 2025-07-10 18-51-41.png, content_type=image/png
+[2025-07-11 23:58:15,960] [DEBUG] [routes.watermark_routes] Received message of length 4 characters
+[2025-07-11 23:58:15,960] [DEBUG] [routes.watermark_routes] Loading original image from uploaded file
+[2025-07-11 23:58:15,961] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-11 23:58:15,998] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (1080, 1920, 3)
+[2025-07-11 23:58:15,998] [INFO] [routes.watermark_routes] Original image loaded: shape=(1080, 1920, 3), dtype=uint8
+[2025-07-11 23:58:15,998] [DEBUG] [routes.watermark_routes] Attempting to extract existing hash and messages for appending support
+[2025-07-11 23:58:16,232] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+[2025-07-11 23:58:16,232] [DEBUG] [core.dwt_engine] Total bits extracted: 2073600
+[2025-07-11 23:58:16,233] [DEBUG] [routes.watermark_routes] Extracted 2073600 bits from image for parent hash extraction.
+[2025-07-11 23:58:16,233] [ERROR] [__main__] Invalid or out-of-bounds message length at cursor 256: 65535. Stopping parse.
+[2025-07-11 23:58:16,233] [DEBUG] [routes.watermark_routes] Parsed hash bits and found 0 existing messages.
+[2025-07-11 23:58:16,233] [INFO] [routes.watermark_routes] Extracted parent hash from image: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+[2025-07-11 23:58:16,238] [INFO] [routes.watermark_routes] SHA256 of uploaded image: [0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1]
+[2025-07-11 23:58:16,238] [WARNING] [routes.watermark_routes] File-level chain broken: parent hash (ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff) does not match uploaded image hash ([0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1]).
+[2025-07-11 23:58:17,304] [ERROR] [__main__] Error fetching watermark from chain: ('execution reverted: Watermark not found', '0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001357617465726d61726b206e6f7420666f756e6400000000000000000000000000')
+Traceback (most recent call last):
+  File "/home/gowtham/dwt-watermarking/backend/utils/blockchain_utils.py", line 102, in get_watermark_from_chain
+    entry = contract.functions.getWatermark(parent_hash_bytes).call()
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/contract/contract.py", line 291, in call
+    return call_contract_function(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/contract/utils.py", line 153, in call_contract_function
+    return_data = w3.eth.call(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/eth/eth.py", line 247, in call
+    return self._durin_call(transaction, block_identifier, state_override)
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/eth/eth.py", line 266, in _durin_call
+    return self._call(transaction, block_identifier, state_override)
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/_utils/validation.py", line 397, in validate_rpc_response_and_raise_if_error
+    response = apply_error_formatters(error_formatters, response)
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/_utils/formatters.py", line 146, in apply_error_formatters
+    formatted_resp = pipe(response, error_formatters)
+  File "cytoolz/functoolz.pyx", line 685, in cytoolz.functoolz.pipe
+  File "cytoolz/functoolz.pyx", line 660, in cytoolz.functoolz.c_pipe
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/_utils/error_formatters_utils.py", line 166, in raise_contract_logic_error_on_revert
+    raise ContractLogicError(message, data=data)
+web3.exceptions.ContractLogicError: ('execution reverted: Watermark not found', '0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001357617465726d61726b206e6f7420666f756e6400000000000000000000000000')
+[2025-07-11 23:58:17,304] [WARNING] [routes.watermark_routes] Blockchain chain broken: no watermark record found for parent hash ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff.
+[2025-07-11 23:58:17,304] [INFO] [routes.watermark_routes] Total messages to embed: 1
+[2025-07-11 23:58:17,304] [DEBUG] [routes.watermark_routes] Preparing bitstream with SHA256 hash and multi-message framing
+[2025-07-11 23:58:17,310] [INFO] [routes.watermark_routes] Combined bitstream length: 304 bits
+[2025-07-11 23:58:17,310] [DEBUG] [routes.watermark_routes] Embedding combined bitstream into image via DWT parity
+[2025-07-11 23:58:17,382] [DEBUG] [core.dwt_engine] Embedding 304 bits in Y channel parity
+[2025-07-11 23:58:17,382] [DEBUG] [core.dwt_engine] Y-parity embed check: 304 bits embedded, 0 mismatches
+[2025-07-11 23:58:17,383] [INFO] [routes.watermark_routes] Embedding complete without mismatches
+[2025-07-11 23:58:17,384] [DEBUG] [routes.watermark_routes] Saving original image to /home/gowtham/dwt-watermarking/backend/uploads/original/1491cb7b3b7947b4a7b4f589a003487e_orig.png
+[2025-07-11 23:58:17,384] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/original/1491cb7b3b7947b4a7b4f589a003487e_orig.png
+[2025-07-11 23:58:17,410] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-11 23:58:17,410] [INFO] [routes.watermark_routes] Original image saved successfully
+[2025-07-11 23:58:17,410] [DEBUG] [routes.watermark_routes] Saving watermarked image to /home/gowtham/dwt-watermarking/backend/uploads/watermarked/1491cb7b3b7947b4a7b4f589a003487e_wm.png
+[2025-07-11 23:58:17,411] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/1491cb7b3b7947b4a7b4f589a003487e_wm.png
+[2025-07-11 23:58:17,435] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-11 23:58:17,435] [INFO] [routes.watermark_routes] Watermarked image saved successfully
+[2025-07-11 23:58:17,435] [INFO] [routes.watermark_routes] Starting upload of original and watermarked images to Pinata Cloud (IPFS)...
+[2025-07-11 23:58:17,435] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/original/1491cb7b3b7947b4a7b4f589a003487e_orig.png to Pinata Cloud...
+[2025-07-11 23:58:20,303] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: QmdmZrT7gGt8MXAc3a5MVJEAUnf4W9wNsh8LMWUq8SZz3h
+[2025-07-11 23:58:20,303] [INFO] [routes.watermark_routes] Original image uploaded to Pinata. CID: QmdmZrT7gGt8MXAc3a5MVJEAUnf4W9wNsh8LMWUq8SZz3h
+[2025-07-11 23:58:20,303] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/watermarked/1491cb7b3b7947b4a7b4f589a003487e_wm.png to Pinata Cloud...
+[2025-07-11 23:58:22,873] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: QmfBGNgVYvTAbtwv6sjzHiUEwaCZtD79wezq1sAUBCstSr
+[2025-07-11 23:58:22,873] [INFO] [routes.watermark_routes] Watermarked image uploaded to Pinata. CID: QmfBGNgVYvTAbtwv6sjzHiUEwaCZtD79wezq1sAUBCstSr
+[2025-07-11 23:58:22,874] [INFO] [routes.watermark_routes] IPFS upload step completed in 5.44 seconds.
+[2025-07-11 23:58:22,881] [INFO] [routes.watermark_routes] Original image SHA256 hash: 7b41679df661f724b35dafbb3adca2ba7d323e9eb0a4e2c0b316372ba22e54a3
+[2025-07-11 23:58:22,881] [INFO] [routes.watermark_routes] Watermarked image SHA256 hash: 0708b406cc29b7e53171d2afd10dc5244ae7171ad2cc9bef4e175ae71e6b858e
+[2025-07-11 23:58:22,881] [INFO] [routes.watermark_routes] Combined message string: hjjj
+[2025-07-11 23:58:22,881] [INFO] [routes.watermark_routes] CRC value: 17773
+[2025-07-11 23:58:22,881] [INFO] [routes.watermark_routes] Parent hash (hex): 0000000000000000000000000000000000000000000000000000000000000000
+[2025-07-11 23:58:25,125] [INFO] [__main__] Transaction sent. Hash: 0x59c5e96412985eed34e7fe742710473b9e705255942a415a1dbeb7b51f730ced
+[2025-07-11 23:58:25,533] [INFO] [__main__] Transaction mined in block 23790508 with status 1
+[2025-07-11 23:58:25,533] [INFO] [routes.watermark_routes] Logged watermark to blockchain. Tx hash: 0x59c5e96412985eed34e7fe742710473b9e705255942a415a1dbeb7b51f730ced
+[2025-07-11 23:58:25,533] [DEBUG] [routes.watermark_routes] Encoding watermarked image at /home/gowtham/dwt-watermarking/backend/uploads/watermarked/1491cb7b3b7947b4a7b4f589a003487e_wm.png to base64
+[2025-07-11 23:58:25,533] [DEBUG] [utils.image_utils] Attempting to convert image to base64 from path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/1491cb7b3b7947b4a7b4f589a003487e_wm.png
+[2025-07-11 23:58:25,535] [DEBUG] [utils.image_utils] Image successfully encoded to base64.
+[2025-07-11 23:58:25,535] [INFO] [routes.watermark_routes] Base64 encoding complete
+[2025-07-11 23:58:25,535] [INFO] [routes.watermark_routes] POST /watermark completed successfully
+[2025-07-11 23:58:25,548] [INFO] [__main__] App context teardown complete.
+[2025-07-11 23:58:25,549] [ERROR] [__main__] 127.0.0.1 - - [11/Jul/2025 23:58:25] "POST /watermark HTTP/1.1" 200 -
+[2025-07-11 23:59:46,601] [INFO] [__main__] Launching Flask server...
+[2025-07-11 23:59:46,601] [INFO] [__main__] Creating Flask app...
+[2025-07-11 23:59:46,602] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-11 23:59:46,603] [INFO] [__main__] b" * Serving Flask app 'app'"
+[2025-07-11 23:59:46,603] [INFO] [__main__] b' * Debug mode: on'
+[2025-07-11 23:59:46,609] [ERROR] [__main__] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-07-11 23:59:46,609] [ERROR] [__main__] [33mPress CTRL+C to quit[0m
+[2025-07-11 23:59:46,610] [ERROR] [__main__]  * Restarting with stat
+[2025-07-11 23:59:47,144] [INFO] [__main__] Launching Flask server...
+[2025-07-11 23:59:47,144] [INFO] [__main__] Creating Flask app...
+[2025-07-11 23:59:47,145] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-11 23:59:47,151] [ERROR] [__main__]  * Debugger is active!
+[2025-07-11 23:59:47,151] [ERROR] [__main__]  * Debugger PIN: 575-763-446
+[2025-07-12 00:00:00,837] [DEBUG] [__main__] Received a new request.
+[2025-07-12 00:00:00,837] [INFO] [routes.watermark_routes] POST /watermark called
+[2025-07-12 00:00:00,839] [DEBUG] [routes.watermark_routes] Received file: filename=Screenshot from 2025-07-09 20-04-39.png, content_type=image/png
+[2025-07-12 00:00:00,839] [DEBUG] [routes.watermark_routes] Received message of length 3 characters
+[2025-07-12 00:00:00,839] [DEBUG] [routes.watermark_routes] Loading original image from uploaded file
+[2025-07-12 00:00:00,839] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-12 00:00:00,847] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (301, 1296, 3)
+[2025-07-12 00:00:00,848] [INFO] [routes.watermark_routes] Original image loaded: shape=(301, 1296, 3), dtype=uint8
+[2025-07-12 00:00:00,848] [DEBUG] [routes.watermark_routes] Attempting to extract existing hash and messages for appending support
+[2025-07-12 00:00:00,896] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2025-07-12 00:00:00,896] [DEBUG] [core.dwt_engine] Total bits extracted: 390096
+[2025-07-12 00:00:00,897] [DEBUG] [routes.watermark_routes] Extracted 390096 bits from image for parent hash extraction.
+[2025-07-12 00:00:00,897] [ERROR] [__main__] Invalid or out-of-bounds message length at cursor 256: 0. Stopping parse.
+[2025-07-12 00:00:00,897] [DEBUG] [routes.watermark_routes] Parsed hash bits and found 0 existing messages.
+[2025-07-12 00:00:00,897] [INFO] [routes.watermark_routes] Extracted parent hash from image: 0000000000000000000000000000000000000000000000000000000000000000
+[2025-07-12 00:00:00,898] [INFO] [routes.watermark_routes] SHA256 of uploaded image: [0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0]
+[2025-07-12 00:00:00,898] [WARNING] [routes.watermark_routes] File-level chain broken: parent hash (0000000000000000000000000000000000000000000000000000000000000000) does not match uploaded image hash ([0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0]).
+[2025-07-12 00:00:01,981] [ERROR] [__main__] Error fetching watermark from chain: ('execution reverted: Watermark not found', '0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001357617465726d61726b206e6f7420666f756e6400000000000000000000000000')
+Traceback (most recent call last):
+  File "/home/gowtham/dwt-watermarking/backend/utils/blockchain_utils.py", line 102, in get_watermark_from_chain
+    entry = contract.functions.getWatermark(parent_hash_bytes).call()
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/contract/contract.py", line 291, in call
+    return call_contract_function(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/contract/utils.py", line 153, in call_contract_function
+    return_data = w3.eth.call(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/eth/eth.py", line 247, in call
+    return self._durin_call(transaction, block_identifier, state_override)
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/eth/eth.py", line 266, in _durin_call
+    return self._call(transaction, block_identifier, state_override)
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/_utils/validation.py", line 397, in validate_rpc_response_and_raise_if_error
+    response = apply_error_formatters(error_formatters, response)
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/_utils/formatters.py", line 146, in apply_error_formatters
+    formatted_resp = pipe(response, error_formatters)
+  File "cytoolz/functoolz.pyx", line 685, in cytoolz.functoolz.pipe
+  File "cytoolz/functoolz.pyx", line 660, in cytoolz.functoolz.c_pipe
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/_utils/error_formatters_utils.py", line 166, in raise_contract_logic_error_on_revert
+    raise ContractLogicError(message, data=data)
+web3.exceptions.ContractLogicError: ('execution reverted: Watermark not found', '0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001357617465726d61726b206e6f7420666f756e6400000000000000000000000000')
+[2025-07-12 00:00:01,981] [WARNING] [routes.watermark_routes] Blockchain chain broken: no watermark record found for parent hash 0000000000000000000000000000000000000000000000000000000000000000.
+[2025-07-12 00:00:01,981] [INFO] [routes.watermark_routes] Total messages to embed: 1
+[2025-07-12 00:00:01,981] [DEBUG] [routes.watermark_routes] Preparing bitstream with SHA256 hash and multi-message framing
+[2025-07-12 00:00:01,982] [INFO] [routes.watermark_routes] Combined bitstream length: 296 bits
+[2025-07-12 00:00:01,982] [DEBUG] [routes.watermark_routes] Embedding combined bitstream into image via DWT parity
+[2025-07-12 00:00:02,002] [DEBUG] [core.dwt_engine] Embedding 296 bits in Y channel parity
+[2025-07-12 00:00:02,003] [DEBUG] [core.dwt_engine] Y-parity embed check: 296 bits embedded, 0 mismatches
+[2025-07-12 00:00:02,003] [WARNING] [core.dwt_engine] Resizing Cr from (301, 1296) to (302, 1296)
+[2025-07-12 00:00:02,003] [WARNING] [core.dwt_engine] Resizing Cb from (301, 1296) to (302, 1296)
+[2025-07-12 00:00:02,003] [INFO] [routes.watermark_routes] Embedding complete without mismatches
+[2025-07-12 00:00:02,004] [DEBUG] [routes.watermark_routes] Saving original image to /home/gowtham/dwt-watermarking/backend/uploads/original/d13a5181737844049f329a7171b4f7f7_orig.png
+[2025-07-12 00:00:02,004] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/original/d13a5181737844049f329a7171b4f7f7_orig.png
+[2025-07-12 00:00:02,008] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-12 00:00:02,008] [INFO] [routes.watermark_routes] Original image saved successfully
+[2025-07-12 00:00:02,008] [DEBUG] [routes.watermark_routes] Saving watermarked image to /home/gowtham/dwt-watermarking/backend/uploads/watermarked/d13a5181737844049f329a7171b4f7f7_wm.png
+[2025-07-12 00:00:02,009] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/d13a5181737844049f329a7171b4f7f7_wm.png
+[2025-07-12 00:00:02,013] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-12 00:00:02,013] [INFO] [routes.watermark_routes] Watermarked image saved successfully
+[2025-07-12 00:00:02,013] [INFO] [routes.watermark_routes] Starting upload of original and watermarked images to Pinata Cloud (IPFS)...
+[2025-07-12 00:00:02,013] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/original/d13a5181737844049f329a7171b4f7f7_orig.png to Pinata Cloud...
+[2025-07-12 00:00:03,816] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: QmWSXrBHP7pfUcaT29sV1SQJWMrevsPxD5ngPiQppc4ZWh
+[2025-07-12 00:00:03,823] [INFO] [routes.watermark_routes] Original image uploaded to Pinata. CID: QmWSXrBHP7pfUcaT29sV1SQJWMrevsPxD5ngPiQppc4ZWh
+[2025-07-12 00:00:03,823] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/watermarked/d13a5181737844049f329a7171b4f7f7_wm.png to Pinata Cloud...
+[2025-07-12 00:00:05,524] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: QmQpcstBr3k5yZH2vQyZ8YCaN215abxLyFyYAqNj6v4E93
+[2025-07-12 00:00:05,524] [INFO] [routes.watermark_routes] Watermarked image uploaded to Pinata. CID: QmQpcstBr3k5yZH2vQyZ8YCaN215abxLyFyYAqNj6v4E93
+[2025-07-12 00:00:05,524] [INFO] [routes.watermark_routes] IPFS upload step completed in 3.51 seconds.
+[2025-07-12 00:00:05,527] [INFO] [routes.watermark_routes] Original image SHA256 hash: 15f43d934b7b9b8f0166d10aa9563e442f6698340aa880ac817c61722224a654
+[2025-07-12 00:00:05,527] [INFO] [routes.watermark_routes] Watermarked image SHA256 hash: cccffaa9256556a0f2916c71d0293a38b05b0aaa8c338bf6aca6c763c96b5255
+[2025-07-12 00:00:05,527] [INFO] [routes.watermark_routes] Combined message string: sds
+[2025-07-12 00:00:05,527] [INFO] [routes.watermark_routes] CRC value: 33086
+[2025-07-12 00:00:05,527] [INFO] [routes.watermark_routes] Parent hash (hex): 0000000000000000000000000000000000000000000000000000000000000000
+[2025-07-12 00:00:07,710] [INFO] [__main__] Transaction sent. Hash: 0x7b34a6b93b2873513a0aaf025e27421bfb7dcff4bd98f9ba4eddb13c1d5d82c0
+[2025-07-12 00:00:09,624] [INFO] [__main__] Transaction mined in block 23790557 with status 1
+[2025-07-12 00:00:09,624] [INFO] [routes.watermark_routes] Logged watermark to blockchain. Tx hash: 0x7b34a6b93b2873513a0aaf025e27421bfb7dcff4bd98f9ba4eddb13c1d5d82c0
+[2025-07-12 00:00:09,624] [DEBUG] [routes.watermark_routes] Encoding watermarked image at /home/gowtham/dwt-watermarking/backend/uploads/watermarked/d13a5181737844049f329a7171b4f7f7_wm.png to base64
+[2025-07-12 00:00:09,625] [DEBUG] [utils.image_utils] Attempting to convert image to base64 from path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/d13a5181737844049f329a7171b4f7f7_wm.png
+[2025-07-12 00:00:09,625] [DEBUG] [utils.image_utils] Image successfully encoded to base64.
+[2025-07-12 00:00:09,625] [INFO] [routes.watermark_routes] Base64 encoding complete
+[2025-07-12 00:00:09,625] [INFO] [routes.watermark_routes] POST /watermark completed successfully
+[2025-07-12 00:00:09,628] [INFO] [__main__] App context teardown complete.
+[2025-07-12 00:00:09,628] [ERROR] [__main__] 127.0.0.1 - - [12/Jul/2025 00:00:09] "POST /watermark HTTP/1.1" 200 -
+[2025-07-12 00:01:32,236] [INFO] [__main__] Launching Flask server...
+[2025-07-12 00:01:32,236] [INFO] [__main__] Creating Flask app...
+[2025-07-12 00:01:32,237] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-12 00:01:32,239] [INFO] [__main__] b" * Serving Flask app 'app'"
+[2025-07-12 00:01:32,239] [INFO] [__main__] b' * Debug mode: on'
+[2025-07-12 00:01:32,245] [ERROR] [__main__] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-07-12 00:01:32,245] [ERROR] [__main__] [33mPress CTRL+C to quit[0m
+[2025-07-12 00:01:32,246] [ERROR] [__main__]  * Restarting with stat
+[2025-07-12 00:01:32,785] [INFO] [__main__] Launching Flask server...
+[2025-07-12 00:01:32,786] [INFO] [__main__] Creating Flask app...
+[2025-07-12 00:01:32,786] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-12 00:01:32,794] [ERROR] [__main__]  * Debugger is active!
+[2025-07-12 00:01:32,794] [ERROR] [__main__]  * Debugger PIN: 575-763-446
+[2025-07-12 00:01:37,116] [DEBUG] [__main__] Received a new request.
+[2025-07-12 00:01:37,116] [INFO] [routes.watermark_routes] POST /extract called
+[2025-07-12 00:01:37,118] [DEBUG] [routes.watermark_routes] Loading watermarked image: filename=d13a5181737844049f329a7171b4f7f7_wm.png
+[2025-07-12 00:01:37,118] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-12 00:01:37,122] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (302, 1296, 3)
+[2025-07-12 00:01:37,123] [INFO] [routes.watermark_routes] Watermarked image loaded: shape=(302, 1296, 3), dtype=uint8
+[2025-07-12 00:01:37,123] [DEBUG] [routes.watermark_routes] Extracting full parity bitstream via DWT engine
+[2025-07-12 00:01:37,172] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1]
+[2025-07-12 00:01:37,172] [DEBUG] [core.dwt_engine] Total bits extracted: 391392
+[2025-07-12 00:01:37,172] [INFO] [routes.watermark_routes] Extracted total bitstream length: 391392 bits
+[2025-07-12 00:01:37,172] [DEBUG] [routes.watermark_routes] First 32 bits of bitstream: [0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1]
+[2025-07-12 00:01:37,172] [ERROR] [routes.watermark_routes] Invalid or out-of-bounds message length at cursor 296: 0. Stopping parse.
+[2025-07-12 00:01:37,172] [INFO] [routes.watermark_routes] Extracted SHA256 hash: 15f43d934b7b9b8f0166d10aa9563e442f6698340aa880ac817c61722224a654
+[2025-07-12 00:01:38,195] [INFO] [routes.watermark_routes] Blockchain metadata found for hash 15f43d934b7b9b8f0166d10aa9563e442f6698340aa880ac817c61722224a654. CRC match: True
+[2025-07-12 00:01:38,195] [INFO] [routes.watermark_routes] Extraction complete: 1 messages found
+[2025-07-12 00:01:38,197] [INFO] [__main__] App context teardown complete.
+[2025-07-12 00:01:38,198] [ERROR] [__main__] 127.0.0.1 - - [12/Jul/2025 00:01:38] "POST /extract HTTP/1.1" 200 -
+[2025-07-12 00:01:44,477] [DEBUG] [__main__] Received a new request.
+[2025-07-12 00:01:44,477] [INFO] [routes.watermark_routes] POST /watermark called
+[2025-07-12 00:01:44,479] [DEBUG] [routes.watermark_routes] Received file: filename=d13a5181737844049f329a7171b4f7f7_wm.png, content_type=image/png
+[2025-07-12 00:01:44,479] [DEBUG] [routes.watermark_routes] Received message of length 3 characters
+[2025-07-12 00:01:44,479] [DEBUG] [routes.watermark_routes] Loading original image from uploaded file
+[2025-07-12 00:01:44,479] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-12 00:01:44,486] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (302, 1296, 3)
+[2025-07-12 00:01:44,486] [INFO] [routes.watermark_routes] Original image loaded: shape=(302, 1296, 3), dtype=uint8
+[2025-07-12 00:01:44,486] [DEBUG] [routes.watermark_routes] Attempting to extract existing hash and messages for appending support
+[2025-07-12 00:01:44,542] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1]
+[2025-07-12 00:01:44,543] [DEBUG] [core.dwt_engine] Total bits extracted: 391392
+[2025-07-12 00:01:44,543] [DEBUG] [routes.watermark_routes] Extracted 391392 bits from image for parent hash extraction.
+[2025-07-12 00:01:44,543] [ERROR] [__main__] Invalid or out-of-bounds message length at cursor 296: 0. Stopping parse.
+[2025-07-12 00:01:44,543] [DEBUG] [routes.watermark_routes] Parsed hash bits and found 1 existing messages.
+[2025-07-12 00:01:44,543] [INFO] [routes.watermark_routes] Extracted parent hash from image: 15f43d934b7b9b8f0166d10aa9563e442f6698340aa880ac817c61722224a654
+[2025-07-12 00:01:44,544] [INFO] [routes.watermark_routes] SHA256 of uploaded image: [1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1]
+[2025-07-12 00:01:44,544] [WARNING] [routes.watermark_routes] File-level chain broken: parent hash (15f43d934b7b9b8f0166d10aa9563e442f6698340aa880ac817c61722224a654) does not match uploaded image hash ([1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1]).
+[2025-07-12 00:01:45,619] [INFO] [routes.watermark_routes] Blockchain chain intact: found watermark record for parent hash 15f43d934b7b9b8f0166d10aa9563e442f6698340aa880ac817c61722224a654.
+[2025-07-12 00:01:45,619] [INFO] [routes.watermark_routes] Total messages to embed: 2
+[2025-07-12 00:01:45,619] [DEBUG] [routes.watermark_routes] Preparing bitstream with SHA256 hash and multi-message framing
+[2025-07-12 00:01:45,620] [INFO] [routes.watermark_routes] Combined bitstream length: 336 bits
+[2025-07-12 00:01:45,620] [DEBUG] [routes.watermark_routes] Embedding combined bitstream into image via DWT parity
+[2025-07-12 00:01:45,631] [DEBUG] [core.dwt_engine] Embedding 336 bits in Y channel parity
+[2025-07-12 00:01:45,631] [DEBUG] [core.dwt_engine] Y-parity embed check: 336 bits embedded, 0 mismatches
+[2025-07-12 00:01:45,631] [INFO] [routes.watermark_routes] Embedding complete without mismatches
+[2025-07-12 00:01:45,632] [DEBUG] [routes.watermark_routes] Saving original image to /home/gowtham/dwt-watermarking/backend/uploads/original/f3cfe9456c7841dcb70d08f2c2a60937_orig.png
+[2025-07-12 00:01:45,632] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/original/f3cfe9456c7841dcb70d08f2c2a60937_orig.png
+[2025-07-12 00:01:45,635] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-12 00:01:45,635] [INFO] [routes.watermark_routes] Original image saved successfully
+[2025-07-12 00:01:45,636] [DEBUG] [routes.watermark_routes] Saving watermarked image to /home/gowtham/dwt-watermarking/backend/uploads/watermarked/f3cfe9456c7841dcb70d08f2c2a60937_wm.png
+[2025-07-12 00:01:45,636] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/f3cfe9456c7841dcb70d08f2c2a60937_wm.png
+[2025-07-12 00:01:45,639] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-12 00:01:45,639] [INFO] [routes.watermark_routes] Watermarked image saved successfully
+[2025-07-12 00:01:45,639] [INFO] [routes.watermark_routes] Starting upload of original and watermarked images to Pinata Cloud (IPFS)...
+[2025-07-12 00:01:45,639] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/original/f3cfe9456c7841dcb70d08f2c2a60937_orig.png to Pinata Cloud...
+[2025-07-12 00:01:47,417] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: QmQpcstBr3k5yZH2vQyZ8YCaN215abxLyFyYAqNj6v4E93
+[2025-07-12 00:01:47,417] [INFO] [routes.watermark_routes] Original image uploaded to Pinata. CID: QmQpcstBr3k5yZH2vQyZ8YCaN215abxLyFyYAqNj6v4E93
+[2025-07-12 00:01:47,417] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/watermarked/f3cfe9456c7841dcb70d08f2c2a60937_wm.png to Pinata Cloud...
+[2025-07-12 00:01:49,089] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: QmbcAbRz3x6j9PaLaFfGGvnWM5NRMRvev1f9yBHWgvvSKk
+[2025-07-12 00:01:49,090] [INFO] [routes.watermark_routes] Watermarked image uploaded to Pinata. CID: QmbcAbRz3x6j9PaLaFfGGvnWM5NRMRvev1f9yBHWgvvSKk
+[2025-07-12 00:01:49,090] [INFO] [routes.watermark_routes] IPFS upload step completed in 3.45 seconds.
+[2025-07-12 00:01:49,092] [INFO] [routes.watermark_routes] Original image SHA256 hash: cccffaa9256556a0f2916c71d0293a38b05b0aaa8c338bf6aca6c763c96b5255
+[2025-07-12 00:01:49,092] [INFO] [routes.watermark_routes] Watermarked image SHA256 hash: 64d9f5915d2835bae3df62cc418569f2b9aff2047574c1db7a91009b6972df46
+[2025-07-12 00:01:49,092] [INFO] [routes.watermark_routes] Combined message string: sdssds
+[2025-07-12 00:01:49,092] [INFO] [routes.watermark_routes] CRC value: 22559
+[2025-07-12 00:01:49,092] [INFO] [routes.watermark_routes] Parent hash (hex): 0000000000000000000000000000000000000000000000000000000000000000
+[2025-07-12 00:01:51,500] [INFO] [__main__] Transaction sent. Hash: 0xf90f58dc07bda5cfe2463d2c0d100d7a813072bdaabfb4d5e8f6799d518c64f4
+[2025-07-12 00:01:53,432] [INFO] [__main__] Transaction mined in block 23790606 with status 1
+[2025-07-12 00:01:53,433] [INFO] [routes.watermark_routes] Logged watermark to blockchain. Tx hash: 0xf90f58dc07bda5cfe2463d2c0d100d7a813072bdaabfb4d5e8f6799d518c64f4
+[2025-07-12 00:01:53,433] [DEBUG] [routes.watermark_routes] Encoding watermarked image at /home/gowtham/dwt-watermarking/backend/uploads/watermarked/f3cfe9456c7841dcb70d08f2c2a60937_wm.png to base64
+[2025-07-12 00:01:53,433] [DEBUG] [utils.image_utils] Attempting to convert image to base64 from path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/f3cfe9456c7841dcb70d08f2c2a60937_wm.png
+[2025-07-12 00:01:53,433] [DEBUG] [utils.image_utils] Image successfully encoded to base64.
+[2025-07-12 00:01:53,433] [INFO] [routes.watermark_routes] Base64 encoding complete
+[2025-07-12 00:01:53,433] [INFO] [routes.watermark_routes] POST /watermark completed successfully
+[2025-07-12 00:01:53,434] [INFO] [__main__] App context teardown complete.
+[2025-07-12 00:01:53,435] [ERROR] [__main__] 127.0.0.1 - - [12/Jul/2025 00:01:53] "POST /watermark HTTP/1.1" 200 -
+[2025-07-12 10:06:04,456] [INFO] [app] Syntax OK
+[2025-07-12 10:06:45,320] [INFO] [__main__] Launching Flask server...
+[2025-07-12 10:06:45,320] [INFO] [__main__] Creating Flask app...
+[2025-07-12 10:06:45,321] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-12 10:06:45,322] [INFO] [__main__] b" * Serving Flask app 'app'"
+[2025-07-12 10:06:45,322] [INFO] [__main__] b' * Debug mode: on'
+[2025-07-12 10:06:45,342] [ERROR] [__main__] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-07-12 10:06:45,342] [ERROR] [__main__] [33mPress CTRL+C to quit[0m
+[2025-07-12 10:06:45,343] [ERROR] [__main__]  * Restarting with stat
+[2025-07-12 10:06:45,914] [INFO] [__main__] Launching Flask server...
+[2025-07-12 10:06:45,914] [INFO] [__main__] Creating Flask app...
+[2025-07-12 10:06:45,915] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-12 10:06:45,923] [ERROR] [__main__]  * Debugger is active!
+[2025-07-12 10:06:46,005] [ERROR] [__main__]  * Debugger PIN: 939-065-228
+[2025-07-12 10:06:57,969] [INFO] [__main__] Launching Flask server...
+[2025-07-12 10:06:57,969] [INFO] [__main__] Creating Flask app...
+[2025-07-12 10:06:57,970] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-12 10:06:57,972] [INFO] [__main__] b" * Serving Flask app 'app'"
+[2025-07-12 10:06:57,972] [INFO] [__main__] b' * Debug mode: on'
+[2025-07-12 10:06:57,978] [ERROR] [__main__] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-07-12 10:06:57,978] [ERROR] [__main__] [33mPress CTRL+C to quit[0m
+[2025-07-12 10:06:57,978] [ERROR] [__main__]  * Restarting with stat
+[2025-07-12 10:06:58,548] [INFO] [__main__] Launching Flask server...
+[2025-07-12 10:06:58,548] [INFO] [__main__] Creating Flask app...
+[2025-07-12 10:06:58,549] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-12 10:06:58,557] [ERROR] [__main__]  * Debugger is active!
+[2025-07-12 10:06:58,558] [ERROR] [__main__]  * Debugger PIN: 939-065-228
+[2025-07-12 10:08:17,732] [INFO] [__main__] Launching Flask server...
+[2025-07-12 10:08:17,733] [INFO] [__main__] Creating Flask app...
+[2025-07-12 10:08:17,733] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-12 10:08:17,735] [INFO] [__main__] b" * Serving Flask app 'app'"
+[2025-07-12 10:08:17,735] [INFO] [__main__] b' * Debug mode: on'
+[2025-07-12 10:08:17,742] [ERROR] [__main__] Address already in use
+[2025-07-12 10:08:17,742] [ERROR] [__main__] Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+[2025-07-12 10:08:38,340] [INFO] [__main__] Launching Flask server...
+[2025-07-12 10:08:38,340] [INFO] [__main__] Creating Flask app...
+[2025-07-12 10:08:38,341] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-12 10:08:38,343] [INFO] [__main__] b" * Serving Flask app 'app'"
+[2025-07-12 10:08:38,343] [INFO] [__main__] b' * Debug mode: on'
+[2025-07-12 10:08:38,350] [ERROR] [__main__] Address already in use
+[2025-07-12 10:08:38,350] [ERROR] [__main__] Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+[2025-07-12 10:08:40,488] [INFO] [__main__] Launching Flask server...
+[2025-07-12 10:08:40,489] [INFO] [__main__] Creating Flask app...
+[2025-07-12 10:08:40,489] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-12 10:08:40,491] [INFO] [__main__] b" * Serving Flask app 'app'"
+[2025-07-12 10:08:40,491] [INFO] [__main__] b' * Debug mode: on'
+[2025-07-12 10:08:40,498] [ERROR] [__main__] Address already in use
+[2025-07-12 10:08:40,498] [ERROR] [__main__] Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+[2025-07-12 10:10:29,380] [INFO] [__main__] Launching Flask server...
+[2025-07-12 10:10:29,380] [INFO] [__main__] Creating Flask app...
+[2025-07-12 10:10:29,381] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-12 10:10:29,383] [INFO] [__main__] b" * Serving Flask app 'app'"
+[2025-07-12 10:10:29,383] [INFO] [__main__] b' * Debug mode: on'
+[2025-07-12 10:10:29,389] [ERROR] [__main__] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-07-12 10:10:29,389] [ERROR] [__main__] [33mPress CTRL+C to quit[0m
+[2025-07-12 10:10:29,390] [ERROR] [__main__]  * Restarting with stat
+[2025-07-12 10:10:29,995] [INFO] [__main__] Launching Flask server...
+[2025-07-12 10:10:29,995] [INFO] [__main__] Creating Flask app...
+[2025-07-12 10:10:29,996] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-12 10:10:30,004] [ERROR] [__main__]  * Debugger is active!
+[2025-07-12 10:10:30,004] [ERROR] [__main__]  * Debugger PIN: 939-065-228
+[2025-07-12 10:12:53,265] [INFO] [__main__] Launching Flask server...
+[2025-07-12 10:12:53,265] [INFO] [__main__] Creating Flask app...
+[2025-07-12 10:12:53,266] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-12 10:12:53,267] [INFO] [__main__] b" * Serving Flask app 'app'"
+[2025-07-12 10:12:53,267] [INFO] [__main__] b' * Debug mode: on'
+[2025-07-12 10:12:53,273] [ERROR] [__main__] Address already in use
+[2025-07-12 10:12:53,273] [ERROR] [__main__] Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+[2025-07-12 10:13:41,444] [INFO] [__main__] Launching Flask server...
+[2025-07-12 10:13:41,445] [INFO] [__main__] Creating Flask app...
+[2025-07-12 10:13:41,445] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-12 10:13:41,447] [INFO] [__main__] b" * Serving Flask app 'app'"
+[2025-07-12 10:13:41,447] [INFO] [__main__] b' * Debug mode: on'
+[2025-07-12 10:13:41,452] [ERROR] [__main__] Address already in use
+[2025-07-12 10:13:41,452] [ERROR] [__main__] Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+[2025-07-12 10:14:53,671] [INFO] [__main__] Launching Flask server...
+[2025-07-12 10:14:53,672] [INFO] [__main__] Creating Flask app...
+[2025-07-12 10:14:53,672] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-12 10:14:53,674] [INFO] [__main__] b" * Serving Flask app 'app'"
+[2025-07-12 10:14:53,674] [INFO] [__main__] b' * Debug mode: on'
+[2025-07-12 10:14:53,680] [ERROR] [__main__] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-07-12 10:14:53,680] [ERROR] [__main__] [33mPress CTRL+C to quit[0m
+[2025-07-12 10:14:53,681] [ERROR] [__main__]  * Restarting with stat
+[2025-07-12 10:14:54,202] [INFO] [__main__] Launching Flask server...
+[2025-07-12 10:14:54,202] [INFO] [__main__] Creating Flask app...
+[2025-07-12 10:14:54,203] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-12 10:14:54,209] [ERROR] [__main__]  * Debugger is active!
+[2025-07-12 10:14:54,210] [ERROR] [__main__]  * Debugger PIN: 939-065-228
+[2025-07-12 10:15:26,992] [DEBUG] [__main__] Received a new request.
+[2025-07-12 10:15:26,992] [INFO] [routes.watermark_routes] POST /watermark called
+[2025-07-12 10:15:26,994] [DEBUG] [routes.watermark_routes] Received file: filename=Screenshot from 2025-07-08 13-37-32.png, content_type=image/png
+[2025-07-12 10:15:26,994] [DEBUG] [routes.watermark_routes] Received message of length 2 characters
+[2025-07-12 10:15:26,994] [DEBUG] [routes.watermark_routes] Loading original image from uploaded file
+[2025-07-12 10:15:26,994] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-12 10:15:27,009] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (613, 264, 3)
+[2025-07-12 10:15:27,009] [INFO] [routes.watermark_routes] Original image loaded: shape=(613, 264, 3), dtype=uint8
+[2025-07-12 10:15:27,009] [DEBUG] [routes.watermark_routes] Attempting to extract existing hash and messages for appending support
+[2025-07-12 10:15:27,033] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2025-07-12 10:15:27,034] [DEBUG] [core.dwt_engine] Total bits extracted: 161832
+[2025-07-12 10:15:27,034] [DEBUG] [routes.watermark_routes] Extracted 161832 bits from image for parent hash extraction.
+[2025-07-12 10:15:27,034] [ERROR] [__main__] Invalid or out-of-bounds message length at cursor 256: 18372. Stopping parse.
+[2025-07-12 10:15:27,034] [DEBUG] [routes.watermark_routes] Detected format: hash_based, found 0 existing messages.
+[2025-07-12 10:15:27,034] [INFO] [routes.watermark_routes] Extracted parent hash from image: c400000000000000000000000000000000000000000000000000000000000000
+[2025-07-12 10:15:27,035] [INFO] [routes.watermark_routes] SHA256 of uploaded image: [0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1]
+[2025-07-12 10:15:27,035] [WARNING] [routes.watermark_routes] File-level chain broken: parent hash (c400000000000000000000000000000000000000000000000000000000000000) does not match uploaded image hash ([0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1]).
+[2025-07-12 10:15:28,170] [ERROR] [__main__] Error fetching watermark from chain: ('execution reverted: Watermark not found', '0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001357617465726d61726b206e6f7420666f756e6400000000000000000000000000')
+Traceback (most recent call last):
+  File "/home/gowtham/dwt-watermarking/backend/utils/blockchain_utils.py", line 102, in get_watermark_from_chain
+    entry = contract.functions.getWatermark(parent_hash_bytes).call()
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/contract/contract.py", line 291, in call
+    return call_contract_function(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/contract/utils.py", line 153, in call_contract_function
+    return_data = w3.eth.call(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/eth/eth.py", line 247, in call
+    return self._durin_call(transaction, block_identifier, state_override)
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/eth/eth.py", line 266, in _durin_call
+    return self._call(transaction, block_identifier, state_override)
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/_utils/validation.py", line 397, in validate_rpc_response_and_raise_if_error
+    response = apply_error_formatters(error_formatters, response)
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/_utils/formatters.py", line 146, in apply_error_formatters
+    formatted_resp = pipe(response, error_formatters)
+  File "cytoolz/functoolz.pyx", line 685, in cytoolz.functoolz.pipe
+  File "cytoolz/functoolz.pyx", line 660, in cytoolz.functoolz.c_pipe
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/_utils/error_formatters_utils.py", line 166, in raise_contract_logic_error_on_revert
+    raise ContractLogicError(message, data=data)
+web3.exceptions.ContractLogicError: ('execution reverted: Watermark not found', '0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001357617465726d61726b206e6f7420666f756e6400000000000000000000000000')
+[2025-07-12 10:15:28,170] [WARNING] [routes.watermark_routes] Blockchain chain broken: no watermark record found for parent hash c400000000000000000000000000000000000000000000000000000000000000.
+[2025-07-12 10:15:28,170] [INFO] [routes.watermark_routes] Total messages to embed: 1
+[2025-07-12 10:15:28,170] [DEBUG] [routes.watermark_routes] Preparing bitstream with SHA256 hash and multi-message framing
+[2025-07-12 10:15:28,171] [INFO] [routes.watermark_routes] Combined bitstream length: 288 bits
+[2025-07-12 10:15:28,171] [DEBUG] [routes.watermark_routes] Embedding combined bitstream into image via DWT parity
+[2025-07-12 10:15:28,179] [DEBUG] [core.dwt_engine] Embedding 288 bits in Y channel parity
+[2025-07-12 10:15:28,179] [DEBUG] [core.dwt_engine] Y-parity embed check: 288 bits embedded, 0 mismatches
+[2025-07-12 10:15:28,179] [WARNING] [core.dwt_engine] Resizing Cr from (613, 264) to (614, 264)
+[2025-07-12 10:15:28,180] [WARNING] [core.dwt_engine] Resizing Cb from (613, 264) to (614, 264)
+[2025-07-12 10:15:28,180] [INFO] [routes.watermark_routes] Embedding complete without mismatches
+[2025-07-12 10:15:28,181] [DEBUG] [routes.watermark_routes] Saving original image to /home/gowtham/dwt-watermarking/backend/uploads/original/46d68e19e863486b9134b113f3007c1c_orig.png
+[2025-07-12 10:15:28,181] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/original/46d68e19e863486b9134b113f3007c1c_orig.png
+[2025-07-12 10:15:28,183] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-12 10:15:28,184] [INFO] [routes.watermark_routes] Original image saved successfully
+[2025-07-12 10:15:28,184] [DEBUG] [routes.watermark_routes] Saving watermarked image to /home/gowtham/dwt-watermarking/backend/uploads/watermarked/46d68e19e863486b9134b113f3007c1c_wm.png
+[2025-07-12 10:15:28,184] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/46d68e19e863486b9134b113f3007c1c_wm.png
+[2025-07-12 10:15:28,186] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-12 10:15:28,186] [INFO] [routes.watermark_routes] Watermarked image saved successfully
+[2025-07-12 10:15:28,186] [INFO] [routes.watermark_routes] Starting upload of original and watermarked images to Pinata Cloud (IPFS)...
+[2025-07-12 10:15:28,186] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/original/46d68e19e863486b9134b113f3007c1c_orig.png to Pinata Cloud...
+[2025-07-12 10:15:30,340] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: QmdiK6XFBV3PkTsaWz9Wxqv8U2mfe4LonZnmgnBjhZgbVz
+[2025-07-12 10:15:30,340] [INFO] [routes.watermark_routes] Original image uploaded to Pinata. CID: QmdiK6XFBV3PkTsaWz9Wxqv8U2mfe4LonZnmgnBjhZgbVz
+[2025-07-12 10:15:30,341] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/watermarked/46d68e19e863486b9134b113f3007c1c_wm.png to Pinata Cloud...
+[2025-07-12 10:15:32,093] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: Qmd1g5rdqWqXt635QEKkZoQQw7m3yf3m3HsoWqARF6d8Yc
+[2025-07-12 10:15:32,094] [INFO] [routes.watermark_routes] Watermarked image uploaded to Pinata. CID: Qmd1g5rdqWqXt635QEKkZoQQw7m3yf3m3HsoWqARF6d8Yc
+[2025-07-12 10:15:32,094] [INFO] [routes.watermark_routes] IPFS upload step completed in 3.91 seconds.
+[2025-07-12 10:15:32,095] [INFO] [routes.watermark_routes] Original image SHA256 hash: 584e62afd3fa7e302b6c7ff60d0b27e499f20062a08b75b3441cef52de70c42d
+[2025-07-12 10:15:32,095] [INFO] [routes.watermark_routes] Watermarked image SHA256 hash: ca30ed963b7f9a9c913ae7ca2f62d04e807a74ab2457af32b2a9795b1c5672cb
+[2025-07-12 10:15:32,095] [INFO] [routes.watermark_routes] Combined message string: ss
+[2025-07-12 10:15:32,095] [INFO] [routes.watermark_routes] CRC value: 6220
+[2025-07-12 10:15:32,095] [INFO] [routes.watermark_routes] Using extracted parent hash: c400000000000000000000000000000000000000000000000000000000000000
+[2025-07-12 10:15:34,325] [ERROR] [__main__] Error in store_watermark_on_chain: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds'}
+Traceback (most recent call last):
+  File "/home/gowtham/dwt-watermarking/backend/utils/blockchain_utils.py", line 76, in store_watermark_on_chain
+    tx_hash = w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/eth/eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/_utils/validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds'}
+[2025-07-12 10:15:34,325] [INFO] [__main__] Error in store_watermark_on_chain: {'code': -32000, 'message': 'INTERNAL_ERROR: insufficient funds'}
+[2025-07-12 10:15:34,325] [INFO] [routes.watermark_routes] Logged watermark to blockchain. Tx hash: None
+[2025-07-12 10:15:34,325] [DEBUG] [routes.watermark_routes] Encoding watermarked image at /home/gowtham/dwt-watermarking/backend/uploads/watermarked/46d68e19e863486b9134b113f3007c1c_wm.png to base64
+[2025-07-12 10:15:34,325] [DEBUG] [utils.image_utils] Attempting to convert image to base64 from path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/46d68e19e863486b9134b113f3007c1c_wm.png
+[2025-07-12 10:15:34,326] [DEBUG] [utils.image_utils] Image successfully encoded to base64.
+[2025-07-12 10:15:34,326] [INFO] [routes.watermark_routes] Base64 encoding complete
+[2025-07-12 10:15:34,326] [INFO] [routes.watermark_routes] POST /watermark completed successfully
+[2025-07-12 10:15:34,327] [INFO] [__main__] App context teardown complete.
+[2025-07-12 10:15:34,327] [ERROR] [__main__] 127.0.0.1 - - [12/Jul/2025 10:15:34] "POST /watermark HTTP/1.1" 200 -
+[2025-07-12 10:17:20,521] [INFO] [__main__] Launching Flask server...
+[2025-07-12 10:17:20,521] [INFO] [__main__] Creating Flask app...
+[2025-07-12 10:17:20,522] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-12 10:17:20,524] [INFO] [__main__] b" * Serving Flask app 'app'"
+[2025-07-12 10:17:20,524] [INFO] [__main__] b' * Debug mode: on'
+[2025-07-12 10:17:20,530] [ERROR] [__main__] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-07-12 10:17:20,530] [ERROR] [__main__] [33mPress CTRL+C to quit[0m
+[2025-07-12 10:17:20,531] [ERROR] [__main__]  * Restarting with stat
+[2025-07-12 10:17:21,070] [INFO] [__main__] Launching Flask server...
+[2025-07-12 10:17:21,070] [INFO] [__main__] Creating Flask app...
+[2025-07-12 10:17:21,071] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-12 10:17:21,079] [ERROR] [__main__]  * Debugger is active!
+[2025-07-12 10:17:21,080] [ERROR] [__main__]  * Debugger PIN: 939-065-228
+[2025-07-12 10:18:28,708] [DEBUG] [__main__] Received a new request.
+[2025-07-12 10:18:28,708] [INFO] [routes.watermark_routes] POST /watermark called
+[2025-07-12 10:18:28,710] [DEBUG] [routes.watermark_routes] Received file: filename=Screenshot from 2025-07-01 18-39-32.png, content_type=image/png
+[2025-07-12 10:18:28,710] [DEBUG] [routes.watermark_routes] Received message of length 4 characters
+[2025-07-12 10:18:28,710] [DEBUG] [routes.watermark_routes] Loading original image from uploaded file
+[2025-07-12 10:18:28,711] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-12 10:18:28,716] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (658, 466, 3)
+[2025-07-12 10:18:28,716] [INFO] [routes.watermark_routes] Original image loaded: shape=(658, 466, 3), dtype=uint8
+[2025-07-12 10:18:28,717] [DEBUG] [routes.watermark_routes] Attempting to extract existing hash and messages for appending support
+[2025-07-12 10:18:28,753] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2025-07-12 10:18:28,753] [DEBUG] [core.dwt_engine] Total bits extracted: 306628
+[2025-07-12 10:18:28,753] [DEBUG] [routes.watermark_routes] Extracted 306628 bits from image for parent hash extraction.
+[2025-07-12 10:18:28,753] [ERROR] [__main__] Invalid or out-of-bounds message length at cursor 256: 0. Stopping parse.
+[2025-07-12 10:18:28,753] [DEBUG] [routes.watermark_routes] Detected format: hash_based, found 0 existing messages.
+[2025-07-12 10:18:28,753] [INFO] [routes.watermark_routes] Extracted parent hash from image: 0000000000000000000000000000000000000000000000000000000000000000
+[2025-07-12 10:18:28,754] [INFO] [routes.watermark_routes] SHA256 of uploaded image: [1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1]
+[2025-07-12 10:18:28,754] [WARNING] [routes.watermark_routes] File-level chain broken: parent hash (0000000000000000000000000000000000000000000000000000000000000000) does not match uploaded image hash ([1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1]).
+[2025-07-12 10:18:29,889] [ERROR] [__main__] Error fetching watermark from chain: ('execution reverted: Watermark not found', '0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001357617465726d61726b206e6f7420666f756e6400000000000000000000000000')
+Traceback (most recent call last):
+  File "/home/gowtham/dwt-watermarking/backend/utils/blockchain_utils.py", line 102, in get_watermark_from_chain
+    entry = contract.functions.getWatermark(parent_hash_bytes).call()
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/contract/contract.py", line 291, in call
+    return call_contract_function(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/contract/utils.py", line 153, in call_contract_function
+    return_data = w3.eth.call(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/eth/eth.py", line 247, in call
+    return self._durin_call(transaction, block_identifier, state_override)
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/eth/eth.py", line 266, in _durin_call
+    return self._call(transaction, block_identifier, state_override)
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/_utils/validation.py", line 397, in validate_rpc_response_and_raise_if_error
+    response = apply_error_formatters(error_formatters, response)
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/_utils/formatters.py", line 146, in apply_error_formatters
+    formatted_resp = pipe(response, error_formatters)
+  File "cytoolz/functoolz.pyx", line 685, in cytoolz.functoolz.pipe
+  File "cytoolz/functoolz.pyx", line 660, in cytoolz.functoolz.c_pipe
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/_utils/error_formatters_utils.py", line 166, in raise_contract_logic_error_on_revert
+    raise ContractLogicError(message, data=data)
+web3.exceptions.ContractLogicError: ('execution reverted: Watermark not found', '0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001357617465726d61726b206e6f7420666f756e6400000000000000000000000000')
+[2025-07-12 10:18:29,890] [WARNING] [routes.watermark_routes] Blockchain chain broken: no watermark record found for parent hash 0000000000000000000000000000000000000000000000000000000000000000.
+[2025-07-12 10:18:29,890] [INFO] [routes.watermark_routes] Total messages to embed: 1
+[2025-07-12 10:18:29,890] [DEBUG] [routes.watermark_routes] Preparing bitstream with SHA256 hash and multi-message framing
+[2025-07-12 10:18:29,891] [INFO] [routes.watermark_routes] Combined bitstream length: 304 bits
+[2025-07-12 10:18:29,891] [DEBUG] [routes.watermark_routes] Embedding combined bitstream into image via DWT parity
+[2025-07-12 10:18:29,906] [DEBUG] [core.dwt_engine] Embedding 304 bits in Y channel parity
+[2025-07-12 10:18:29,906] [DEBUG] [core.dwt_engine] Y-parity embed check: 304 bits embedded, 0 mismatches
+[2025-07-12 10:18:29,907] [INFO] [routes.watermark_routes] Embedding complete without mismatches
+[2025-07-12 10:18:29,907] [DEBUG] [routes.watermark_routes] Saving original image to /home/gowtham/dwt-watermarking/backend/uploads/original/75e7fd232587480a9af9855ea3587cb7_orig.png
+[2025-07-12 10:18:29,907] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/original/75e7fd232587480a9af9855ea3587cb7_orig.png
+[2025-07-12 10:18:29,910] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-12 10:18:29,910] [INFO] [routes.watermark_routes] Original image saved successfully
+[2025-07-12 10:18:29,910] [DEBUG] [routes.watermark_routes] Saving watermarked image to /home/gowtham/dwt-watermarking/backend/uploads/watermarked/75e7fd232587480a9af9855ea3587cb7_wm.png
+[2025-07-12 10:18:29,910] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/75e7fd232587480a9af9855ea3587cb7_wm.png
+[2025-07-12 10:18:29,913] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-12 10:18:29,913] [INFO] [routes.watermark_routes] Watermarked image saved successfully
+[2025-07-12 10:18:29,913] [INFO] [routes.watermark_routes] Starting upload of original and watermarked images to Pinata Cloud (IPFS)...
+[2025-07-12 10:18:29,913] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/original/75e7fd232587480a9af9855ea3587cb7_orig.png to Pinata Cloud...
+[2025-07-12 10:18:31,976] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: QmNZJMHJktp7fAFX975zcLFF8GQBkKfzPEm7Y8e5Qb1GdE
+[2025-07-12 10:18:31,976] [INFO] [routes.watermark_routes] Original image uploaded to Pinata. CID: QmNZJMHJktp7fAFX975zcLFF8GQBkKfzPEm7Y8e5Qb1GdE
+[2025-07-12 10:18:31,976] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/watermarked/75e7fd232587480a9af9855ea3587cb7_wm.png to Pinata Cloud...
+[2025-07-12 10:18:33,563] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: QmNigtTKn158N6ZbZFCt2bTCzmYKSX1tDKj5X3kS3RbgfY
+[2025-07-12 10:18:33,563] [INFO] [routes.watermark_routes] Watermarked image uploaded to Pinata. CID: QmNigtTKn158N6ZbZFCt2bTCzmYKSX1tDKj5X3kS3RbgfY
+[2025-07-12 10:18:33,563] [INFO] [routes.watermark_routes] IPFS upload step completed in 3.65 seconds.
+[2025-07-12 10:18:33,564] [INFO] [routes.watermark_routes] Original image SHA256 hash: b2381205aee8b588e3b62b0c03d9476057ab8370da64ec5faf355af90d6c7457
+[2025-07-12 10:18:33,564] [INFO] [routes.watermark_routes] Watermarked image SHA256 hash: 3f6948385d994f77ffafdd0e579b83c4130a5f9333ed136898fe48b0364db620
+[2025-07-12 10:18:33,564] [INFO] [routes.watermark_routes] Combined message string: aaaa
+[2025-07-12 10:18:33,564] [INFO] [routes.watermark_routes] CRC value: 58693
+[2025-07-12 10:18:33,564] [INFO] [routes.watermark_routes] Using extracted parent hash: 0000000000000000000000000000000000000000000000000000000000000000
+[2025-07-12 10:18:35,825] [INFO] [__main__] Transaction sent. Hash: 0x4084c49f1aab5233940aa1627e4c6ad70ea18074b2afa6473e29233d6cbd6f11
+[2025-07-12 10:20:36,219] [ERROR] [__main__] Error in store_watermark_on_chain: Transaction HexBytes('0x4084c49f1aab5233940aa1627e4c6ad70ea18074b2afa6473e29233d6cbd6f11') is not in the chain after 120 seconds
+Traceback (most recent call last):
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/eth/eth.py", line 508, in wait_for_transaction_receipt
+    _timeout.sleep(poll_latency)
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/_utils/threads.py", line 101, in sleep
+    self.check()
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/_utils/threads.py", line 94, in check
+    raise self
+web3._utils.threads.Timeout: 120 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gowtham/dwt-watermarking/backend/utils/blockchain_utils.py", line 82, in store_watermark_on_chain
+    receipt = w3.eth.wait_for_transaction_receipt(tx_hash, timeout=120)
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/eth/eth.py", line 512, in wait_for_transaction_receipt
+    raise TimeExhausted(
+web3.exceptions.TimeExhausted: Transaction HexBytes('0x4084c49f1aab5233940aa1627e4c6ad70ea18074b2afa6473e29233d6cbd6f11') is not in the chain after 120 seconds
+[2025-07-12 10:20:36,219] [INFO] [__main__] Error in store_watermark_on_chain: Transaction HexBytes('0x4084c49f1aab5233940aa1627e4c6ad70ea18074b2afa6473e29233d6cbd6f11') is not in the chain after 120 seconds
+[2025-07-12 10:20:36,219] [INFO] [routes.watermark_routes] Logged watermark to blockchain. Tx hash: None
+[2025-07-12 10:20:36,220] [DEBUG] [routes.watermark_routes] Encoding watermarked image at /home/gowtham/dwt-watermarking/backend/uploads/watermarked/75e7fd232587480a9af9855ea3587cb7_wm.png to base64
+[2025-07-12 10:20:36,220] [DEBUG] [utils.image_utils] Attempting to convert image to base64 from path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/75e7fd232587480a9af9855ea3587cb7_wm.png
+[2025-07-12 10:20:36,220] [DEBUG] [utils.image_utils] Image successfully encoded to base64.
+[2025-07-12 10:20:36,220] [INFO] [routes.watermark_routes] Base64 encoding complete
+[2025-07-12 10:20:36,220] [INFO] [routes.watermark_routes] POST /watermark completed successfully
+[2025-07-12 10:20:36,221] [INFO] [__main__] App context teardown complete.
+[2025-07-12 10:20:36,221] [ERROR] [__main__] 127.0.0.1 - - [12/Jul/2025 10:20:36] "POST /watermark HTTP/1.1" 200 -
+[2025-07-12 10:22:34,067] [INFO] [__main__] Launching Flask server...
+[2025-07-12 10:22:34,067] [INFO] [__main__] Creating Flask app...
+[2025-07-12 10:22:34,068] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-12 10:22:34,069] [INFO] [__main__] b" * Serving Flask app 'app'"
+[2025-07-12 10:22:34,069] [INFO] [__main__] b' * Debug mode: on'
+[2025-07-12 10:22:34,075] [ERROR] [__main__] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-07-12 10:22:34,075] [ERROR] [__main__] [33mPress CTRL+C to quit[0m
+[2025-07-12 10:22:34,076] [ERROR] [__main__]  * Restarting with stat
+[2025-07-12 10:22:34,594] [INFO] [__main__] Launching Flask server...
+[2025-07-12 10:22:34,595] [INFO] [__main__] Creating Flask app...
+[2025-07-12 10:22:34,595] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-12 10:22:34,603] [ERROR] [__main__]  * Debugger is active!
+[2025-07-12 10:22:34,603] [ERROR] [__main__]  * Debugger PIN: 939-065-228
+[2025-07-12 10:25:20,300] [INFO] [__main__] Launching Flask server...
+[2025-07-12 10:25:20,300] [INFO] [__main__] Creating Flask app...
+[2025-07-12 10:25:20,301] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-12 10:25:20,303] [INFO] [__main__] b" * Serving Flask app 'app'"
+[2025-07-12 10:25:20,303] [INFO] [__main__] b' * Debug mode: on'
+[2025-07-12 10:25:20,308] [ERROR] [__main__] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-07-12 10:25:20,309] [ERROR] [__main__] [33mPress CTRL+C to quit[0m
+[2025-07-12 10:25:20,309] [ERROR] [__main__]  * Restarting with stat
+[2025-07-12 10:25:20,823] [INFO] [__main__] Launching Flask server...
+[2025-07-12 10:25:20,823] [INFO] [__main__] Creating Flask app...
+[2025-07-12 10:25:20,823] [INFO] [__main__] Registering watermark blueprint...
+[2025-07-12 10:25:20,830] [ERROR] [__main__]  * Debugger is active!
+[2025-07-12 10:25:20,830] [ERROR] [__main__]  * Debugger PIN: 939-065-228
+[2025-07-12 10:25:35,303] [DEBUG] [__main__] Received a new request.
+[2025-07-12 10:25:35,304] [INFO] [routes.watermark_routes] POST /watermark called
+[2025-07-12 10:25:35,306] [DEBUG] [routes.watermark_routes] Received file: filename=Screenshot from 2025-07-08 13-42-10.png, content_type=image/png
+[2025-07-12 10:25:35,306] [DEBUG] [routes.watermark_routes] Received message of length 4 characters
+[2025-07-12 10:25:35,306] [DEBUG] [routes.watermark_routes] Loading original image from uploaded file
+[2025-07-12 10:25:35,306] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-12 10:25:35,339] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (1080, 1920, 3)
+[2025-07-12 10:25:35,339] [INFO] [routes.watermark_routes] Original image loaded: shape=(1080, 1920, 3), dtype=uint8
+[2025-07-12 10:25:35,339] [DEBUG] [routes.watermark_routes] Attempting to extract existing hash and messages for appending support
+[2025-07-12 10:25:35,564] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+[2025-07-12 10:25:35,565] [DEBUG] [core.dwt_engine] Total bits extracted: 2073600
+[2025-07-12 10:25:35,566] [DEBUG] [routes.watermark_routes] Extracted 2073600 bits from image for parent hash extraction.
+[2025-07-12 10:25:35,566] [ERROR] [__main__] Invalid or out-of-bounds message length at cursor 256: 65535. Stopping parse.
+[2025-07-12 10:25:35,566] [DEBUG] [routes.watermark_routes] Detected format: hash_based, found 0 existing messages.
+[2025-07-12 10:25:35,566] [INFO] [routes.watermark_routes] Extracted parent hash from image: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+[2025-07-12 10:25:35,571] [INFO] [routes.watermark_routes] SHA256 of uploaded image: [1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0]
+[2025-07-12 10:25:35,571] [WARNING] [routes.watermark_routes] File-level chain broken: parent hash (ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff) does not match uploaded image hash ([1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0]).
+[2025-07-12 10:25:36,632] [ERROR] [__main__] Error fetching watermark from chain: ('execution reverted: Watermark not found', '0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001357617465726d61726b206e6f7420666f756e6400000000000000000000000000')
+Traceback (most recent call last):
+  File "/home/gowtham/dwt-watermarking/backend/utils/blockchain_utils.py", line 102, in get_watermark_from_chain
+    entry = contract.functions.getWatermark(parent_hash_bytes).call()
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/contract/contract.py", line 291, in call
+    return call_contract_function(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/contract/utils.py", line 153, in call_contract_function
+    return_data = w3.eth.call(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/eth/eth.py", line 247, in call
+    return self._durin_call(transaction, block_identifier, state_override)
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/eth/eth.py", line 266, in _durin_call
+    return self._call(transaction, block_identifier, state_override)
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/_utils/validation.py", line 397, in validate_rpc_response_and_raise_if_error
+    response = apply_error_formatters(error_formatters, response)
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/_utils/formatters.py", line 146, in apply_error_formatters
+    formatted_resp = pipe(response, error_formatters)
+  File "cytoolz/functoolz.pyx", line 685, in cytoolz.functoolz.pipe
+  File "cytoolz/functoolz.pyx", line 660, in cytoolz.functoolz.c_pipe
+  File "/home/gowtham/dwt-watermarking/backend/venv/lib/python3.10/site-packages/web3/_utils/error_formatters_utils.py", line 166, in raise_contract_logic_error_on_revert
+    raise ContractLogicError(message, data=data)
+web3.exceptions.ContractLogicError: ('execution reverted: Watermark not found', '0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001357617465726d61726b206e6f7420666f756e6400000000000000000000000000')
+[2025-07-12 10:25:36,632] [WARNING] [routes.watermark_routes] Blockchain chain broken: no watermark record found for parent hash ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff.
+[2025-07-12 10:25:36,633] [INFO] [routes.watermark_routes] Total messages to embed: 1
+[2025-07-12 10:25:36,633] [DEBUG] [routes.watermark_routes] Preparing bitstream with SHA256 hash and multi-message framing
+[2025-07-12 10:25:36,636] [INFO] [routes.watermark_routes] Combined bitstream length: 304 bits
+[2025-07-12 10:25:36,637] [DEBUG] [routes.watermark_routes] Embedding combined bitstream into image via DWT parity
+[2025-07-12 10:25:36,714] [DEBUG] [core.dwt_engine] Embedding 304 bits in Y channel parity
+[2025-07-12 10:25:36,715] [DEBUG] [core.dwt_engine] Y-parity embed check: 304 bits embedded, 0 mismatches
+[2025-07-12 10:25:36,716] [INFO] [routes.watermark_routes] Embedding complete without mismatches
+[2025-07-12 10:25:36,717] [DEBUG] [routes.watermark_routes] Saving original image to /home/gowtham/dwt-watermarking/backend/uploads/original/db7bb952d41a4772a4caf7adc35cf194_orig.png
+[2025-07-12 10:25:36,717] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/original/db7bb952d41a4772a4caf7adc35cf194_orig.png
+[2025-07-12 10:25:36,739] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-12 10:25:36,739] [INFO] [routes.watermark_routes] Original image saved successfully
+[2025-07-12 10:25:36,739] [DEBUG] [routes.watermark_routes] Saving watermarked image to /home/gowtham/dwt-watermarking/backend/uploads/watermarked/db7bb952d41a4772a4caf7adc35cf194_wm.png
+[2025-07-12 10:25:36,739] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/db7bb952d41a4772a4caf7adc35cf194_wm.png
+[2025-07-12 10:25:36,761] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-12 10:25:36,761] [INFO] [routes.watermark_routes] Watermarked image saved successfully
+[2025-07-12 10:25:36,761] [INFO] [routes.watermark_routes] Starting upload of original and watermarked images to Pinata Cloud (IPFS)...
+[2025-07-12 10:25:36,761] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/original/db7bb952d41a4772a4caf7adc35cf194_orig.png to Pinata Cloud...
+[2025-07-12 10:25:39,526] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: QmUyrPkd4pEJTednpk6ubu731Lw43MZjggURP54pzG5iVE
+[2025-07-12 10:25:39,527] [INFO] [routes.watermark_routes] Original image uploaded to Pinata. CID: QmUyrPkd4pEJTednpk6ubu731Lw43MZjggURP54pzG5iVE
+[2025-07-12 10:25:39,527] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/watermarked/db7bb952d41a4772a4caf7adc35cf194_wm.png to Pinata Cloud...
+[2025-07-12 10:25:41,850] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: QmYcZTjHoNjjL3oVRRdAH3WdH9DK9EUfCGJ6rdvK4HaFka
+[2025-07-12 10:25:41,850] [INFO] [routes.watermark_routes] Watermarked image uploaded to Pinata. CID: QmYcZTjHoNjjL3oVRRdAH3WdH9DK9EUfCGJ6rdvK4HaFka
+[2025-07-12 10:25:41,850] [INFO] [routes.watermark_routes] IPFS upload step completed in 5.09 seconds.
+[2025-07-12 10:25:41,861] [INFO] [routes.watermark_routes] Original image SHA256 hash: 85376ac43ee90d8929c60a2c011ac4a8253596f6e01f12c122dd9966f80863a2
+[2025-07-12 10:25:41,861] [INFO] [routes.watermark_routes] Watermarked image SHA256 hash: 9e980dbe0f83e4fd530677a0cf00a975d93e4c82e19b73d33c02fa2bc3133609
+[2025-07-12 10:25:41,861] [INFO] [routes.watermark_routes] Combined message string: wwww
+[2025-07-12 10:25:41,861] [INFO] [routes.watermark_routes] CRC value: 12866
+[2025-07-12 10:25:41,861] [INFO] [routes.watermark_routes] Using extracted parent hash: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+[2025-07-12 10:25:44,280] [INFO] [__main__] Transaction sent. Hash: 0x93df02a005719e872f30beae2a5435a36e05f9b0de0fbb097682f42ddd51672c
+[2025-07-12 10:25:45,649] [INFO] [__main__] Transaction mined in block 23808221 with status 1
+[2025-07-12 10:25:45,649] [INFO] [routes.watermark_routes] Logged watermark to blockchain. Tx hash: 0x93df02a005719e872f30beae2a5435a36e05f9b0de0fbb097682f42ddd51672c
+[2025-07-12 10:25:45,650] [DEBUG] [routes.watermark_routes] Encoding watermarked image at /home/gowtham/dwt-watermarking/backend/uploads/watermarked/db7bb952d41a4772a4caf7adc35cf194_wm.png to base64
+[2025-07-12 10:25:45,650] [DEBUG] [utils.image_utils] Attempting to convert image to base64 from path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/db7bb952d41a4772a4caf7adc35cf194_wm.png
+[2025-07-12 10:25:45,650] [DEBUG] [utils.image_utils] Image successfully encoded to base64.
+[2025-07-12 10:25:45,651] [INFO] [routes.watermark_routes] Base64 encoding complete
+[2025-07-12 10:25:45,651] [INFO] [routes.watermark_routes] POST /watermark completed successfully
+[2025-07-12 10:25:45,660] [INFO] [__main__] App context teardown complete.
+[2025-07-12 10:25:45,661] [ERROR] [__main__] 127.0.0.1 - - [12/Jul/2025 10:25:45] "POST /watermark HTTP/1.1" 200 -
+[2025-07-12 10:26:28,259] [DEBUG] [__main__] Received a new request.
+[2025-07-12 10:26:28,259] [INFO] [routes.watermark_routes] POST /extract called
+[2025-07-12 10:26:28,262] [DEBUG] [routes.watermark_routes] Loading watermarked image: filename=db7bb952d41a4772a4caf7adc35cf194_wm.png
+[2025-07-12 10:26:28,262] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-12 10:26:28,288] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (1080, 1920, 3)
+[2025-07-12 10:26:28,288] [INFO] [routes.watermark_routes] Watermarked image loaded: shape=(1080, 1920, 3), dtype=uint8
+[2025-07-12 10:26:28,288] [DEBUG] [routes.watermark_routes] Extracting full parity bitstream via DWT engine
+[2025-07-12 10:26:28,505] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0]
+[2025-07-12 10:26:28,505] [DEBUG] [core.dwt_engine] Total bits extracted: 2073600
+[2025-07-12 10:26:28,506] [INFO] [routes.watermark_routes] Extracted total bitstream length: 2073600 bits
+[2025-07-12 10:26:28,506] [DEBUG] [routes.watermark_routes] First 32 bits of bitstream: [1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0]
+[2025-07-12 10:26:28,506] [ERROR] [__main__] Invalid or out-of-bounds message length at cursor 304: 65535. Stopping parse.
+[2025-07-12 10:26:28,506] [INFO] [routes.watermark_routes] Detected format: hash_based, extracted 1 messages
+[2025-07-12 10:26:28,506] [INFO] [routes.watermark_routes] Extracted SHA256 hash: 85376ac43ee90d8929c60a2c011ac4a8253596f6e01f12c122dd9966f80863a2
+[2025-07-12 10:26:29,691] [INFO] [routes.watermark_routes] Blockchain metadata found for hash 85376ac43ee90d8929c60a2c011ac4a8253596f6e01f12c122dd9966f80863a2. CRC match: True
+[2025-07-12 10:26:29,691] [INFO] [routes.watermark_routes] Extraction complete: 1 messages found
+[2025-07-12 10:26:29,698] [INFO] [__main__] App context teardown complete.
+[2025-07-12 10:26:29,698] [ERROR] [__main__] 127.0.0.1 - - [12/Jul/2025 10:26:29] "POST /extract HTTP/1.1" 200 -
+[2025-07-12 10:26:59,413] [DEBUG] [__main__] Received a new request.
+[2025-07-12 10:26:59,413] [INFO] [routes.watermark_routes] POST /watermark called
+[2025-07-12 10:26:59,415] [DEBUG] [routes.watermark_routes] Received file: filename=db7bb952d41a4772a4caf7adc35cf194_wm.png, content_type=image/png
+[2025-07-12 10:26:59,415] [DEBUG] [routes.watermark_routes] Received message of length 3 characters
+[2025-07-12 10:26:59,415] [DEBUG] [routes.watermark_routes] Loading original image from uploaded file
+[2025-07-12 10:26:59,416] [DEBUG] [utils.image_utils] Attempting to load image from uploaded file...
+[2025-07-12 10:26:59,445] [DEBUG] [utils.image_utils] Image successfully loaded. Shape: (1080, 1920, 3)
+[2025-07-12 10:26:59,445] [INFO] [routes.watermark_routes] Original image loaded: shape=(1080, 1920, 3), dtype=uint8
+[2025-07-12 10:26:59,445] [DEBUG] [routes.watermark_routes] Attempting to extract existing hash and messages for appending support
+[2025-07-12 10:26:59,668] [DEBUG] [core.dwt_engine] Extracted first 32 bits: [1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0]
+[2025-07-12 10:26:59,668] [DEBUG] [core.dwt_engine] Total bits extracted: 2073600
+[2025-07-12 10:26:59,668] [DEBUG] [routes.watermark_routes] Extracted 2073600 bits from image for parent hash extraction.
+[2025-07-12 10:26:59,668] [ERROR] [__main__] Invalid or out-of-bounds message length at cursor 304: 65535. Stopping parse.
+[2025-07-12 10:26:59,668] [DEBUG] [routes.watermark_routes] Detected format: hash_based, found 1 existing messages.
+[2025-07-12 10:26:59,668] [INFO] [routes.watermark_routes] Extracted parent hash from image: 85376ac43ee90d8929c60a2c011ac4a8253596f6e01f12c122dd9966f80863a2
+[2025-07-12 10:26:59,672] [INFO] [routes.watermark_routes] SHA256 of uploaded image: [1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1]
+[2025-07-12 10:26:59,672] [WARNING] [routes.watermark_routes] File-level chain broken: parent hash (85376ac43ee90d8929c60a2c011ac4a8253596f6e01f12c122dd9966f80863a2) does not match uploaded image hash ([1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1]).
+[2025-07-12 10:27:00,676] [INFO] [routes.watermark_routes] Blockchain chain intact: found watermark record for parent hash 85376ac43ee90d8929c60a2c011ac4a8253596f6e01f12c122dd9966f80863a2.
+[2025-07-12 10:27:00,676] [INFO] [routes.watermark_routes] Total messages to embed: 2
+[2025-07-12 10:27:00,676] [DEBUG] [routes.watermark_routes] Preparing bitstream with SHA256 hash and multi-message framing
+[2025-07-12 10:27:00,681] [INFO] [routes.watermark_routes] Combined bitstream length: 344 bits
+[2025-07-12 10:27:00,681] [DEBUG] [routes.watermark_routes] Embedding combined bitstream into image via DWT parity
+[2025-07-12 10:27:00,743] [DEBUG] [core.dwt_engine] Embedding 344 bits in Y channel parity
+[2025-07-12 10:27:00,743] [DEBUG] [core.dwt_engine] Y-parity embed check: 344 bits embedded, 0 mismatches
+[2025-07-12 10:27:00,750] [INFO] [routes.watermark_routes] Embedding complete without mismatches
+[2025-07-12 10:27:00,750] [DEBUG] [routes.watermark_routes] Saving original image to /home/gowtham/dwt-watermarking/backend/uploads/original/a65cf7ca34f64ac2b3f8780ed398db53_orig.png
+[2025-07-12 10:27:00,750] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/original/a65cf7ca34f64ac2b3f8780ed398db53_orig.png
+[2025-07-12 10:27:00,772] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-12 10:27:00,772] [INFO] [routes.watermark_routes] Original image saved successfully
+[2025-07-12 10:27:00,772] [DEBUG] [routes.watermark_routes] Saving watermarked image to /home/gowtham/dwt-watermarking/backend/uploads/watermarked/a65cf7ca34f64ac2b3f8780ed398db53_wm.png
+[2025-07-12 10:27:00,772] [DEBUG] [utils.image_utils] Attempting to save image to path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/a65cf7ca34f64ac2b3f8780ed398db53_wm.png
+[2025-07-12 10:27:00,793] [DEBUG] [utils.image_utils] Image saved successfully.
+[2025-07-12 10:27:00,793] [INFO] [routes.watermark_routes] Watermarked image saved successfully
+[2025-07-12 10:27:00,793] [INFO] [routes.watermark_routes] Starting upload of original and watermarked images to Pinata Cloud (IPFS)...
+[2025-07-12 10:27:00,793] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/original/a65cf7ca34f64ac2b3f8780ed398db53_orig.png to Pinata Cloud...
+[2025-07-12 10:27:03,312] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: QmYcZTjHoNjjL3oVRRdAH3WdH9DK9EUfCGJ6rdvK4HaFka
+[2025-07-12 10:27:03,312] [INFO] [routes.watermark_routes] Original image uploaded to Pinata. CID: QmYcZTjHoNjjL3oVRRdAH3WdH9DK9EUfCGJ6rdvK4HaFka
+[2025-07-12 10:27:03,312] [INFO] [utils.ipfs_utils] Uploading /home/gowtham/dwt-watermarking/backend/uploads/watermarked/a65cf7ca34f64ac2b3f8780ed398db53_wm.png to Pinata Cloud...
+[2025-07-12 10:27:05,572] [INFO] [utils.ipfs_utils] File uploaded successfully to Pinata. CID: QmQ1VokNG6diuqVHugE3KGZt6kd1qYzFbC5ov939Hy4zdM
+[2025-07-12 10:27:05,572] [INFO] [routes.watermark_routes] Watermarked image uploaded to Pinata. CID: QmQ1VokNG6diuqVHugE3KGZt6kd1qYzFbC5ov939Hy4zdM
+[2025-07-12 10:27:05,573] [INFO] [routes.watermark_routes] IPFS upload step completed in 4.78 seconds.
+[2025-07-12 10:27:05,584] [INFO] [routes.watermark_routes] Original image SHA256 hash: 9e980dbe0f83e4fd530677a0cf00a975d93e4c82e19b73d33c02fa2bc3133609
+[2025-07-12 10:27:05,584] [INFO] [routes.watermark_routes] Watermarked image SHA256 hash: 1dcd43a437592c2c83afce8bff9af73e8c7e48f69c412591c1eb50d8ab103e25
+[2025-07-12 10:27:05,584] [INFO] [routes.watermark_routes] Combined message string: wwwwghf
+[2025-07-12 10:27:05,584] [INFO] [routes.watermark_routes] CRC value: 20543
+[2025-07-12 10:27:05,584] [INFO] [routes.watermark_routes] Using extracted parent hash: 85376ac43ee90d8929c60a2c011ac4a8253596f6e01f12c122dd9966f80863a2
+[2025-07-12 10:27:07,751] [INFO] [__main__] Transaction sent. Hash: 0x2347d16b000e277f27d7426b22056a9ec2572caebb4940041897ecd2a3f70b59
+[2025-07-12 10:27:09,577] [INFO] [__main__] Transaction mined in block 23808260 with status 1
+[2025-07-12 10:27:09,577] [INFO] [routes.watermark_routes] Logged watermark to blockchain. Tx hash: 0x2347d16b000e277f27d7426b22056a9ec2572caebb4940041897ecd2a3f70b59
+[2025-07-12 10:27:09,577] [DEBUG] [routes.watermark_routes] Encoding watermarked image at /home/gowtham/dwt-watermarking/backend/uploads/watermarked/a65cf7ca34f64ac2b3f8780ed398db53_wm.png to base64
+[2025-07-12 10:27:09,577] [DEBUG] [utils.image_utils] Attempting to convert image to base64 from path: /home/gowtham/dwt-watermarking/backend/uploads/watermarked/a65cf7ca34f64ac2b3f8780ed398db53_wm.png
+[2025-07-12 10:27:09,578] [DEBUG] [utils.image_utils] Image successfully encoded to base64.
+[2025-07-12 10:27:09,578] [INFO] [routes.watermark_routes] Base64 encoding complete
+[2025-07-12 10:27:09,578] [INFO] [routes.watermark_routes] POST /watermark completed successfully
+[2025-07-12 10:27:09,586] [INFO] [__main__] App context teardown complete.
+[2025-07-12 10:27:09,587] [ERROR] [__main__] 127.0.0.1 - - [12/Jul/2025 10:27:09] "POST /watermark HTTP/1.1" 200 -
