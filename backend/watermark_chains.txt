@@ -1,0 +1,13 @@
+Watermark Chains
+==================================================
+
+Format: chain_number)hash1->hash2->hash3...
+Note: Single hashes represent genesis watermarks
+
+Watermark Chains
+Watermark Chains
+1)8a7a5c875296a3ea8fc6f36f2ef625d2faf2dd5817a03d035eaf4b051be81a9b->997eb4baf9fd48f1f81cf57ce108a7af6c8e737f30023fd6612f8c7767d335b8->9a6893bc2dbb24d67dbf8fea437eac82568804caed61b6f5e91d733c1918885f
+
+Total chains: 3
+Generated on: 2025-07-13 10:09:33
+Source: Polygon Amoy Testnet

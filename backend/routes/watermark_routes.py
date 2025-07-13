@@ -22,6 +22,7 @@ from utils.logger import setup_logger
 import time
 from utils.blockchain_utils import store_watermark_on_chain, get_watermark_from_chain, get_all_watermark_logs, get_watermark_chain
 from web3 import Web3
+from datetime import datetime
 logger = setup_logger(__name__)
 watermark_bp = Blueprint("watermark", __name__)
 
@@ -33,6 +34,65 @@ ORIGINAL_FOLDER = os.path.join(UPLOAD_FOLDER, "original")
 WATERMARKED_FOLDER = os.path.join(UPLOAD_FOLDER, "watermarked")
 os.makedirs(ORIGINAL_FOLDER, exist_ok=True)
 os.makedirs(WATERMARKED_FOLDER, exist_ok=True)
+
+def update_chain_file(original_hash, parent_hash):
+    """
+    Update the chain file with new watermark information.
+    """
+    try:
+        chain_file_path = os.path.join(ROOT_DIR, "watermark_chains.txt")
+        
+        # Read existing chains
+        existing_chains = []
+        if os.path.exists(chain_file_path):
+            with open(chain_file_path, 'r') as f:
+                lines = f.readlines()
+                for line in lines:
+                    line = line.strip()
+                    if line and not line.startswith('#') and not line.startswith('=') and not line.startswith('Format:') and not line.startswith('Note:') and not line.startswith('Total chains:') and not line.startswith('Generated on:') and not line.startswith('Source:'):
+                        existing_chains.append(line)
+        
+        # Check if this is a new chain or continuation
+        new_chain = True
+        updated_chains = []
+        
+        for chain in existing_chains:
+            if chain.endswith(parent_hash):
+                # This is a continuation of an existing chain
+                new_chain_str = chain + "->" + original_hash
+                updated_chains.append(new_chain_str)
+                new_chain = False
+                logger.info(f"Updated existing chain: {new_chain_str}")
+            else:
+                updated_chains.append(chain)
+        
+        if new_chain:
+            # This is a new chain (genesis watermark)
+            chain_number = len(updated_chains) + 1
+            new_chain_str = f"{chain_number}){original_hash}"
+            updated_chains.append(new_chain_str)
+            logger.info(f"Added new chain: {new_chain_str}")
+        
+        # Write updated chains to file
+        with open(chain_file_path, 'w') as f:
+            f.write("Watermark Chains\n")
+            f.write("=" * 50 + "\n\n")
+            f.write("Format: chain_number)hash1->hash2->hash3...\n")
+            f.write("Note: Single hashes represent genesis watermarks\n\n")
+            
+            for chain in updated_chains:
+                f.write(chain + "\n")
+            
+            f.write(f"\nTotal chains: {len(updated_chains)}\n")
+            f.write(f"Generated on: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+            f.write(f"Source: Polygon Amoy Testnet\n")
+        
+        logger.info(f"Chain file updated successfully: {chain_file_path}")
+        return True
+        
+    except Exception as e:
+        logger.error(f"Error updating chain file: {e}")
+        return False
 
 @watermark_bp.route("/watermark", methods=["POST"])
 def watermark_image():
@@ -188,6 +248,14 @@ def watermark_image():
                 parent_hash=parent_hash_bytes
             )
             logger.info(f"Logged watermark to blockchain. Tx hash: {tx_hash}")
+            
+            # Update chain file after successful blockchain transaction
+            if tx_hash:
+                update_chain_file(original_hash, parent_hash)
+                logger.info("Chain file updated successfully")
+            else:
+                logger.warning("Blockchain transaction failed, chain file not updated")
+                
         except Exception as e:
             logger.error(f"Blockchain logging failed: {e}")
         # --- End blockchain logging integration ---

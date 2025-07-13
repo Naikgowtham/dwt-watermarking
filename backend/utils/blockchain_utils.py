@@ -7,8 +7,8 @@ import json
 # Load environment variables
 load_dotenv()
 ALCHEMY_URL = os.getenv("ALCHEMY_URL")
-PRIVATE_KEY = os.getenv("PRIVATE_KEY")
-PUBLIC_ADDRESS = os.getenv("PUBLIC_ADDRESS")
+PRIVATE_KEY = os.getenv("PRIVATE_KEY2")
+PUBLIC_ADDRESS = os.getenv("PUBLIC_ADDRESS2")
 
 logger = logging.getLogger("blockchain_utils.store_watermark_on_chain")
 
