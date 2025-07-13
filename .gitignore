@@ -1,158 +1,120 @@
-# Byte-compiled / optimized / DLL files
+# === Python Artifacts ===
 __pycache__/
+**/__pycache__/
 *.py[cod]
 *$py.class
-
-# C extensions
 *.so
-
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
 *.egg-info/
-.installed.cfg
 *.egg
-
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
+*.bak
+*.swp
+*~
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+# === Python Virtual Environments ===
+venv/
+.venv/
+ENV/
+.env/
+.env
+env/
+venv.bak/
+.env.*
+backend/venv/
+backend1/venv/
+backend2/venv/
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
+# === Environment/Secret Files ===
+.env
+.env.*
+*.env
+
+# === Logs and Uploads ===
+logs/
+*.log
+backend/logs/
+backend/uploads/
+backend/uploads/original/
+backend/uploads/watermarked/
+backend1/logs/
+backend1/uploads/
+backend1/uploads/original/
+backend1/uploads/watermarked/
+backend2/logs/
+backend2/uploads/
+backend2/uploads/original/
+backend2/uploads/watermarked/
+
+# === Node/React Artifacts ===
+node_modules/
+frontend/node_modules/
+frontend1/node_modules/
+frontend2/node_modules/
+frontend/build/
+frontend/dist/
+frontend1/build/
+frontend1/dist/
+frontend2/build/
+frontend2/dist/
+
+# === Coverage/Test Artifacts ===
+coverage/
 .coverage
 .coverage.*
 .cache
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
+htmlcov/
+.tox/
+.nox/
 .pytest_cache/
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-local_settings.py
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-.target/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# IPython
-profile_default/
-ipython_config.py
-
-# pyenv
-.python-version
-
-# pipenv
-Pipfile.lock
-
-# poetry
-poetry.lock
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow
-__pypackages__/
-
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
+.hypothesis/
 .mypy_cache/
 .dmypy.json
-compiled/
-
-# Pyre type checker
 .pyre/
-
-# pytype static type analyzer
 .pytype/
 
-# Cython debug symbols
-cython_debug/
-
-# VS Code
+# === IDE/Editor/OS Files ===
 .vscode/
-
-# System files
+.idea/
 .DS_Store
 Thumbs.db
+.spyderproject
+.spyproject
+.ropeproject
 
-# Node
-node_modules/
-frontend/node_modules/
-frontend/build/
-frontend/dist/
+# === Miscellaneous ===
+watermark_chains.txt
+Pipfile.lock
+poetry.lock
+pip-log.txt
+pip-delete-this-directory.txt
+instance/
+.webassets-cache
+.scrapy
+docs/_build/
+.target/
+profile_default/
+ipython_config.py
+site/
+celerybeat-schedule
+celerybeat.pid
+*.sage.py
 
-# Log files
-*.log
-backend/logs/
+# === Ignore build/dist for all backends ===
+backend/build/
+backend/dist/
+backend1/build/
+backend1/dist/
+backend2/build/
+backend2/dist/
 
-# Secret files
-*.env
-.env.*
+# === Ignore test scripts output ===
+backend/test_*.pyc
+backend1/test_*.pyc
+backend2/test_*.pyc
 
-# Python virtual environments
-backend/venv/
+# === Ignore Jupyter/IPython ===
+.ipynb_checkpoints/
 
-# Uploaded images
-backend/uploads/
-
-# Misc
-*.swp
-*~ 
+# === Ignore system swap/lock files ===
+*.lock 

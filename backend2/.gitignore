@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+core/__pycache__/
+routes/__pycache__/
+utils/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env
+
+# Logs
+logs/
+*.log
+
+# Uploads
+uploads/
+uploads/original/
+uploads/watermarked/
+
+# Output
+*.out
+*.bak
+*.swp
+
+# System
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Misc
+watermark_chains.txt
