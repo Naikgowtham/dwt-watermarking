@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import config from '../config';
 
 function EmbedPanel() {
   const [image, setImage] = useState(null);
@@ -26,7 +27,7 @@ function EmbedPanel() {
 
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/watermark', formData);
+      const res = await axios.post(config.ENDPOINTS.WATERMARK, formData);
       setWatermarked(`data:image/png;base64,${res.data.image}`);
       setEmbedResult(res.data);
     } catch (err) {

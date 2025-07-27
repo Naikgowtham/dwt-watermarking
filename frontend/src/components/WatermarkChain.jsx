@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import config from '../config';
 
 function WatermarkChain() {
   const [chain, setChain] = useState([]);
@@ -14,7 +15,7 @@ function WatermarkChain() {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.get(`http://localhost:5000/blockchain/chain/${hash}`);
+      const response = await axios.get(`${config.ENDPOINTS.BLOCKCHAIN_CHAIN}/${hash}`);
       setChain(response.data);
       setCurrentHash(hash);
     } catch (err) {

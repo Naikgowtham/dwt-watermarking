@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import config from '../config';
 
 function ExtractPanel() {
   const [image, setImage] = useState(null);
@@ -22,7 +23,7 @@ function ExtractPanel() {
 
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/extract', formData);
+      const res = await axios.post(config.ENDPOINTS.EXTRACT, formData);
       setExtractResult(res.data);
     } catch (err) {
       alert("Error: " + err.message);

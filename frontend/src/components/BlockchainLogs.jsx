@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import config from '../config';
 
 function BlockchainLogs() {
   const [logs, setLogs] = useState([]);
@@ -6,7 +7,7 @@ function BlockchainLogs() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('/blockchain/logs')
+    fetch(config.ENDPOINTS.BLOCKCHAIN_LOGS)
       .then((res) => {
         if (!res.ok) throw new Error('Failed to fetch logs');
         return res.json();
