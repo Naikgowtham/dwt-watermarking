@@ -2,6 +2,7 @@
 __pycache__/
 **/__pycache__/
 *.py[cod]
+*.pyc
 *$py.class
 *.so
 *.egg-info/
@@ -118,3 +119,53 @@ backend2/test_*.pyc
 
 # === Ignore system swap/lock files ===
 *.lock 
+
+# === Test PSNR and SSIM Files ===
+# Test scripts
+backend/test_psnr.py
+backend/test_ssim.py
+backend1/test_psnr.py
+backend1/test_ssim.py
+backend2/test_psnr.py
+backend2/test_ssim.py
+
+# Test results
+backend/psnr_results.txt
+backend/ssim_results.txt
+backend1/psnr_results.txt
+backend1/ssim_results.txt
+backend2/psnr_results.txt
+backend2/ssim_results.txt
+
+# === Test Directories and Files ===
+# Test image directories
+backend/test_img/
+backend1/test_img/
+backend2/test_img/
+
+# Test upload directories
+backend/test_uploads/
+backend1/test_uploads/
+backend2/test_uploads/
+
+# Analysis directories
+backend/analysis_nc_ber/
+backend1/analysis_nc_ber/
+backend2/analysis_nc_ber/
+
+# Attack directories
+backend/attacks/
+backend1/attacks/
+backend2/attacks/
+
+# Batch watermark script
+backend/batch_watermark.py
+backend1/batch_watermark.py
+backend2/batch_watermark.py
+
+# NC BER result files
+backend/nc_ber_*.txt
+backend1/nc_ber_*.txt
+backend2/nc_ber_*.txt 
+
+backend/utils/__pycache__/

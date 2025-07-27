@@ -120,6 +120,16 @@ class RobustDWTWatermarkEngine:
         # Ensure values are in valid range
         watermarked_Y = np.clip(watermarked_Y, 0, 255).astype(np.uint8)
         
+        # --- PATCH: Ensure all channels have the same shape before merging ---
+        logger.debug(f"Shapes before merge: Y={watermarked_Y.shape}, Cr={Cr.shape}, Cb={Cb.shape}")
+        target_shape = watermarked_Y.shape
+        if Cr.shape != target_shape:
+            logger.warning(f"Resizing Cr from {Cr.shape} to {target_shape} for merge.")
+            Cr = cv2.resize(Cr, (target_shape[1], target_shape[0]), interpolation=cv2.INTER_AREA)
+        if Cb.shape != target_shape:
+            logger.warning(f"Resizing Cb from {Cb.shape} to {target_shape} for merge.")
+            Cb = cv2.resize(Cb, (target_shape[1], target_shape[0]), interpolation=cv2.INTER_AREA)
+        logger.debug(f"Shapes after resize: Y={watermarked_Y.shape}, Cr={Cr.shape}, Cb={Cb.shape}")
         # Merge channels
         merged = cv2.merge([watermarked_Y, Cr, Cb])
         watermarked_image = cv2.cvtColor(merged, cv2.COLOR_YCrCb2RGB)
