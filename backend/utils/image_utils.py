@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 import base64
-from utils.logger import setup_logger
+from backend.utils.logger import setup_logger
 from io import BytesIO
 
 logger = setup_logger(__name__)

@@ -11,7 +11,8 @@ w3 = Web3(Web3.HTTPProvider(os.getenv("ALCHEMY_URL")))
 assert w3.is_connected(), "❌ Web3 is not connected"
 
 # Load ABI
-with open("contract/WatermarkContractABI.json", "r") as f:
+abi_path = os.path.join(os.path.dirname(__file__), "WatermarkContractABI.json")
+with open(abi_path, "r") as f:
     abi = json.load(f)
 
 # Set contract address (Amoy deployment)

@@ -1,0 +1,12 @@
+Image                                            NC        BER
+-----------------------------------------------------------------
+e54b0d73b89142a0acbeedc4b3c49c84_wm_resizeP0.5.png     0.0542     0.4688
+08c221bd97794b2891358b282a866861_wm_resizeP0.5.png    -0.0901     0.5437
+5093d4380fe240d3abbca91e4400ae49_wm_resizeP0.5.png    -0.0399     0.5188
+5d765f2913db485c8987909b159ab4e4_wm_resizeP0.5.png    -0.0793     0.5312
+5dbd1ba42c5a4bc4a29c92c52bf5d706_wm_resizeP0.5.png     0.0406     0.4750
+f62fb8341ec04c88a9fb07ecf0ef06be_wm_resizeP0.5.png     0.1184     0.4313
+ab9429cbfb2f4d76be9d645035006fa5_wm_resizeP0.5.png     0.0333     0.4813
+206c5724d37f4630a34d9921b34f9a98_wm_resizeP0.5.png     0.0033     0.5000
+3881898746a94af8b9958263e4f60c88_wm_resizeP0.5.png     0.1381     0.4250
+55036d1597a540cfb25e8332e8d66438_wm_resizeP0.5.png     0.1376     0.4188

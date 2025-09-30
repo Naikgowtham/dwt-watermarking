@@ -2,8 +2,8 @@ import os
 import uuid
 import logging
 from flask import Blueprint, request, jsonify
-from utils.image_utils import load_image, save_image, image_to_base64
-from utils.bit_utils import (
+from backend.utils.image_utils import load_image, save_image, image_to_base64
+from backend.utils.bit_utils import (
     string_to_bits,
     bits_to_string,
     int_to_bits,
@@ -15,12 +15,12 @@ from utils.bit_utils import (
     parse_bitstream_with_hash_and_messages,
     detect_and_parse_bitstream,
 )
-from utils.ipfs_utils import upload_to_pinata
+from backend.utils.ipfs_utils import upload_to_pinata
 import zlib
-from core.dwt_engine import embed_bits_in_dwt, extract_bits_from_dwt
-from utils.logger import setup_logger
+from backend.core.dwt_engine import embed_bits_in_dwt, extract_bits_from_dwt
+from backend.utils.logger import setup_logger
 import time
-from utils.blockchain_utils import store_watermark_on_chain, get_watermark_from_chain, get_all_watermark_logs, get_watermark_chain
+from backend.utils.blockchain_utils import store_watermark_on_chain, get_watermark_from_chain, get_all_watermark_logs, get_watermark_chain
 from web3 import Web3
 from datetime import datetime
 logger = setup_logger(__name__)

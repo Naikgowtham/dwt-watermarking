@@ -1,0 +1,12 @@
+Image                                            NC        BER
+-----------------------------------------------------------------
+206c5724d37f4630a34d9921b34f9a98_wm_jpegQF90.png     0.1474     0.4250
+5093d4380fe240d3abbca91e4400ae49_wm_jpegQF90.png    -0.0764     0.5375
+f62fb8341ec04c88a9fb07ecf0ef06be_wm_jpegQF90.png    -0.0731     0.5250
+5dbd1ba42c5a4bc4a29c92c52bf5d706_wm_jpegQF90.png     0.1152     0.4437
+e54b0d73b89142a0acbeedc4b3c49c84_wm_jpegQF90.png     0.9118     0.0437
+55036d1597a540cfb25e8332e8d66438_wm_jpegQF90.png    -0.0292     0.4688
+08c221bd97794b2891358b282a866861_wm_jpegQF90.png     0.1621     0.4125
+ab9429cbfb2f4d76be9d645035006fa5_wm_jpegQF90.png     0.0260     0.4688
+5d765f2913db485c8987909b159ab4e4_wm_jpegQF90.png    -0.0072     0.4875
+3881898746a94af8b9958263e4f60c88_wm_jpegQF90.png     0.0427     0.4750

@@ -1,0 +1,23 @@
+PSNR (Peak Signal-to-Noise Ratio) Test Results
+Generated on: 2025-08-23 11:18:43
+================================================================================
+
+UUID                             Original                       Watermarked                     PSNR (dB)
+--------------------------------------------------------------------------------------------------------------
+874cc8e44f314281bcc8c86286fffd7c 874cc8e44f314281bcc8c86286fffd7c_orig.png 874cc8e44f314281bcc8c86286fffd7c_wm.png      52.66
+d9fdfc0271884ae3b2aa91f8960daeaa d9fdfc0271884ae3b2aa91f8960daeaa_orig.png d9fdfc0271884ae3b2aa91f8960daeaa_wm.png      52.13
+3c8aec59228e4849b7d2e77b6418d140 3c8aec59228e4849b7d2e77b6418d140_orig.png 3c8aec59228e4849b7d2e77b6418d140_wm.png      72.51
+1ff3b890d6574e5d824f0ee69ca9dfd8 1ff3b890d6574e5d824f0ee69ca9dfd8_orig.png 1ff3b890d6574e5d824f0ee69ca9dfd8_wm.png      26.17
+28e28c9e1f1c41e78a6412cb95e1f1a2 28e28c9e1f1c41e78a6412cb95e1f1a2_orig.png 28e28c9e1f1c41e78a6412cb95e1f1a2_wm.png      51.88
+d8fb3338dde84bd59048d8b88e67152f d8fb3338dde84bd59048d8b88e67152f_orig.png d8fb3338dde84bd59048d8b88e67152f_wm.png      52.47
+000df879082e4cb684f325430bcd960f 000df879082e4cb684f325430bcd960f_orig.png 000df879082e4cb684f325430bcd960f_wm.png      52.34
+25ec59a242c44bf8becd20e372007b46 25ec59a242c44bf8becd20e372007b46_orig.png 25ec59a242c44bf8becd20e372007b46_wm.png      22.46
+5f819c75c5e44f49ab688a2edc49e50c 5f819c75c5e44f49ab688a2edc49e50c_orig.png 5f819c75c5e44f49ab688a2edc49e50c_wm.png      52.13
+ea7754b21e5b40cba3000a2146901e37 ea7754b21e5b40cba3000a2146901e37_orig.png ea7754b21e5b40cba3000a2146901e37_wm.png      52.52
+
+
+Summary Statistics:
+Total images processed: 10
+Valid PSNR calculations: 10
+Average PSNR: 48.73 dB
+Results saved to: /home/gowtham/dwt-watermarking/backend/results/psnr_results_20250823_111843.txt

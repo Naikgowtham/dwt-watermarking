@@ -1,0 +1,10 @@
+Saved: /home/gowtham/dwt-watermarking/backend2/attacks/../test_uploads/attacked/gaussian_noise/20dd3f0e50af4ff4a51c2aa36b05f266_wm_gaussVar20.0.png
+Saved: /home/gowtham/dwt-watermarking/backend2/attacks/../test_uploads/attacked/gaussian_noise/c587447290644f92bc68f1d49bf81042_wm_gaussVar20.0.png
+Saved: /home/gowtham/dwt-watermarking/backend2/attacks/../test_uploads/attacked/gaussian_noise/55a7b1c10177479380755ef86dd949ff_wm_gaussVar20.0.png
+Saved: /home/gowtham/dwt-watermarking/backend2/attacks/../test_uploads/attacked/gaussian_noise/4480eae412b7493b9f45a15d8423899b_wm_gaussVar20.0.png
+Saved: /home/gowtham/dwt-watermarking/backend2/attacks/../test_uploads/attacked/gaussian_noise/023cf6e86ad2410ca0a07f63b640a2af_wm_gaussVar20.0.png
+Saved: /home/gowtham/dwt-watermarking/backend2/attacks/../test_uploads/attacked/gaussian_noise/7606e670849d44f59f5fc2429cc67f9e_wm_gaussVar20.0.png
+Saved: /home/gowtham/dwt-watermarking/backend2/attacks/../test_uploads/attacked/gaussian_noise/bc2f6efbce124bf1aeaddec95369de18_wm_gaussVar20.0.png
+Saved: /home/gowtham/dwt-watermarking/backend2/attacks/../test_uploads/attacked/gaussian_noise/77fbf4c75fe7447594dbe00691ba1845_wm_gaussVar20.0.png
+Saved: /home/gowtham/dwt-watermarking/backend2/attacks/../test_uploads/attacked/gaussian_noise/b7d4787ff3da4acfac1f85dfa19e4b1b_wm_gaussVar20.0.png
+Saved: /home/gowtham/dwt-watermarking/backend2/attacks/../test_uploads/attacked/gaussian_noise/03dd3c1df59d493692ec05f976ba0c81_wm_gaussVar20.0.png

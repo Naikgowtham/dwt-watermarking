@@ -1,7 +1,7 @@
 import numpy as np
 import pywt
 import cv2
-from utils.logger import setup_logger
+from backend.utils.logger import setup_logger
 
 logger = setup_logger(__name__)
 
@@ -64,7 +64,7 @@ def embed_bits_in_dwt(image_rgb: np.ndarray, bitstream: list[int]) -> np.ndarray
     if Cb.dtype != modified_Y.dtype:
         logger.warning(f"Casting Cb from {Cb.dtype} to {modified_Y.dtype}")
         Cb = Cb.astype(modified_Y.dtype)
-    # --- END PATCH ---
+    # --- END PATCH ---How dwt works
 
     merged = cv2.merge([modified_Y, Cr, Cb])
     return cv2.cvtColor(merged, cv2.COLOR_YCrCb2RGB)

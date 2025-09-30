@@ -1,0 +1,12 @@
+Image                                            NC        BER
+-----------------------------------------------------------------
+7606e670849d44f59f5fc2429cc67f9e_wm_spAmt0.02.png     0.4605     0.2687
+03dd3c1df59d493692ec05f976ba0c81_wm_spAmt0.02.png     0.5877     0.2062
+b7d4787ff3da4acfac1f85dfa19e4b1b_wm_spAmt0.02.png     0.7017     0.1500
+c587447290644f92bc68f1d49bf81042_wm_spAmt0.02.png     0.7871     0.1062
+bc2f6efbce124bf1aeaddec95369de18_wm_spAmt0.02.png     0.5762     0.2125
+55a7b1c10177479380755ef86dd949ff_wm_spAmt0.02.png     0.6483     0.1750
+023cf6e86ad2410ca0a07f63b640a2af_wm_spAmt0.02.png     0.5605     0.2188
+20dd3f0e50af4ff4a51c2aa36b05f266_wm_spAmt0.02.png     0.5335     0.2313
+4480eae412b7493b9f45a15d8423899b_wm_spAmt0.02.png     0.6537     0.1750
+77fbf4c75fe7447594dbe00691ba1845_wm_spAmt0.02.png     0.3954     0.3000

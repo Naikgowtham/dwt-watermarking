@@ -1,0 +1,12 @@
+Image                                            NC        BER
+-----------------------------------------------------------------
+55a7b1c10177479380755ef86dd949ff_wm_jpegQF70.png     1.0000     0.0000
+023cf6e86ad2410ca0a07f63b640a2af_wm_jpegQF70.png     1.0000     0.0000
+20dd3f0e50af4ff4a51c2aa36b05f266_wm_jpegQF70.png     1.0000     0.0000
+7606e670849d44f59f5fc2429cc67f9e_wm_jpegQF70.png     1.0000     0.0000
+b7d4787ff3da4acfac1f85dfa19e4b1b_wm_jpegQF70.png     0.9875     0.0063
+c587447290644f92bc68f1d49bf81042_wm_jpegQF70.png     1.0000     0.0000
+bc2f6efbce124bf1aeaddec95369de18_wm_jpegQF70.png     1.0000     0.0000
+77fbf4c75fe7447594dbe00691ba1845_wm_jpegQF70.png     1.0000     0.0000
+4480eae412b7493b9f45a15d8423899b_wm_jpegQF70.png     0.9622     0.0187
+03dd3c1df59d493692ec05f976ba0c81_wm_jpegQF70.png     1.0000     0.0000

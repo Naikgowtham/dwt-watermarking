@@ -1,7 +1,13 @@
+import sys
+import os
+
+# Add the project root to the Python path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from flask import Flask
 from flask_cors import CORS
-from routes.watermark_routes import watermark_bp
-from utils.logger import setup_logger
+from backend.routes.watermark_routes import watermark_bp
+from backend.utils.logger import setup_logger
 
 logger = setup_logger(__name__)
 
